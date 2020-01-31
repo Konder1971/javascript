@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Spoler</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .block {
+      padding: 0;
+    }
+    .item {
+      margin: 0 0 20px 0;
+    }
+    .title {
+      font-weight: 600;
+      text-transform: uppercase;
+      position: relative;
+      padding: 0 0 0 30px;
+      cursor: pointer;
+    }
+    .title:after,
+    .title:before {
+      content: '';
+      width: 10px;
+      height: 1px;
+      background-color: #000;
+      position: absolute;
+      top: 13px;
+    }
+    .title:after {
+      transform: rotate(-40deg);
+      left: 8px;
+    }
+    .title:before {
+      transform: rotate(40deg);
+      left: 0;
+    }
+    .title.active:after,
+    .title.active:before {
+      background-color: #b00;
+      transition: all .5s ease 0s
+    }
+    .title.active:after {
+      transform: rotate(40deg);
+    }
+    .title.active:before {
+      transform: rotate(-40deg);
+    }
+    .text {
+      display: none;
+      padding: 10px 0 0 0;
+    }
+    .spoler-title {
+      cursor: pointer;
+    }
+    .spoler-text {
+      display: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h3>Аккордион</h3>
+
+  <div class="block accodion">
+
+    <div class="item">
+      <div class="title">Заголовок №1</div>
+      <div class="text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam molestias sint ipsum dolores reprehenderit
+        illum.
+        Illo in consequuntur hic deserunt dolores. Est saepe explicabo et non sunt. Magni alias unde iste sapiente error
+        nam dolor, officia aspernatur ipsa possimus consectetur maiores nesciunt, deleniti tempore laborum, veritatis
+        nostrum vero. Numquam, impedit!
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="title">Заголовок №2</div>
+      <div class="text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam molestias sint ipsum dolores reprehenderit
+        illum.
+        Illo in consequuntur hic deserunt dolores. Est saepe explicabo et non sunt. Magni alias unde iste sapiente
+        error
+        nam dolor, officia aspernatur ipsa possimus consectetur maiores nesciunt, deleniti tempore laborum, veritatis
+        nostrum vero. Numquam, impedit!
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="title">Заголовок №3</div>
+      <div class="text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam molestias sint ipsum dolores reprehenderit
+        illum.
+        Illo in consequuntur hic deserunt dolores. Est saepe explicabo et non sunt. Magni alias unde iste sapiente
+        error
+        nam dolor, officia aspernatur ipsa possimus consectetur maiores nesciunt, deleniti tempore laborum,
+        veritatis
+        nostrum vero. Numquam, impedit!
+      </div>
+    </div>
+
+  </div>
+
+  <hr />
+
+  <h3>Спойлеры</h3>
+
+  <div class="spoler">
+    <div class="spoler-title">Спойлер №1</div>
+    <div class="spoler-text">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam molestias sint ipsum dolores reprehenderit
+      illum. <a href="https://google.com" target="_blank">Google</a><br />
+      Illo in consequuntur hic deserunt dolores. Est saepe explicabo et non sunt. Magni alias unde iste sapiente error
+      nam dolor, officia aspernatur ipsa possimus consectetur maiores nesciunt, deleniti tempore laborum, veritatis
+      nostrum vero. Numquam, impedit!
+    </div>
+  </div>
+
+  <div class="spoler">
+    <div class="spoler-title">Спойлер №2</div>
+    <div class="spoler-text">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam molestias sint ipsum dolores reprehenderit
+      illum. <a href="https://google.com" target="_blank">Google</a>
+      Illo in consequuntur hic deserunt dolores. Est saepe explicabo et non sunt. Magni alias unde iste sapiente error
+      nam dolor, officia aspernatur ipsa possimus consectetur maiores nesciunt, deleniti tempore laborum, veritatis
+      nostrum vero. Numquam, impedit!
+    </div>
+  </div>
+
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/spoler.js"></script>
+</body>
+
+</html>

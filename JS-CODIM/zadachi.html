@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Задачи</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+      .du,
+      .zd,
+      .sh {
+        margin: 0 0 30px 0;
+      }
+      .dubuttons,
+      .ducontent,
+      .zdbuttons,
+      .genumber,
+      .genblocks,
+      .shbuttons {
+        border-bottom: 1px solid #333;
+      }
+      .ducontent,
+      .genblocks {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 10px 0 0 0;
+        min-height: 71px;
+      }
+      .btn:first-child {
+        margin-left: 0;
+      }
+      .kw,
+      .kwgen {
+        background-color: #333;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 4px;
+        width: 0px;
+        height: 50px;
+        font-size: 22px;
+        margin: 0 10px 10px 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;       
+        -webkit-transition: all 1s ease 0s;
+        -moz-transition: all 1s ease 0s;
+        transition: all 1s ease 0s;
+      }
+      .kw.active {
+        width: 50px;
+        -webkit-transition: all 1s ease 0s;
+        -moz-transition: all 1s ease 0s;
+        transition: all 1s ease 0s;
+      }
+
+      .genumber {
+        padding: 7px 0 10px 0;
+        min-height: 42px;
+      }
+
+      .kwgen {
+        background-color: #333;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 4px;
+        width: 0px;
+        height: 0px;
+        font-size: 22px;
+        margin: 0 10px 10px 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;       
+        -webkit-transition: all 1s ease 0s;
+        -moz-transition: all 1s ease 0s;
+        transition: all 1s ease 0s;
+        opacity: 0;
+        cursor: pointer;
+      }
+      .kwgen.active {
+        width: 50px;
+        height: 50px;
+        -webkit-transition: all 1s ease 0s;
+        -moz-transition: all 1s ease 0s;
+        transition: all 1s ease 0s;
+      }
+      .rotate {
+        transform:rotate(3600deg);
+        -ms-transform:rotate(3600deg);
+        -webkit-transform:rotate(3600deg);
+        -webkit-transition: all 1s ease 0s;
+        -moz-transition: all 1s ease 0s;
+        transition: all 1s ease 0s;
+      }
+      .opacityE {
+        opacity: 0;
+      }
+      .opacityNone {
+        opacity: 1;
+      }
+
+      .kwbox2 div:nth-child(odd) {
+        background-color: crimson;
+      }
+      .kwbox2 div:nth-child(even) {
+        background-color:darkcyan;
+      }
+      .genblocks .kwgen:hover {
+        background-color:darkgreen;
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+      }
+
+
+
+      .shcontent {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 10px 0 0 0;
+        min-height: 71px;
+      }
+      .shar {
+        background-color: #333;
+        color: #fff;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        font-size: 22px;
+        margin: 0 10px 10px 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;  
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <script src="js/zadachi.js"></script>
+  </body>
+</html>

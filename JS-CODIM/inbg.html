@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Интерактивные градиенты</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/inbg.js"></script>
+
+  <style type="text/css">
+
+    .canvas-interactive-wrapper {
+        position: relative;
+        height: 300px;
+        text-align: center;
+        margin: 0;
+    }
+
+    .canvas-interactive-wrapper canvas {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .canvas-interactive-wrapper .cta-wrapper {
+        margin-top: 0;
+        padding-top: 50px;
+    }
+
+    .canvas-interactive-wrapper .cta-wrapper a {
+        position: relative;
+        display: inline-block;
+        padding: 3px 7px;
+        border: solid 1px transparent;
+        margin-right: 50px;
+        z-index: 1;
+        text-decoration: none;
+        color: #222;
+        transition: border .3s;
+    }
+
+    .canvas-interactive-wrapper .cta-wrapper a.active {
+        border-color: #222;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+    <!--
+        Требуется подключить библиотеку jQuery.
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+        Такой вариант анимации, не может повторяться бесконечно, поэтому указываем параметр. На один клик – одна анимация.
+        loop: false
+        Подключить библиотеку Granim.js можно через внешнюю CDN ссылку.
+        <script src='js/jquery-3.4.1.min.js'></script>
+        Или скачать файл granim.min.js, тогда путь до файла укажите свой.
+        <script src='js/granim.min.js'></script>
+    -->
+
+    <div class="canvas-interactive-wrapper">
+        <canvas id="canvas-interactive"></canvas>
+        <div class="cta-wrapper">
+            <a href="#default-state" id="default-state-cta" class="active">Default state</a>
+            <a href="#violet-state" id="violet-state-cta">Violet state</a>
+            <a href="#orange-state" id="orange-state-cta">Orange state</a>
+        </div>
+    </div>
+
+    <script src='js/jquery-3.4.1.min.js'></script>
+    <script src='js/granim.min.js'></script>
+
+    <script>
+        var granimInstance = new Granim({
+            element: '#canvas-interactive',
+            name: 'interactive-gradient',
+            elToSetClassOn: '.canvas-interactive-wrapper',
+            direction: 'diagonal',
+            opacity: [1, 1],
+            isPausedWhenNotInView: true,
+            stateTransitionSpeed: 500,
+            states : {
+                "default-state": {
+                    gradients: [
+                        ['#B3FFAB', '#12FFF7'],
+                        ['#ADD100', '#7B920A'],
+                        ['#1A2980', '#26D0CE']
+                    ],
+                    transitionSpeed: 10000
+                },
+                "violet-state": {
+                    gradients: [
+                        ['#9D50BB', '#6E48AA'],
+                        ['#4776E6', '#8E54E9']
+                    ],
+                    transitionSpeed: 2000
+                },
+                "orange-state": {
+                    gradients: [ ['#FF4E50', '#F9D423'] ],
+                    loop: false
+                }
+            }
+        });
+
+        // With jQuery
+        $('#default-state-cta').on('click', function(event) {
+            event.preventDefault();
+            granimInstance.changeState('default-state');
+            setClass('#default-state-cta')
+        });
+        $('#violet-state-cta').on('click', function(event) {
+            event.preventDefault();
+            granimInstance.changeState('violet-state');
+            setClass('#violet-state-cta')
+        });
+        $('#orange-state-cta').on('click', function(event) {
+            event.preventDefault();
+            granimInstance.changeState('orange-state');
+            setClass('#orange-state-cta')
+        });
+
+        function setClass(element) {
+            $('.canvas-interactive-wrapper a').removeClass('active');
+            $(element).addClass('active');
+        };
+    </script>
+
+</body>
+</html>

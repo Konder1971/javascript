@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Как перемешать список элементов</title>
+  <style>
+    button {
+      cursor: pointer;
+      padding: 2px 4px;
+    }
+    h2, ol, ul {
+      margin: 0;
+    }
+    li {
+      font-size: 24px;
+    }
+    ol {
+      padding: 0;
+    }
+    ol > li,
+    ul,
+    .dp p {
+      display: inline-block;
+    }
+    ol > li {
+      padding: 0 10px 0 0;
+    }
+    .dp > p {
+      margin: 0 10px 5px 0;
+      border: 1px solid #000;
+      padding: 4px 10px 2px;
+    }
+    .perm {
+      margin: 0 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Перемешать список элементов в теге div при клике</h2>
+  <button class="perm">Перемешать</button>
+  <div class="dp"></div>
+  <hr>
+
+  <h2>Перемешать список элементов в теге ol при заходе на страницу</h2>
+  <ol></ol>
+  <hr>
+
+  <h2>Перемешать список элементов в тегах ul при заходе на страницу</h2>
+  <ul></ul>
+  <ul></ul>
+  <ul></ul>
+  <ul></ul>
+  <hr>
+
+
+  
+  <script src="js/peremeshat.js"></script>
+</body>
+</html>

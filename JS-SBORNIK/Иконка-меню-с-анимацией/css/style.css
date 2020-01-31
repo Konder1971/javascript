@@ -1,0 +1,46 @@
+body { background-color: black;}
+
+#nav-toggle {position: relative; display: inline-block; width:35px; height:25px;}
+#nav-toggle span { position: absolute; left: 0; top: 10px; }
+
+#nav-toggle span, 
+#nav-toggle span:before,
+#nav-toggle span:after {
+  position: absolute;
+  display: block;
+  content: '';
+  height: 5px;
+  width: 35px;
+  background: white;
+  border-radius: 1px;
+  cursor: pointer;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px; 
+}
+
+/* Добавим анимацию всех свойств для блоков нашей иконки */
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+
+/* Центральный блок делаем прозрачным */
+#nav-toggle.active span {
+  background-color: transparent;
+}
+
+/* Смещаем псевдо-элементы в центр иконки (на место основного блока) */
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+
+/* Наклоняем псевдо-элементы под углом 45 градусов, но в разные стороны */
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}

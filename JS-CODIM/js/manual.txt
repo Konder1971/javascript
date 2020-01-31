@@ -1,0 +1,49 @@
+
+docation.reload();  - обновление страницы
+event.preventDefault(); // отмена перезагрузки страинцы при отправки формы
+
+let chips = document.createElement('div'); // создание div
+document.querySelector('body').appendChild(chips); // вывод div на страницу
+
+querySelector // выбирает первый элемент из списка
+document.querySelector('.newbox').innerHTML +=  + number; // дозапись в элемент: +=
+document.querySelector('h1').outerHTML = '<h2>Заменили заголовок h1 на h2</h2>';
+
+Добавлние:
+.insertAdjacentHTML('position', 'element');
+'beforebegin': до самого element (до открывающего тега).
+'afterbegin': сразу после открывающего тега  element (перед первым потомком).
+'beforeend': сразу перед закрывающим тегом element (после последнего потомка).
+'afterend': после element (после закрывающего тега).
+
+
+
+// События Мыши: *********************************************************** */
+document.querySelector('.onclick').onclick = () => {
+  console.log('Click');
+}
+// двойной клик
+document.querySelector('.ondblclick').ondblclick = () => {
+  console.log('ondblclick');
+}
+// движение мыши над объектом серьёзно нагружает процессор
+document.querySelector('.onmousemove').onmousemove = () => {
+  console.log('onmousemove ... ');
+}
+// срабатывает когда мышь заходит на элемент
+document.querySelector('.onmouseenter').onmouseenter = () => {
+  console.log('onmouseenter');
+}
+// срабатывает когда мышь заходит с элемента
+document.querySelector('.onmouseleave').onmouseleave = () => {
+  console.log('... onmouseleave');
+}
+// прокрутка колеса мыши внутри элемента
+document.querySelector('.onmousewheel').onmousewheel = () => {
+  console.log('onmousewheel');
+  return false;
+}
+
+
+
+

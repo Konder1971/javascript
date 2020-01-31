@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    JS Links:<br/><br/>
+    <a href="https://www.youtube.com/watch?v=KmTK8kub_gw" target="_blank">Учим JavaScript/jQuery за 1 час! #От Профессионала</a><br/><br/>
+    <a href="https://www.codecademy.com/" target="_blank">codecademy.com - смотрим на элементы дизайна</a><br/><br/>
+    <a href="https://ahrefs.com" target="_blank">https://ahrefs.com - отзывы элементы дизайна</a><br/><br/>
+    https://codepen.io/ReGGae/pen/bmyYEj <br/><br/>
+    https://codepen.io/YahiaRefaiea/pen/xyNWQq <br/><br/>
+    https://www.youtube.com/watch?v=xMYg_GFZFs0 <br/><br/>
+    https://www.youtube.com/watch?v=JISFx18J7nc&list=PLVfMKQXDAhGW0p_BEEe47UkCgNoS_dyki <br/><br/>
+    https://www.youtube.com/watch?v=T3IgBNN9bhM&list=PLVfMKQXDAhGUaEtJ_fOUz0F7TJtidE7Qw <br/><br/>
+    https://www.youtube.com/watch?v=PsWIKvBeQ4k <br/><br/>
+    https://ru.hexlet.io/ <br/><br/>
+
+    <!-- вывод информации о браузере старт -->
+    <div id="exampleBr"></div>
+    <script type="text/javascript">
+        txt = "<p><hr />Кодовое имя Браузера: " + navigator.appCodeName + "</p>";
+        txt+= "<p>Название Браузера: " + navigator.appName + "</p>";
+        txt+= "<p>Версия Браузера: " + navigator.appVersion + "</p>";
+        txt+= "<p>Включены ли Cookie: " + navigator.cookieEnabled + "</p>";
+        txt+= "<p>Платформа: " + navigator.platform + "</p>";
+        txt+= "<p>Заголовок User-agent: " + navigator.userAgent + "</p><hr />";
+    document.getElementById("exampleBr").innerHTML=txt;
+    </script>
+    <!-- вывод информации о браузере ст0з -->
+
+    <!-- вывод data старт -->
+    <p id="data1"></p>
+    <script>
+    var d = new Date();
+        document.getElementById("data1").innerHTML = d;
+    </script>
+    <!-- вывод data стop -->
+
+    <!-- вывод дня недели старт -->
+    <p id="demoDN"></p>
+    <script>
+        var day;
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case  6:
+                day = "Saturday";
+        }
+        document.getElementById("demoDN").innerHTML = "Сука опять " + day;
+    </script>
+    <!-- вывод дня недели стоп -->
+
+
+
+    <!-- отсчёт времени старт -->
+    <form>
+        <input type="button" value="Начать отсчет!" onclick="doTimer()" />
+        <input type="text" id="txt" />
+        <input type="button" value="Прекратить Отсчет!" onclick="stopCount()" />
+    </form>
+    <p>
+    Щелкните на кнопке "Начать отсчет!" выше, чтобы запустить таймер. 
+    Счетчик в поле ввода будет считать до бесконечности, начиная с нуля. 
+    Щелкните на кнопке "Прекратить отсчет!", чтобы остановить таймер. 
+    Щелкните на кнопке "Начать отсчет!", чтобы заново запустить таймер.
+    </p>
+    <script>
+        var c=0;
+        var t;
+        var timer_is_on=0;
+        
+        function timedCount()
+        {
+        document.getElementById('txt').value=c;
+        c=c+1;
+        t=setTimeout("timedCount()",1000);
+        }
+        
+        function doTimer()
+        {
+        if (!timer_is_on)
+          {
+          timer_is_on=1;
+          timedCount();
+          }
+        }
+        
+        function stopCount()
+        {
+        clearTimeout(t);
+        timer_is_on=0;
+        }
+     </script>
+    <!-- отсчёт времени стоп -->
+
+    <!-- вывод массива старт -->
+    <script type="text/javascript">
+        var i;
+        var mycars = new Array();
+        mycars[0] = "Мерседес";
+        mycars[1] = "Шкода";
+        mycars[2] = "БМВ";
+        
+        for (i=0;i<mycars.length;i++)
+        {
+        document.write(mycars[i] + "<br />");
+        }
+    </script>
+    <!-- вывод массива стоп -->
+
+
+    <br /><hr />
+    <h2>JavaScript while</h2>
+    <p id="demo114"></p>
+    <script>
+    var text = "";
+    var i = 4;
+    while (i < 7) {
+        text += "<br>The number is " + i;
+        i++;
+    }
+    document.getElementById("demo114").innerHTML = text;
+    </script>
+    <br /><hr />
+
+
+    <h2>JavaScript do ... while</h2>
+    https://www.w3schools.com/js/js_loop_while.asp
+    <p id="demo1rr"></p>
+    <script>
+    var text = ""
+    var i = 0;
+    do {
+        text += "<br>The number is " + i;
+        i++;
+    }
+    while (i < 4);  
+    document.getElementById("demo1rr").innerHTML = text;
+    </script>
+    <br /><hr />
+    <br />
+
+
+
+    <!-- tab старт https://www.w3schools.com/howto/howto_js_tabs.asp -->
+    <h2>Tabs</h2>
+    <p>Click on the buttons inside the tabbed menu:</p>
+
+    <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo2')">Tokyo2</button>
+    </div>
+
+    <div id="London" class="tabcontent">
+    <h3>London</h3>
+    <p>London is the capital city of England.</p>
+    </div>
+
+    <div id="Paris" class="tabcontent">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France.</p> 
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+    <h3>Tokyo</h3>
+    <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+    <div id="Tokyo2" class="tabcontent">
+    <h3>Tokyo2</h3>
+    <p>Tokyo2 is the capital of Japan2.</p>
+    </div>
+
+    <script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    </script>
+    <br /><hr />
+    <br />
+    <!-- tab стоп -->
+      
+      
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery-3.3.1.slim.js"></script>
+    <script type="text/javascript">
+        //Изменим стандартный символ $ на jq   
+        var jq=jQuery.noConflict();
+        //Изменим цвет абзаца используя nsign вместо $
+        jq(document).ready(function(){
+           jq("p").css("color", "green").css("font-size","20px");
+        });                                         
+    </script> 
+</body>
+
+</html>

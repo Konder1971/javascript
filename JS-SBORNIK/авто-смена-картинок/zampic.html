@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Авто-смена картинки</title>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <style>
+    h1, h2 {
+      margin: 10px 0;
+    }
+    .zs {
+      position: relative;
+      width: 200px;
+      height: 286px;
+    }
+    .zs > img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 200px;
+      height: 286px;
+    }
+    .promo-img {
+      width: 200px;
+      height: 286px;
+    }
+
+    #img_container {
+      position:relative;
+      height:200px;
+      width:200px;
+    }
+    #img_container img {
+      position:absolute;
+      left:0;
+      -webkit-transition: opacity 1s ease-in-out;
+      -moz-transition: opacity 1s ease-in-out;
+      -o-transition: opacity 1s ease-in-out;
+      transition: opacity 1s ease-in-out;
+      width: 200px;
+      height:200px;
+    }
+    @-webkit-keyframes cf3FadeInOut {
+        0% {
+          opacity:1;
+        }
+        45% {
+          opacity:1;
+        }
+        55% {
+          opacity:0;
+        }
+        100% {
+        opacity:0;
+      }
+    }
+    @-moz-keyframes cf3FadeInOut {
+      0% {
+        opacity:1;
+      }
+      45% {
+        opacity:1;
+      }
+      55% {
+        opacity:0;
+      }
+      100% {
+      opacity:0;
+      }
+    }
+    @-o-keyframes cf3FadeInOut {
+      0% {
+        opacity:1;
+      }
+      45% {
+        opacity:1;
+      }
+      55% {
+        opacity:0;
+      }
+      100% {
+      opacity:0;
+      }
+    }
+    @keyframes cf3FadeInOut {
+      0% {
+        opacity:1;
+      }
+      45% {
+        opacity:1;
+      }
+      55% {
+        opacity:0;
+      }
+      100% {
+      opacity:0;
+      }
+    }
+    #img_container img.top {
+      -webkit-animation-name: cf3FadeInOut;
+      -webkit-animation-timing-function: ease-in-out;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-duration: 5s;
+      -webkit-animation-direction: alternate;
+
+      -moz-animation-name: cf3FadeInOut;
+      -moz-animation-timing-function: ease-in-out;
+      -moz-animation-iteration-count: infinite;
+      -moz-animation-duration: 5s;
+      -moz-animation-direction: alternate;
+
+      -o-animation-name: cf3FadeInOut;
+      -o-animation-timing-function: ease-in-out;
+      -o-animation-iteration-count: infinite;
+      -o-animation-duration: 5s;
+      -o-animation-direction: alternate;
+
+      animation-name: cf3FadeInOut;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-duration: 5s;
+      animation-direction: alternate;
+    }
+
+
+
+    .image.first,.image.second {
+      margin:0;
+      padding:0;
+    }
+    .image.first {
+      opacity:1px;
+      display:block;
+      position:absolute;
+      z-index:100;
+      transition-duration:0.96s;
+      -webkit-transition-duration:0.96s;
+      -moz-transition-duration:0.96s;
+      -o-transition-duration:0.96s;
+      -ms-transition-duration:0.96s;
+    }
+    .image.first:hover {
+      cursor: pointer;
+      opacity:0.00;
+    }
+    div.ImgField {
+      display:inline-block;
+      background-position:center center;
+      background-repeat:no-repeat;
+      margin:0;
+      padding:0;
+      width: 140px;
+    }
+    div.ImgField img {
+      width: 140px;
+    }
+
+
+    .header {
+      height: 200px;
+      position: relative;
+    }
+    .header__bg {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      right: 0;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 2s;
+    }
+    .is-current {
+      z-index: 5;
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>  
+  <h1>Авто смена картинки</h1>
+  <hr>
+
+  <h2>Замена картинки скриптом 1</h2>
+  <div class="zs">
+    <img src="images/pic-1.png" id="img_1" />
+    <img src="images/pic-2.png" id="img_2"  style="opacity: 0; filter: alpha(opacity=0); "  />
+    <img src="images/pic-3.png" id="img_3"  style="opacity: 0; filter: alpha(opacity=0); "  />
+  </div>
+  <hr>
+
+  <h2>Замена картинки скриптом 2</h2>
+  <div class="zs2">
+    <img src="images/pic-1.png" class="promo-img" id="image_id" />
+  </div>
+  <hr>
+
+  <h2>Смена background-image в div скриптом</h2>
+  <div class="csa-head" style="width: 140px; height: 180px;"></div>
+  <hr>
+
+  <h2>Один Цикл смена background-image в div скриптом</h2>
+  <div class="csa-head2" style="width: 140px; height: 180px;"></div>
+  <hr>
+
+  <h2>Пример смены картинок на css (css-анимация)</h2>
+  <div id="img_container">
+		<img class="bottom" src="images/html5.jpg" />
+		<img class="top" src="images/css3.jpg" />
+  </div>
+  <hr>
+
+  <h2>Плавная смена картинок при наведении курсора</h2>
+  <div class=ImgField>
+    <img class="image first" src="images/pic-1.png"/>
+    <img class="image second" src="images/pic-2.png"/>
+  </div>
+  <div class=ImgField>
+    <img class="image first" src="images/pic-2.png"/>
+    <img class="image second" src="images/pic-3.png"/>
+  </div>
+  <div class=ImgField>
+    <img class="image first" src="images/pic-3.png"/>
+    <img class="image second" src="images/pic-1.png"/>
+  </div>
+  <hr>
+ 
+  
+  <script src="js/zampic.js"></script>
+</body>
+</html>

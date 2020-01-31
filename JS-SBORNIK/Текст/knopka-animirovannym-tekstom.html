@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <title>Кнопка с анимированным текстом</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- скрипт для кнопки https://myrusakov.ru/knopka-animirovannym-tekstom.html -->
+  <script language="javascript">
+    var timerID = 0;
+    var timerRunning = false;
+    var charNo = 0;
+    var charMax = 0;
+    var textLine = "Rightapplications - Goto Web Site, и будьте счастливы!"; //Текст на кнопке
+    var urlLine = "https://rightapplications.com/"; //Адрес перехода после нажатия
+    function startShow() {
+      stopShow();
+      showLine();
+      timerRunning = true;
+    }
+
+    function stopShow() {
+      if (timerRunning) {
+        clearTimeout(timerID);
+        timerRunning = false;
+      }
+    }
+
+    function showLine() {
+      charMax = textLine.length;
+      if (charNo <= charMax) {
+        document.animationbutton.but.value = textLine.substring(0, charNo);
+        document.animationbutton.but.style.color = "red";
+        charNo++;
+        timerID = setTimeout("showLine()", 100);
+      } else {
+        charNo = 0;
+        timerID = setTimeout("showLine()", 3000);
+      }
+    }
+
+    function gotoURL() {
+      location.href = urlLine;
+    }
+  </script>
+
+
+</head>
+
+<body onload="startShow()">
+
+  <form name="animationbutton">
+    <input type="button" name="but" onClick="gotoURL()">
+  </form>
+
+</body>
+
+</html>

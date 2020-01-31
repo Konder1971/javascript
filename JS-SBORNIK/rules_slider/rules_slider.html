@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rules Slider</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  .block-modal-test {
+    width: 250px;
+    height: 340px;
+    border: 1px solid #000;
+    margin: 100px auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-slider {
+    width: 500px;
+    height: 340px;
+    background-color: bisque;
+    margin-left: 0;
+    transition: all ease 1s;
+  }
+  .left-50,
+  .right-50 {
+    width: 50%;
+    float: left;
+    padding: 10px;
+  }
+  .left-50 {
+    background-color: red;
+  }
+  .right-50 {
+    background-color: green;
+    max-height: 340px;
+    overflow-y: auto;
+  }
+  .reed-rules,
+  .reed-rules-back {
+    cursor: pointer;
+  }
+</style>
+<body>
+
+  <div class="block-modal-test">
+    <div class="form-slider">
+      <div class="left-50">
+        <p class="reed-rules">Read Ruless ...</p>
+      </div>
+      <div class="right-50">
+        <p class="reed-rules-back">Back</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nemo aliquam, doloremque amet minus temporibus est laudantium
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nemo aliquam, doloremque amet minus temporibus est laudantium, molestiae reiciendis veritatis eligendi harum aut at delectus voluptate magnam eveniet cupiditate rerum?
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nemo aliquam, doloremque amet minus 
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nemo aliquam, doloremque amet minus temporibus est laudantium, molestiae reiciendis veritatis eligendi harum aut at delectus voluptate magnam eveniet cupiditate rerum?
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nemo aliquam, doloremque amet minus temporibus est laudantium, molestiae reiciendis veritatis eligendi harum aut at delectus voluptate magnam eveniet cupiditate rerum?
+        </p>
+        <p class="reed-rules-back">Back</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/rules_slider.js"></script>
+</body>
+</html>
