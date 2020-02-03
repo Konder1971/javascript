@@ -189,6 +189,13 @@ peremeshatButton.onclick = function () {
 
 
 
+
+
+
+
+
+
+
 // Шары
 /*
 let sh = document.createElement('div');
