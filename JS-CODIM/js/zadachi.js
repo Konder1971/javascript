@@ -226,38 +226,3 @@ document.querySelector('.shcontent').appendChild(shar);
 
 
 // https://www.youtube.com/watch?v=v6AVfIupNB8
-class Programmer {
-  constructor(name) {
-    this.name = name
-  }
-  code() {
-    console.log(`${this.name} - это программист !`)
-  }
-}
-
-class Frontend extends Programmer {
-  angular() {
-    console.log(`${this.name} - пишет на Angular`)
-  }
-}
-
-class Backend extends Programmer {
-  nodejs() {
-    console.log(`${this.name} - знает Node Js`)
-  }
-}
-
-class Fullstack extends Programmer {
-  
-}
-
-const programmer = new Programmer(name, 'Чёрт')
-programmer.code()
-
-const frontend = new Frontend(name, 'Иван')
-frontend.code()
-frontend.angular()
-
-const backend = new Backend(name, 'Семен')
-backend.code()
-backend.nodejs()
