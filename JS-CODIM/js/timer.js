@@ -55,8 +55,7 @@ back.onclick = function() {
 }
 
 discharge.onclick = function() {
-  clearInterval(interval);
-  document.querySelector('.timer').innerHTML = '';
+  clearTimeout(interval);
   i = 0;
   interval = 0;
   launch.disabled = false;

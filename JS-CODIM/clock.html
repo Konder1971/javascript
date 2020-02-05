@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Часы</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <style>
+    .clock {
+      box-shadow: inset 0 0 0 0.02em #000;
+      display: inline-block;
+      border-radius: 0.5em;
+      position: relative;
+      font-size: 300px;
+      overflow: hidden;
+      height: 1em;
+      width: 1em;
+    }
+
+    .clock::after {
+      content: '';
+      background-color: #fff;
+      border-radius: 0.5em;
+      margin-left: -0.5em;
+      margin-top: -0.5em;
+      position: absolute;
+      font-size: 0.01em;
+      display: block;
+      height: 1em;
+      width: 1em;
+      left: 50%;
+      top: 50%;
+    }
+
+    .clock__hand-container,
+    .clock__hand,
+    .clock__stroke {
+      margin-left: -0.5em;
+      margin-top: -0.5em;
+      font-size: inherit;
+      position: absolute;
+      display: block;
+      height: 1em;
+      width: 1em;
+      left: 50%;
+      top: 50%;
+    }
+
+    .clock__stroke::after {
+      content: "";
+      border-radius: 0 0 0.02em 0.02em;
+      background-color: #000;
+      margin-left: -0.01em;
+      position: absolute;
+      display: block;
+      height: 0.05em;
+      width: 0.02em;
+      top: 0.02em;
+      left: 50%;
+    }
+
+    .clock__stroke--small::after {
+      content: "";
+      border-radius: 0 0 0.0125em 0.0125em;
+      height: 0.025em;
+      width: 0.015em;
+    }
+
+    .clock__stroke--1 {
+      transform: rotate(6deg);
+    }
+
+    .clock__stroke--2 {
+      transform: rotate(12deg);
+    }
+
+    .clock__stroke--3 {
+      transform: rotate(18deg);
+    }
+
+    .clock__stroke--4 {
+      transform: rotate(24deg);
+    }
+
+    .clock__stroke--5 {
+      transform: rotate(30deg);
+    }
+
+    .clock__stroke--6 {
+      transform: rotate(36deg);
+    }
+
+    .clock__stroke--7 {
+      transform: rotate(42deg);
+    }
+
+    .clock__stroke--8 {
+      transform: rotate(48deg);
+    }
+
+    .clock__stroke--9 {
+      transform: rotate(54deg);
+    }
+
+    .clock__stroke--10 {
+      transform: rotate(60deg);
+    }
+
+    .clock__stroke--11 {
+      transform: rotate(66deg);
+    }
+
+    .clock__stroke--12 {
+      transform: rotate(72deg);
+    }
+
+    .clock__stroke--13 {
+      transform: rotate(78deg);
+    }
+
+    .clock__stroke--14 {
+      transform: rotate(84deg);
+    }
+
+    .clock__stroke--15 {
+      transform: rotate(90deg);
+    }
+
+    .clock__stroke--16 {
+      transform: rotate(96deg);
+    }
+
+    .clock__stroke--17 {
+      transform: rotate(102deg);
+    }
+
+    .clock__stroke--18 {
+      transform: rotate(108deg);
+    }
+
+    .clock__stroke--19 {
+      transform: rotate(114deg);
+    }
+
+    .clock__stroke--20 {
+      transform: rotate(120deg);
+    }
+
+    .clock__stroke--21 {
+      transform: rotate(126deg);
+    }
+
+    .clock__stroke--22 {
+      transform: rotate(132deg);
+    }
+
+    .clock__stroke--23 {
+      transform: rotate(138deg);
+    }
+
+    .clock__stroke--24 {
+      transform: rotate(144deg);
+    }
+
+    .clock__stroke--25 {
+      transform: rotate(150deg);
+    }
+
+    .clock__stroke--26 {
+      transform: rotate(156deg);
+    }
+
+    .clock__stroke--27 {
+      transform: rotate(162deg);
+    }
+
+    .clock__stroke--28 {
+      transform: rotate(168deg);
+    }
+
+    .clock__stroke--29 {
+      transform: rotate(174deg);
+    }
+
+    .clock__stroke--30 {
+      transform: rotate(180deg);
+    }
+
+    .clock__stroke--31 {
+      transform: rotate(186deg);
+    }
+
+    .clock__stroke--32 {
+      transform: rotate(192deg);
+    }
+
+    .clock__stroke--33 {
+      transform: rotate(198deg);
+    }
+
+    .clock__stroke--34 {
+      transform: rotate(204deg);
+    }
+
+    .clock__stroke--35 {
+      transform: rotate(210deg);
+    }
+
+    .clock__stroke--36 {
+      transform: rotate(216deg);
+    }
+
+    .clock__stroke--37 {
+      transform: rotate(222deg);
+    }
+
+    .clock__stroke--38 {
+      transform: rotate(228deg);
+    }
+
+    .clock__stroke--39 {
+      transform: rotate(234deg);
+    }
+
+    .clock__stroke--40 {
+      transform: rotate(240deg);
+    }
+
+    .clock__stroke--41 {
+      transform: rotate(246deg);
+    }
+
+    .clock__stroke--42 {
+      transform: rotate(252deg);
+    }
+
+    .clock__stroke--43 {
+      transform: rotate(258deg);
+    }
+
+    .clock__stroke--44 {
+      transform: rotate(264deg);
+    }
+
+    .clock__stroke--45 {
+      transform: rotate(270deg);
+    }
+
+    .clock__stroke--46 {
+      transform: rotate(276deg);
+    }
+
+    .clock__stroke--47 {
+      transform: rotate(282deg);
+    }
+
+    .clock__stroke--48 {
+      transform: rotate(288deg);
+    }
+
+    .clock__stroke--49 {
+      transform: rotate(294deg);
+    }
+
+    .clock__stroke--50 {
+      transform: rotate(300deg);
+    }
+
+    .clock__stroke--51 {
+      transform: rotate(306deg);
+    }
+
+    .clock__stroke--52 {
+      transform: rotate(312deg);
+    }
+
+    .clock__stroke--53 {
+      transform: rotate(318deg);
+    }
+
+    .clock__stroke--54 {
+      transform: rotate(324deg);
+    }
+
+    .clock__stroke--55 {
+      transform: rotate(330deg);
+    }
+
+    .clock__stroke--56 {
+      transform: rotate(336deg);
+    }
+
+    .clock__stroke--57 {
+      transform: rotate(342deg);
+    }
+
+    .clock__stroke--58 {
+      transform: rotate(348deg);
+    }
+
+    .clock__stroke--59 {
+      transform: rotate(354deg);
+    }
+
+    .clock__hand--hour::after {
+      content: "";
+      border-radius: 0.015em 0.015em 0.01em 0.01em;
+      background-color: #000;
+      margin-bottom: -0.02em;
+      margin-left: -0.025em;
+      font-size: inherit;
+      position: absolute;
+      display: block;
+      height: 0.25em;
+      width: 0.05em;
+      bottom: 50%;
+      left: 50%;
+    }
+
+    .clock__hand--minute::after {
+      content: "";
+      border-radius: 0.012em 0.012em 0.01em 0.01em;
+      background-color: #000;
+      margin-bottom: -0.02em;
+      margin-left: -0.015em;
+      font-size: inherit;
+      position: absolute;
+      display: block;
+      height: 0.4em;
+      width: 0.03em;
+      bottom: 50%;
+      left: 50%;
+    }
+
+    .clock__hand--second::after {
+      content: "";
+      border-radius: 0.01em 0.01em 0.005em 0.005em;
+      background-color: #f00;
+      margin-bottom: -0.02em;
+      margin-left: -0.005em;
+      font-size: inherit;
+      position: absolute;
+      display: block;
+      height: 0.46em;
+      width: 0.01em;
+      bottom: 50%;
+      left: 50%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    https://habr.com/ru/post/350884/
+    https://codepen.io/StasLiudera/pen/VXwoeJ
+  -->
+  <h1>Часы</h1>
+  <time class="clock">
+    <span class="clock__stroke clock__stroke--small clock__stroke--1"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--2"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--3"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--4"></span>
+    <span class="clock__stroke clock__stroke--5"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--6"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--7"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--8"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--9"></span>
+    <span class="clock__stroke clock__stroke--10"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--11"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--12"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--13"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--14"></span>
+    <span class="clock__stroke clock__stroke--15"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--16"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--17"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--18"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--19"></span>
+    <span class="clock__stroke clock__stroke--20"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--21"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--22"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--23"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--24"></span>
+    <span class="clock__stroke clock__stroke--25"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--26"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--27"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--28"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--29"></span>
+    <span class="clock__stroke clock__stroke--30"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--31"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--32"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--33"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--34"></span>
+    <span class="clock__stroke clock__stroke--35"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--36"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--37"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--38"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--39"></span>
+    <span class="clock__stroke clock__stroke--40"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--41"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--42"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--43"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--44"></span>
+    <span class="clock__stroke clock__stroke--45"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--46"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--47"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--48"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--49"></span>
+    <span class="clock__stroke clock__stroke--50"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--51"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--52"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--53"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--54"></span>
+    <span class="clock__stroke clock__stroke--55"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--56"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--57"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--58"></span>
+    <span class="clock__stroke clock__stroke--small clock__stroke--59"></span>
+    <span class="clock__stroke clock__stroke--60"></span>
+
+    <span class="clock__hand clock__hand--hour"></span>
+    <span class="clock__hand clock__hand--minute"></span>
+    <span class="clock__hand clock__hand--second"></span>
+  </time>
+
+  <!-- 
+    https://medium.com/@juwain/%D0%B2%D1%80%D0%B5%D0%BC%D1%8F-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85-429d9dc4499 
+    https://codepen.io/juwain/pen/OQQVKE
+  -->
+
+  <script src="js/clock.js"></script>
+</body>
+
+</html>
