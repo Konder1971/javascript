@@ -7,6 +7,17 @@ clearTimeout( идентификатор );
 clearInterval( идентификатор );
 */
 
+// https://www.youtube.com/watch?v=Tk57Fo6Dl_0
+let ct = -1;
+function counttime() {
+  ct++;
+  document.querySelector('.counttime').innerHTML = ct
+  setTimeout('counttime()', 1000)
+}
+
+
+
+
 // add inline css
 var sheet = document.createElement('style')
 sheet.innerHTML = `div.timer{
