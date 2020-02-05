@@ -42,7 +42,7 @@ launch.onclick = function() {
   setTimeout(function() { // кнопка станет активна через 2.5 секунд
     launch.disabled = false;
   }, 2500);
-  interval = setInterval(countdown, 100);
+  interval = setInterval(countdown, 200);
 }
    
 stop.onclick = function() {
@@ -50,11 +50,11 @@ stop.onclick = function() {
 }
 
 proceed.onclick = function() {
-  interval = setInterval(countdown, 100);
+  interval = setInterval(countdown, 200);
 }
 
 back.onclick = function() {
-  interval = setInterval(reduce, 100);
+  interval = setInterval(reduce, 200);
 }
 
 discharge.onclick = function() {
