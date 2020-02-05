@@ -14,7 +14,10 @@
     .liner {
       height: 10px;
       width: 0;
+      max-width: 100%!important;
+      overflow: hidden;
       background-color: darkgreen;
+      margin-bottom: 5px;
     }
   </style>
 </head>
@@ -32,8 +35,8 @@
     <button class="btn back">обратный отсчет</button>
     <button class="btn discharge">сбросить таймер</button>
   </div>
-  <div class="timer"></div>
   <div class="liner"></div>
+  <div class="timer"></div>
 
   <script src="js/timer.js"></script>
 </body>
