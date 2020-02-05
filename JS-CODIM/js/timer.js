@@ -7,6 +7,16 @@ clearTimeout( идентификатор );
 clearInterval( идентификатор );
 */
 
+// add inline css
+var sheet = document.createElement('style')
+sheet.innerHTML = `div.timer{
+  border: 2px solid #333; 
+  background-color: #efefef; 
+  padding: 10px 15px;
+  font-size: 24px;
+}`;
+document.head.appendChild(sheet);
+
 
 let i = 0;
 let interval = 0;
@@ -16,15 +26,16 @@ let proceed = document.querySelector('.proceed');
 let back = document.querySelector('.back');
 let discharge = document.querySelector('.discharge');
 
+
 function countdown() {
   document.querySelector('.timer').innerHTML += i + ' ';
   i++;
 }
-
 function reduce() {
   document.querySelector('.timer').innerHTML += i + ' ';
   i--;
 }
+
 
 launch.onclick = function() {
   launch.disabled = true;
@@ -39,11 +50,9 @@ proceed.onclick = function() {
   interval = setInterval(countdown, 100);
 }
 
-
 back.onclick = function() {
   interval = setInterval(reduce, 100);
 }
-
 
 discharge.onclick = function() {
   clearInterval(interval);
