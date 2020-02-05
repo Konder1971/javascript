@@ -40,6 +40,7 @@ let discharge = document.querySelector('.discharge');
 
 function countdown() {
   document.querySelector('.timer').innerHTML += i + ' ';
+  document.querySelector('.liner').style.width = `${i*10}px`; // https://learn.javascript.ru/styles-and-classes
   i++;
 }
 function reduce() {
