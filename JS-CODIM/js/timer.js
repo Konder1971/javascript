@@ -39,6 +39,9 @@ function reduce() {
 
 launch.onclick = function() {
   launch.disabled = true;
+  setTimeout(function() { // кнопка станет активна через 2.5 секунд
+    launch.disabled = false;
+  }, 2500);
   interval = setInterval(countdown, 100);
 }
    
@@ -59,4 +62,5 @@ discharge.onclick = function() {
   i = 0;
   interval = 0;
   launch.disabled = false;
+  document.querySelector('.timer').innerHTML = '';
 }
