@@ -41,6 +41,7 @@ sheet.innerHTML = `div.timer{
   background-color: #efefef; 
   padding: 15px 20px;
   font-size: 24px;
+  width: 100%;
 }`;
 document.head.appendChild(sheet);
 
