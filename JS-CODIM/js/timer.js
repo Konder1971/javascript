@@ -50,6 +50,7 @@ let timerBlock = document.querySelector('.timer');
 
 function timedCountPlus() {
   timerBlock.innerHTML+= i + ' ';
+  document.querySelector('.liner').style.width = `${i*10}px`; // https://learn.javascript.ru/styles-and-classes
   i++;
   t = setTimeout(timedCountPlus, 300);
 }
@@ -81,10 +82,14 @@ function stopCountPlus() {
   timer_is_on2 = 0;
 };
 
-
 launch.onclick = function() {
   startCountPlus();
-  //proceed.disabled = false;
+  /*
+  proceed.disabled = false;
+  setTimeout(function() { // кнопка станет активна через 2.5 секунд
+    launch.disabled = false;
+  }, 2500);
+  */
 }
 
 stop.onclick = function() {
