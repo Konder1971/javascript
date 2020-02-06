@@ -1,4 +1,5 @@
 // выведем текущее время
+myTime();
 let time = setInterval(myTime, 1000);
 function myTime() {
   let t = new Date();
