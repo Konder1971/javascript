@@ -14,13 +14,22 @@ clearTimeout( идентификатор );
 clearInterval( идентификатор );
 */
 
+// выведем текущее время
+myTime();
+let mytime = setInterval(myTime, 1000);
+function myTime() {
+  let t = new Date();
+  let td = t.toLocaleTimeString();
+  document.querySelector('.data').innerHTML = td;
+};
+
 // https://www.youtube.com/watch?v=Tk57Fo6Dl_0
 // Вы находитесь на странице ... секунд
 let ct = -1;
 function counttime() {
-  ct++
-  document.querySelector('.counttime').innerHTML = ct
-  setTimeout('counttime()', 1000)
+  ct++;
+  document.querySelector('.counttime').innerHTML = ct;
+  setTimeout('counttime()', 1000);
 }
 
 
@@ -47,18 +56,18 @@ let discharge = document.querySelector('.discharge');
 let timerBlock = document.querySelector('.timer');
 
 
-function countdown() {
+function timedCountPlus() {
   document.querySelector('.timer').innerHTML += i + ' ';
   document.querySelector('.liner').style.width = `${i}px`; // https://learn.javascript.ru/styles-and-classes
   i++;
   t = setTimeout(timedCountPlus, 300);
 }
+
 function startCountPlus() {
   if (!timer_is_on2) {
     //launch.disabled = true;
     timer_is_on2 = 1;
     timedCountPlus();
-    document.querySelector('.liner').style.width = `${i*10}px`;
   }
 }
 
