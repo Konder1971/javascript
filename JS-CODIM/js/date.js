@@ -5,6 +5,12 @@ let mydate = new Date();
 document.querySelector('.mydate').innerHTML = mydate;
 document.querySelector('.year').innerHTML = mydate.getFullYear();
 document.querySelector('.month').innerHTML = mydate.getMonth()+1;
+document.querySelector('.day').innerHTML = mydate.getDay();
+document.querySelector('.hours').innerHTML = mydate.getHours();
+document.querySelector('.hours').innerHTML = mydate.getHours();
+document.querySelector('.minutes').innerHTML = mydate.getMinutes();
+document.querySelector('.seconds').innerHTML = mydate.getSeconds();
+document.querySelector('.milliseconds').innerHTML = mydate.getMilliseconds();
 
 // выведем текущее время
 myTime();
