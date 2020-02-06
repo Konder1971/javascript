@@ -20,7 +20,7 @@ function counttime() {
 let data = setInterval(myData, 1000);
 function myData() {
   var d = new Date();
-  var t = d.toLocaleTimeString();
+  var t = d.toLocaleTimeString(); // выведем время
   document.querySelector('.data').innerHTML = t;
 }
 
