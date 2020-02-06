@@ -81,6 +81,11 @@ function stopCountPlus() {
   clearTimeout(t);
   timer_is_on2 = 0;
 };
+function stopCountMinus() {
+  clearTimeout(t);
+  timer_is_on2 = 0;
+};
+
 
 launch.onclick = function() {
   startCountPlus();
@@ -111,4 +116,5 @@ discharge.onclick = function() {
   timerBlock.innerHTML = '';
   i = 0;
   stopCountPlus();
+  stopCountMinus();
 };
