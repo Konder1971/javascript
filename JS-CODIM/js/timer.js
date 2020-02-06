@@ -62,7 +62,6 @@ function startCountPlus() {
   }
 }
 
-
 function timedCountMinus() {
   timerBlock.innerHTML+= i + ' ';
   i--;
@@ -104,10 +103,12 @@ stop.onclick = function() {
 
 //proceed.disabled = true;
 proceed.onclick = function() {
+  stopCountMinus();
   startCountPlus();
 }
 
 back.onclick = function() {
+  stopCountPlus();
   startCountMinus();
 }
 
