@@ -11,20 +11,31 @@
     .buttons .btn {
       margin: 5px 5px 5px 0;
     }
+    .liner {
+      height: 10px;
+      width: 0;
+      max-width: 100%!important;
+      overflow: hidden;
+      background-color: darkgreen;
+      margin-bottom: 5px;
+    }
   </style>
 </head>
 
-<body>
+<body onload="counttime()">
   <h1>Таймер</h1>
+  <div>Вы находитесь на странице <span class="counttime"></span> секунд</div>
+
   <hr>
 
   <div class="buttons">
-    <button class="btn launch">запустить таймер</button>
-    <button class="btn stop">остановить таймер</button>
+    <button class="btn launch">запустить счет</button>
+    <button class="btn stop">остановить счет</button>
     <button class="btn proceed">продолжить счет</button>
-    <button class="btn back">обратный отсчет</button>
-    <button class="btn discharge">сбросить таймер</button>
+    <button class="btn back">обратный счет</button>
+    <button class="btn discharge">сбросить счет</button>
   </div>
+  <div class="liner"></div>
   <div class="timer"></div>
 
   <script src="js/timer.js"></script>
