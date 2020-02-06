@@ -39,7 +39,7 @@ var sheet = document.createElement('style')
 sheet.innerHTML = `div.timer{
   border: 2px solid #333; 
   background-color: #efefef; 
-  padding: 10px 15px;
+  padding: 15px 20px;
   font-size: 24px;
 }`;
 document.head.appendChild(sheet);
@@ -54,10 +54,13 @@ let back = document.querySelector('.back');
 let discharge = document.querySelector('.discharge');
 let timerBlock = document.querySelector('.timer');
 
-
+let w = document.querySelector('.timer').innerWidth;
+console.log(w);
 function timedCountPlus() {
   document.querySelector('.timer').innerHTML += i + ' ';
-  document.querySelector('.liner').style.width = `${i}px`; // https://learn.javascript.ru/styles-and-classes
+  if (i<=w) {
+    document.querySelector('.liner').style.width = `${i}px`;
+  };
   i++;
   t = setTimeout(timedCountPlus, 300);
 }
