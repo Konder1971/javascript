@@ -16,7 +16,7 @@ function counttime() {
   setTimeout('counttime()', 1000);
 }
 
-// Часы
+// Часы https://www.youtube.com/watch?v=0QLW3qxeHOo&list=PL0lO_mIqDDFUGX9k45bZFuz1ixTvUhd7b&index=18
 let data = setInterval(myData, 1000);
 function myData() {
   var d = new Date();
@@ -59,6 +59,7 @@ function startCountPlus() {
     //launch.disabled = true;
     timer_is_on2 = 1;
     timedCountPlus();
+    document.querySelector('.liner').style.width = `${i*10}px`;
   }
 }
 
@@ -118,4 +119,5 @@ discharge.onclick = function() {
   i = 0;
   stopCountPlus();
   stopCountMinus();
+  document.querySelector('.liner').style.width = 0;
 };
