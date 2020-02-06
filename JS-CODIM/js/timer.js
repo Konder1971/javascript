@@ -5,7 +5,6 @@ setTimeout - функция которая откладывает выполне
 setInterval -функция которая запускает выполнение части кода через указанный промежуток времени. Выполняется условно бесконечно.
 
 setInterval(function() {
-      // Do something every 5 seconds
 }, 5000);
 
 setTimeout(func, delay);
