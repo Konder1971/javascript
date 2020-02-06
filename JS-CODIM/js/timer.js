@@ -8,11 +8,20 @@ clearInterval( идентификатор );
 */
 
 // https://www.youtube.com/watch?v=Tk57Fo6Dl_0
+// Вы находитесь на странице ... секунд
 let ct = -1;
 function counttime() {
   ct++;
-  document.querySelector('.counttime').innerHTML = ct
-  setTimeout('counttime()', 1000)
+  document.querySelector('.counttime').innerHTML = ct;
+  setTimeout('counttime()', 1000);
+}
+
+// Часы
+let data = setInterval(myData, 1000);
+function myData() {
+  var d = new Date();
+  var t = d.toLocaleTimeString();
+  document.querySelector('.data').innerHTML = t;
 }
 
 
@@ -28,16 +37,76 @@ sheet.innerHTML = `div.timer{
 }`;
 document.head.appendChild(sheet);
 
-
 let i = 0;
-let interval = 0;
+var t;
+var timer_is_on2 = 0;
 let launch = document.querySelector('.launch');
 let stop = document.querySelector('.stop');
 let proceed = document.querySelector('.proceed');
 let back = document.querySelector('.back');
 let discharge = document.querySelector('.discharge');
+let timerBlock = document.querySelector('.timer');
+
+function timedCount2() {
+  timerBlock.innerHTML+= i + ' ';
+  i++;
+  t = setTimeout(timedCount2, 300);
+}
+
+function startCount2() {
+  if (!timer_is_on2) {
+    //launch.disabled = true;
+    timer_is_on2 = 1;
+    timedCount2();
+  }
+}
+
+function stopCount2() {
+  clearTimeout(t);
+  timer_is_on2 = 0;
+};
+
+launch.onclick = function() {
+  startCount2();
+  //proceed.disabled = false;
+}
+
+stop.onclick = function() {
+  clearTimeout(t);
+  timer_is_on2 = 0;
+};
+
+//proceed.disabled = true;
+proceed.onclick = function() {
+  startCount2();
+}
+
+discharge.onclick = function() {
+  //launch.disabled = false;
+  timerBlock.innerHTML = '';
+  i = 0;
+  stopCount2();
+};
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 function countdown() {
   document.querySelector('.timer').innerHTML += i + ' ';
   document.querySelector('.liner').style.width = `${i*10}px`; // https://learn.javascript.ru/styles-and-classes
@@ -76,3 +145,5 @@ discharge.onclick = function() {
   launch.disabled = false;
   document.querySelector('.timer').innerHTML = '';
 }
+
+*/
