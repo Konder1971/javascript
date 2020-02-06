@@ -83,7 +83,6 @@ function startCountMinus() {
   }
 }
 
-
 function stopCountPlus() {
   clearTimeout(t);
   timer_is_on2 = 0;
