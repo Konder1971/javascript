@@ -47,27 +47,43 @@ let back = document.querySelector('.back');
 let discharge = document.querySelector('.discharge');
 let timerBlock = document.querySelector('.timer');
 
-function timedCount2() {
+
+function timedCountPlus() {
   timerBlock.innerHTML+= i + ' ';
   i++;
-  t = setTimeout(timedCount2, 300);
+  t = setTimeout(timedCountPlus, 300);
 }
-
-function startCount2() {
+function startCountPlus() {
   if (!timer_is_on2) {
     //launch.disabled = true;
     timer_is_on2 = 1;
-    timedCount2();
+    timedCountPlus();
   }
 }
 
-function stopCount2() {
+
+function timedCountMinus() {
+  timerBlock.innerHTML+= i + ' ';
+  i--;
+  t = setTimeout(timedCountMinus, 300);
+}
+function startCountMinus() {
+  if (!timer_is_on2) {
+    //launch.disabled = true;
+    timer_is_on2 = 1;
+    timedCountMinus();
+  }
+}
+
+
+function stopCountPlus() {
   clearTimeout(t);
   timer_is_on2 = 0;
 };
 
+
 launch.onclick = function() {
-  startCount2();
+  startCountPlus();
   //proceed.disabled = false;
 }
 
@@ -78,72 +94,16 @@ stop.onclick = function() {
 
 //proceed.disabled = true;
 proceed.onclick = function() {
-  startCount2();
+  startCountPlus();
+}
+
+back.onclick = function() {
+  startCountMinus();
 }
 
 discharge.onclick = function() {
   //launch.disabled = false;
   timerBlock.innerHTML = '';
   i = 0;
-  stopCount2();
+  stopCountPlus();
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function countdown() {
-  document.querySelector('.timer').innerHTML += i + ' ';
-  document.querySelector('.liner').style.width = `${i*10}px`; // https://learn.javascript.ru/styles-and-classes
-  i++;
-}
-function reduce() {
-  document.querySelector('.timer').innerHTML += i + ' ';
-  i--;
-}
-
-
-launch.onclick = function() {
-  launch.disabled = true;
-  setTimeout(function() { // кнопка станет активна через 2.5 секунд
-    launch.disabled = false;
-  }, 2500);
-  interval = setInterval(countdown, 200);
-}
-   
-stop.onclick = function() {
-  clearInterval(interval);
-}
-
-proceed.onclick = function() {
-  interval = setInterval(countdown, 200);
-}
-
-back.onclick = function() {
-  interval = setInterval(reduce, 200);
-}
-
-discharge.onclick = function() {
-  clearTimeout(interval);
-  i = 0;
-  interval = 0;
-  launch.disabled = false;
-  document.querySelector('.timer').innerHTML = '';
-}
-
-*/
