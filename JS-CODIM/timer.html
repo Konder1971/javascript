@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Таймер</title>
+  <title>Таймеры/Счетчики/Дата</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -23,10 +23,11 @@
 </head>
 
 <body onload="counttime()">
-  <h1>Таймер</h1>
+  <h1>Таймеры/Счетчики/Дата</h1>
+  <div>Время сейчас: <span class="data"></span></div>
   <div>Вы находитесь на странице <span class="counttime"></span> секунд</div>
-
   <hr>
+
 
   <div class="buttons">
     <button class="btn launch">запустить счет</button>
@@ -37,6 +38,36 @@
   </div>
   <div class="liner"></div>
   <div class="timer"></div>
+
+
+  <br><hr>
+  <button onclick="startCount()">Start count!</button>
+  <input type="text" id="txt">
+  <button onclick="stopCount()">Stop count!</button>
+  <script>
+  var c = 0;
+  var t;
+  var timer_is_on = 0;
+
+  function timedCount() {
+    document.getElementById("txt").value = c;
+    c = c + 1;
+    t = setTimeout(timedCount, 1000);
+  }
+
+  function startCount() {
+    if (!timer_is_on) {
+      timer_is_on = 1;
+      timedCount();
+    }
+  }
+
+  function stopCount() {
+    clearTimeout(t);
+    timer_is_on = 0;
+    //document.getElementById("txt").value = '';
+  }
+  </script>
 
   <script src="js/timer.js"></script>
 </body>
