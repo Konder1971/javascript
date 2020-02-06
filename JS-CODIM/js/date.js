@@ -1,4 +1,5 @@
 // https://www.w3schools.com/jsref/jsref_obj_date.asp
+// https://www.w3schools.com/jsref/jsref_obj_date.asp
 
 // выведем текущую дату
 let mydate = new Date();
