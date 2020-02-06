@@ -54,8 +54,7 @@ let back = document.querySelector('.back');
 let discharge = document.querySelector('.discharge');
 let timerBlock = document.querySelector('.timer');
 
-let w = document.querySelector('.timer').innerWidth;
-console.log(w);
+let w = timerBlock.clientWidth;
 function timedCountPlus() {
   document.querySelector('.timer').innerHTML += i + ' ';
   if (i<=w) {
