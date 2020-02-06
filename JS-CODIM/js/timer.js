@@ -18,23 +18,9 @@ clearInterval( идентификатор );
 // Вы находитесь на странице ... секунд
 let ct = -1;
 function counttime() {
-<<<<<<< HEAD
   ct++
   document.querySelector('.counttime').innerHTML = ct
   setTimeout('counttime()', 1000)
-=======
-  ct++;
-  document.querySelector('.counttime').innerHTML = ct;
-  setTimeout('counttime()', 1000);
-}
-
-// Часы https://www.youtube.com/watch?v=0QLW3qxeHOo&list=PL0lO_mIqDDFUGX9k45bZFuz1ixTvUhd7b&index=18
-let data = setInterval(myData, 1000);
-function myData() {
-  var d = new Date();
-  var t = d.toLocaleTimeString(); // выведем время
-  document.querySelector('.data').innerHTML = t;
->>>>>>> 47aa3d293c82540bd2a1e7e9859c17db49e6159a
 }
 
 
@@ -61,15 +47,9 @@ let discharge = document.querySelector('.discharge');
 let timerBlock = document.querySelector('.timer');
 
 
-<<<<<<< HEAD
 function countdown() {
   document.querySelector('.timer').innerHTML += i + ' ';
   document.querySelector('.liner').style.width = `${i}px`; // https://learn.javascript.ru/styles-and-classes
-=======
-function timedCountPlus() {
-  timerBlock.innerHTML+= i + ' ';
-  document.querySelector('.liner').style.width = `${i*10}px`; // https://learn.javascript.ru/styles-and-classes
->>>>>>> 47aa3d293c82540bd2a1e7e9859c17db49e6159a
   i++;
   t = setTimeout(timedCountPlus, 300);
 }
