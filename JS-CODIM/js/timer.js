@@ -10,7 +10,7 @@ clearInterval( идентификатор );
 // https://www.youtube.com/watch?v=Tk57Fo6Dl_0
 let ct = -1;
 function counttime() {
-  ct++;
+  ct++
   document.querySelector('.counttime').innerHTML = ct
   setTimeout('counttime()', 1000)
 }
@@ -40,7 +40,7 @@ let discharge = document.querySelector('.discharge');
 
 function countdown() {
   document.querySelector('.timer').innerHTML += i + ' ';
-  document.querySelector('.liner').style.width = `${i*10}px`; // https://learn.javascript.ru/styles-and-classes
+  document.querySelector('.liner').style.width = `${i}px`; // https://learn.javascript.ru/styles-and-classes
   i++;
 }
 function reduce() {
