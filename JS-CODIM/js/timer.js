@@ -57,15 +57,10 @@ let timerBlock = document.querySelector('.timer');
 
 let w = timerBlock.clientWidth;
 function timedCountPlus() {
-<<<<<<< HEAD
-  timerBlock.innerHTML+= i + ' ';
-  document.querySelector('.liner').style.width = `${i}px`; // https://learn.javascript.ru/styles-and-classes
-=======
   document.querySelector('.timer').innerHTML += i + ' ';
   if (i<=w) {
     document.querySelector('.liner').style.width = `${i}px`;
   };
->>>>>>> 16b9b7caa676eebeba5cff2b63e8981d04b9036a
   i++;
   t = setTimeout(timedCountPlus, 300);
 }
