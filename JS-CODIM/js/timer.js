@@ -10,8 +10,7 @@ clearTimeout( идентификатор );
 clearInterval( идентификатор );
 */
 
-var wTimer = window.setTimeout("alert('Таймер сработал через 4 секунды');",4000);
-//clearTimeout(wTimer);
+let wTimer = window.setTimeout("alert('Таймер сработал через 2 секунды после загрузки страницы');",2000);
 
 // выведем текущее время
 myTime();
