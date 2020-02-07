@@ -5,7 +5,6 @@ setTimeout - функция которая откладывает выполне
 setInterval -функция которая запускает выполнение части кода через указанный промежуток времени. Выполняется условно бесконечно.
 
 setInterval(function() {
-      // Do something every 5 seconds
 }, 5000);
 
 setTimeout(func, delay);
@@ -13,6 +12,15 @@ setTimeout(func, delay);
 clearTimeout( идентификатор );
 clearInterval( идентификатор );
 */
+
+// выведем текущее время
+myTime();
+let mytime = setInterval(myTime, 1000);
+function myTime() {
+  let t = new Date();
+  let td = t.toLocaleTimeString();
+  document.querySelector('.data').innerHTML = td;
+};
 
 // https://www.youtube.com/watch?v=Tk57Fo6Dl_0
 // Вы находитесь на странице ... секунд
@@ -23,14 +31,6 @@ function counttime() {
   setTimeout('counttime()', 1000);
 }
 
-// Часы https://www.youtube.com/watch?v=0QLW3qxeHOo&list=PL0lO_mIqDDFUGX9k45bZFuz1ixTvUhd7b&index=18
-let data = setInterval(myData, 1000);
-function myData() {
-  var d = new Date();
-  var t = d.toLocaleTimeString(); // выведем время
-  document.querySelector('.data').innerHTML = t;
-}
-
 
 
 
@@ -39,8 +39,9 @@ var sheet = document.createElement('style')
 sheet.innerHTML = `div.timer{
   border: 2px solid #333; 
   background-color: #efefef; 
-  padding: 10px 15px;
+  padding: 15px 20px;
   font-size: 24px;
+  width: 100%;
 }`;
 document.head.appendChild(sheet);
 
@@ -54,19 +55,26 @@ let back = document.querySelector('.back');
 let discharge = document.querySelector('.discharge');
 let timerBlock = document.querySelector('.timer');
 
-
+let w = timerBlock.clientWidth;
 function timedCountPlus() {
+<<<<<<< HEAD
   timerBlock.innerHTML+= i + ' ';
   document.querySelector('.liner').style.width = `${i}px`; // https://learn.javascript.ru/styles-and-classes
+=======
+  document.querySelector('.timer').innerHTML += i + ' ';
+  if (i<=w) {
+    document.querySelector('.liner').style.width = `${i}px`;
+  };
+>>>>>>> 16b9b7caa676eebeba5cff2b63e8981d04b9036a
   i++;
   t = setTimeout(timedCountPlus, 300);
 }
+
 function startCountPlus() {
   if (!timer_is_on2) {
     //launch.disabled = true;
     timer_is_on2 = 1;
     timedCountPlus();
-    document.querySelector('.liner').style.width = `${i*10}px`;
   }
 }
 
@@ -82,7 +90,6 @@ function startCountMinus() {
     timedCountMinus();
   }
 }
-
 
 function stopCountPlus() {
   clearTimeout(t);
