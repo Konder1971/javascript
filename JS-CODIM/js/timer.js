@@ -1,17 +1,18 @@
-// https://learn.javascript.ru/while-for
 // http://www.cyberforum.ru/javascript/thread565601.html   Бесконечный цикл
+
+// https://itchief.ru/lessons/javascript/javascript-window-object-timers
 /*
 setTimeout - функция которая откладывает выполнения определенной части кода, на указанное время. Выполняется однократно.
 setInterval -функция которая запускает выполнение части кода через указанный промежуток времени. Выполняется условно бесконечно.
-
 setInterval(function() {
 }, 5000);
-
 setTimeout(func, delay);
-
 clearTimeout( идентификатор );
 clearInterval( идентификатор );
 */
+
+var wTimer = window.setTimeout("alert('Таймер сработал через 4 секунды');",4000);
+//clearTimeout(wTimer);
 
 // выведем текущее время
 myTime();
