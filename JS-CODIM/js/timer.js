@@ -1,6 +1,5 @@
-// http://www.cyberforum.ru/javascript/thread565601.html   Бесконечный цикл
-
 // https://itchief.ru/lessons/javascript/javascript-window-object-timers
+
 /*
 setTimeout - функция которая откладывает выполнения определенной части кода, на указанное время. Выполняется однократно.
 setInterval -функция которая запускает выполнение части кода через указанный промежуток времени. Выполняется условно бесконечно.

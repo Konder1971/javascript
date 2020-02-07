@@ -1,4 +1,5 @@
 // https://www.youtube.com/watch?v=J7auwe4rSrw&list=PLM7wFzahDYnEltE-aVGhRHYPwIJn0Xquu&index=27
+// http://www.cyberforum.ru/javascript/thread565601.html   Бесконечный цикл
 
 /*
 let arr1 = [4,7,9];
