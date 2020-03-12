@@ -5,6 +5,7 @@
   <title>GSAP</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/CSSRulePlugin.js"></script>
@@ -16,8 +17,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/ScrollToPlugin.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/EasePack.js"></script>
 
-
-  
+  <!--
   <script src="minified/TextPlugin.min.js"></script>
   <script src="minified/CustomEase.min.js"></script>
   <script src="minified/DrawSVGPlugin.min.js"></script>
@@ -31,140 +31,7 @@
   <script src="minified/SplitText.min.js"></script>
   <script src="minified/CustomBounce.min.js"></script>
   <script src="minified/CustomWiggle.min.js"></script>
-  
-
-  <style>
-    body {
-      background-color:#1d1d1d;
-      font-family: "Signika Negative", sans-serif;
-      color: #999;
-      margin: 0;
-      font-size: 18px;
-    }
-    h1, h2, h3 {
-      font-family: "Signika Negative", sans-serif;
-      margin: 10px 0 10px 0;
-      color: #f3f2ef;
-      font-weight: 400;
-    }
-    h1 { 
-      font-size:42px;
-    }
-    h2 {
-      font-size:24px;
-    }
-    h3 {
-      font-size:22px;
-    }
-    p{
-      line-height:22px;
-      margin-bottom:16px;  
-    }
-    a {
-      color: #88ce02;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    #demo {
-      height:100%;
-      position:relative;
-    }
-    .box {
-      width:50px;
-      height:50px;
-      position:relative;
-      border-radius:6px;
-      margin-top:4px;
-      display:inline-block;
-      line-height:50px;
-      text-align:center;
-      color:#333;
-    }
-    .green{
-      background-color:#6fb936;
-    }
-    .orange {
-      background-color:#f38630;
-    }
-    .grey {
-      background-color:#989898;
-    }
-    button {
-      display:inline-block;
-      outline: none;
-      border: none;
-      padding: 8px 14px;
-      background: #414141;
-      background-image: -webkit-linear-gradient(top, #575757, #414141);
-      background-image: -moz-linear-gradient(top, #575757, #414141);
-      background-image: -ms-linear-gradient(top, #575757, #414141);
-      background-image: -o-linear-gradient(top, #575757, #414141);
-      background-image: linear-gradient(to bottom, #575757, #414141);
-      text-shadow: 0px 1px 0px #414141;
-      -webkit-box-shadow: 0px 1px 0px 414141;
-      -moz-box-shadow: 0px 1px 0px 414141;
-      box-shadow: 0px 1px 0px 414141;
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 auto 10px;
-      -webkit-border-radius: 4;
-      -moz-border-radius: 4;
-      border-radius: 4px;
-      padding: 12px 25px;
-      font-family: "Signika Negative", sans-serif;
-      text-transform: uppercase;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 13px;
-      line-height: 18px;
-    }
-    button:hover {
-      background: #57a818;
-      background-image: -webkit-linear-gradient(top, #57a818, #4d9916);
-      background-image: -moz-linear-gradient(top, #57a818, #4d9916);
-      background-image: -ms-linear-gradient(top, #57a818, #4d9916);
-      background-image: -o-linear-gradient(top, #57a818, #4d9916);
-      background-image: linear-gradient(to bottom, #57a818, #4d9916);
-      text-shadow: 0px 1px 0px #32610e;
-      -webkit-box-shadow: 0px 1px 0px fefefe;
-      -moz-box-shadow: 0px 1px 0px fefefe;
-      box-shadow: 0px 1px 0px fefefe;
-      color: #ffffff;
-      text-decoration: none;
-    }
-    .brandBar {
-      position:absolute;
-      width:100%;
-      height:40px;
-      z-index:1000;
-      line-height:40px;
-      color:#ccc;
-      padding-left:0px;
-    }
-    .nav{
-      margin:20px 0;
-    }
-    .brandBar img{
-      position:absolute;
-      width:90px;
-      right:20px;
-      top:12px;
-    }
-    .wrapper {
-      position:absolute;
-      padding:20px;
-    }
-    .pink {
-      background-color: pink;
-    }
-    #quote{
-      font-size:44px;
-      line-height:50px;
-      color:#dedede;
-    }
-  </style>
+  -->
 
 </head>
 
@@ -174,6 +41,7 @@
   <p><a href="https://codepen.io/GreenSock/" target="_blank">Демонстрации CodePen</a></p>
   <hr>
 
+  <h2>Anima 1</h2>
   <div class="box green"></div>
   <div class="nav">
     <button id="play">play()</button>
@@ -182,71 +50,8 @@
     <button id="reverse">reverse()</button>
     <button id="restart">restart()</button>
   </div>
-  <script>
-    var tween = gsap.to(".green", {
-    duration: 4, 
-    x: 750, 
-    rotation: 360,
-    opacity: 0.2,
-    ease: "none", 
-    paused: true
-  });
-  // click handlers for controlling the tween instance...
-  document.querySelector("#play").onclick = () => tween.play();
-  document.querySelector("#pause").onclick = () => tween.pause();
-  document.querySelector("#resume").onclick = () => tween.resume();
-  document.querySelector("#reverse").onclick = () => tween.reverse();
-  document.querySelector("#restart").onclick = () => tween.restart();
-  </script>
+  <hr>
 
-<div id="quote">SplitText makes it easy to break apart the text in an HTML element so that each character, word, and/or line is wrapped in its own div tag.</div>
-<button id="animate">animate</button>
-<script>
-var tl = gsap.timeline(), 
-    mySplitText = new SplitText("#quote", {type:"words,chars"}), 
-    chars = mySplitText.chars; //an array of all the divs that wrap each character
-
-gsap.set("#quote", {perspective: 400});
-
-tl.from(chars, {duration: 0.8, opacity:0, scale:0, y:80, rotationX:180, transformOrigin:"0% 50% -50",  ease:"back", stagger: 0.01}, "+=0");
-
-document.getElementById("animate").onclick = function() {
-  tl.restart();
-}
-</script>
-
-<script>
-  window.onload = function(){
-    var canvas = document.getElementById( 'canvas' ),
-        ctx = canvas.getContext( '2d' ),
-        // это объект, параметры которого будут изменяться
-        square = {
-            width: 100,
-            height: 100,
-            top: 100,
-            left: 100
-        };
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    ctx.fillStyle = '#ff0000';
-
-    // функция отрисовки в канву
-    function draw(){
-        ctx.clearRect( 0, 0, canvas.width, canvas.height );
-        ctx.save();
-        // отрисовываем квадрат по параметрам из анимируемого объекта
-        ctx.translate( square.left - square.width * .5, square.top - square.height * .5 );
-        ctx.fillRect( 0, 0, square.width, square.height );
-       ctx.restore();				
-    };
-    
-    // начинаем анимировать объект
-    TweenLite.to( square, 5, { left: canvas.width * .5, top: canvas.height * .5, width: 200, height: 200, onUpdate: draw } );
-
-}
-</script>
-
-
+  <script src="js/main.js"></script>
 </body>
 </html>
