@@ -1,0 +1,65 @@
+/* Сделаем элемент body во всю высоту окна */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+  padding: 20% 0 0 0;
+  margin: 0;
+  text-align: center;
+  font-size: 40px;
+}
+
+p {
+  text-align: center;
+  color: #fff;
+}
+
+/* Сделаем высоту каждой секции равной высоте окна */
+section {
+  height: 100%;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+/* Разместим контент по центру секций */
+section .inner {
+  margin: 0 auto;
+  max-width: 85%;
+}
+
+/* Фоновые цвета для каждой секции */
+section#one {
+  background-color: #0089cd;
+  background-image: url(../images/1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+section#two {
+  background-color: #ccc;
+  background-image: url(../images/2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+section#three {
+  background-color: #c00;
+  background-image: url(../images/3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+section#four {
+  background-color: #222;
+  background-image: url(../images/4.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

@@ -32,7 +32,6 @@
   <script src="minified/CustomBounce.min.js"></script>
   <script src="minified/CustomWiggle.min.js"></script>
   
-  
 
   <style>
     body {
@@ -213,6 +212,38 @@ tl.from(chars, {duration: 0.8, opacity:0, scale:0, y:80, rotationX:180, transfor
 
 document.getElementById("animate").onclick = function() {
   tl.restart();
+}
+</script>
+
+<script>
+  window.onload = function(){
+    var canvas = document.getElementById( 'canvas' ),
+        ctx = canvas.getContext( '2d' ),
+        // это объект, параметры которого будут изменяться
+        square = {
+            width: 100,
+            height: 100,
+            top: 100,
+            left: 100
+        };
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    ctx.fillStyle = '#ff0000';
+
+    // функция отрисовки в канву
+    function draw(){
+        ctx.clearRect( 0, 0, canvas.width, canvas.height );
+        ctx.save();
+        // отрисовываем квадрат по параметрам из анимируемого объекта
+        ctx.translate( square.left - square.width * .5, square.top - square.height * .5 );
+        ctx.fillRect( 0, 0, square.width, square.height );
+       ctx.restore();				
+    };
+    
+    // начинаем анимировать объект
+    TweenLite.to( square, 5, { left: canvas.width * .5, top: canvas.height * .5, width: 200, height: 200, onUpdate: draw } );
+
 }
 </script>
 
