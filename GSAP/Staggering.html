@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>GSAP</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.js"></script>
+
+  <style>
+    .box1 {
+      display: block;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="box">
+    <h1 id="title" style="text-align: center;">Title</h1>
+    <div class="box box1 green">1</div>
+    <div class="box box1 orange">2</div>
+    <div class="box box1 grey">3</div>
+    <div class="box box1 pink">4</div>
+  </div>
+
+  <script>
+
+    const box = document.querySelectorAll('.box');
+    const tl = new gsap.timeline();
+    const duration = 1;
+    const xDistance = 800;
+    const alpha = .3;
+    const easing = Power4.easeOut;
+
+    tl
+      .staggerTo(box, duration, {       
+        x: xDistance,
+        autoAlpha: alpha,
+        ease: easing,
+        rotate: 360
+      }, 0.6);
+
+  </script>
+
+</body>
+
+</html>

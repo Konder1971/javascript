@@ -29,6 +29,12 @@
     <div class="box box1 grey">3</div>
     <div class="box box1 pink">4</div>
   </div>
+  <hr>
+  <button id="play">play</button>
+  <button id="pause">pause</button>
+  <button id="resume">resume</button>
+  <button id="reverse">reverse</button>
+  <button id="restart">restart</button>
 
   <script>
 
@@ -44,8 +50,16 @@
 
     gsap.set('#title', { opasity:0, scale:0})
     const tl = new gsap.timeline({repeat: 2, repeatDelay: 1})
+
+    tl.pause();
+    document.querySelector('#play').onclick = () => tl.play()
+    document.querySelector('#pause').onclick = () => tl.pause()
+    document.querySelector('#resume').onclick = () => tl.resume()
+    document.querySelector('#reverse').onclick = () => tl.reverse()
+    document.querySelector('#restart').onclick = () => tl.restart()
+
     tl
-      .to('#title', {delay:1, duration:2, opasity:1, scale:2, ease:"back"})
+      .to('#title', {delay:.5, duration:1, opasity:1, scale:2, ease:"back"})
       .to('.green', duration, {       
         x: xDistance + 100,
         delay: delayValue,
