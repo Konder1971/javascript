@@ -36,13 +36,15 @@
 </head>
 
 <body>
+  
   <h1>GSAP</h1>
   <p>https://greensock.com/get-started/</p>
   <p><a href="https://codepen.io/GreenSock/" target="_blank">Демонстрации CodePen</a></p>
+  <p>http://www.creative-seo.ru/blog/gsap-js-rukovodstvo-dlya-nachinayushchih/</p>
   <hr>
 
   <h2>Anima 1</h2>
-  <div class="box green"></div>
+  <div class="box green green1"></div>
   <div class="nav">
     <button id="play">play()</button>
     <button id="pause">pause()</button>
@@ -51,6 +53,350 @@
     <button id="restart">restart()</button>
   </div>
   <hr>
+
+  <div class="demo">
+    <div id="autostart1"><div class="box green"></div> Запускается при при загрузке страницы</div>
+  </div><hr>
+  <script>
+    TweenMax.to('#autostart1', 10, { x: 600 })
+  </script>
+
+  <div>
+    Easing позволит изменять скорость анимации.<br>
+    Запускается при при загрузке страницы<br>
+    <div id="easeWrapper">
+      <div class="logo" id="logo1"></div>
+    </div>
+  </div><hr>
+  <style>
+    #easeWrapper {
+      width: 500px;
+      margin-right: auto;
+      margin-left: auto;
+      border-right: 1px dashed #CCC;
+      border-left: 1px dashed #CCC;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var logo1 = document.getElementById("logo1");
+      TweenLite.to(logo1, 2, {left:"440px", ease:Bounce.easeOut});
+      /* Tip: Try substituting the following eases:
+      Elastic.easeIn
+      Elastic.easeInout
+      Back.easeOut
+      Power1.easeOut
+      Power2.easeOut
+      Power3.easeOut
+      Power4.easeOut
+      SlowMo.ease
+      SlowMo.ease.config(0.2, 0.8)
+      SlowMo.ease.config(0.8, 1.2)
+      */	
+    }
+  </script>
+
+  <div class="demo">
+    Задержка<br>
+    Определим задержку перед выполнением анимации.<br>Запускается при при загрузке страницы<br> 
+    Использование опции delay для одной анимации можеть быть очень удобным. Для создания цепочек анимаций рекомендуем использовать TimeLineMax, TimeLineLite.<br> 
+    <div id="bar2"></div>
+    <div class="logo" id="logo2"></div> 
+  </div><hr>
+  <style>
+    #bar2{
+      background-color:#91e500; 
+      color:black; 
+      position:relative; 
+      width:60px; 
+      height:10px;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var logo2 = document.getElementById("logo2"),
+          bar2 = document.getElementById("bar2");
+          TweenLite.to(bar2, 2, {width:"692px", delay:1});
+          TweenLite.to(logo2, 2, {left:"632px", delay:2});
+    }
+  </script>
+
+  <div class="demo">
+    Анимируем несколько css свойств в одном tween<br>
+    Важно удалить все дефисы в именах css свойств.<br>
+    Запускается при при загрузке страницы<br><br>
+    <div class="logo" id="logo3">
+      <p>GreenSock</p>
+    </div> 
+  </div><hr>
+  <style>
+    #logo3 {
+      position: relative;
+      width: 150px;
+      height: 60px;
+      background: #90E500 url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/logo_transparent_1.png) no-repeat;
+      background-position: 0px 4px;
+      color: #000;
+      font-family: Arial, Helvetica, sans-serif;
+      border-bottom: solid #000 10px;
+    }
+    #logo3 p {
+      font-size:17px;
+      margin-top: 0px;
+      margin-left: 60px;
+      line-height: 58px;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var logo3 = document.getElementById("logo3");
+      TweenLite.to(logo3, 2, {left:"542px", backgroundColor:"black", borderBottomColor:"#90e500", color:"white"});
+    }
+  </script>
+
+<div class="demo">
+  Анимация происходит от заданного значения до текущего.<br>
+  В предыдущих примерах мы использовали TweenLite.to(), анимация происходила от изначально заданных значений к указанным в функции<br />
+  <div class="logo" id="logo5"></div>
+</div><hr>
+<script>
+  window.onload = function() {
+    var logo5 = document.getElementById("logo5");
+    TweenLite.from(logo5, 2, {opacity:0, left:"400px"});
+  }
+</script>
+
+<div class="demo">
+  Задание относительных значений<br>
+  Установим конечное значение анимации относительно текущего.<br>
+  Добавление += или -= префиксов говорит GSAP, что необходимо увеличить или уменьшить параметр на указанную величину.<br>
+  логотип будет анимировать 100px справа от текущей позиции.<br>
+  <div id="logo6" class="logo"></div><br>
+  <input type="button" id="tweenBtn6" value="create new tween">
+</div><hr>
+<style>
+input#tweenBtn6[type="button"]{
+  -webkit-appearance: button;
+  padding:5px;
+  margin-right:5px;
+  cursor: pointer;
+}
+</style>
+<script>
+  window.onload = function() {
+    var logo6 = document.getElementById("logo6"),
+        tweenBtn = document.getElementById("tweenBtn6"); 
+        tweenBtn.onclick = function() {
+          TweenLite.to(logo6, 0.5, {left:"+=100px"});
+        };
+  }
+</script>
+
+<div class="demo">
+  <div class="box7" id="red" class="box7"></div>
+  <div class="box7" id="yellow" class="box7"></div>
+  <div class="box7" id="green" class="box7"></div>
+</div><hr>
+<style>
+.box7 {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	margin-right: 10px;
+	float:left;
+}
+#red{
+	background-color: red;
+} 
+#yellow{
+	background-color: yellow;
+} 
+#green{
+	background-color: green;
+}
+a:link, a:visited{
+color:#90E500;
+}
+code{
+  background-color:#333;
+  padding:10px;
+  color:#ccc;
+}
+.description{
+  width:700px;
+}
+</style>
+<script>
+window.onload = function() {
+  var red = document.getElementById("red"),
+		    yellow = document.getElementById("yellow"),
+		    green = document.getElementById("green");
+		
+  TweenLite.to([red, yellow, green], 1, {scale:0.2, opacity:0.3});
+}
+</script>
+
+
+
+<div class="demo">
+	<div id="logo8" class="logo"></div>
+</div>
+<input type="button" id="restartBtn8" value="restart"><hr>
+<script>
+window.onload = function() {
+	var logo8 = document.getElementById("logo8"),
+		restartBtn8 = document.getElementById("restartBtn8"),
+		tween = TweenLite.to(logo8, 2, {left:"632px", rotation: 720, repeat:3, yoyo:true});
+		
+	restartBtn8.onclick = function() {
+		tween.restart();
+	}	
+}
+  //try these alternate animations
+  //TweenMax.to(logo, 1, {css:{left:"300px"}, repeat:3, yoyo:true, repeatDelay:.5});
+  //TweenMax.to(logo, 1, {css:{left:"300px"}, repeat:-1, yoyo:true});	
+</script>
+
+
+<div class="demo demo9">
+  <div>
+    Использование Stagger для нескольких анимаций<br>
+    Методы staggerTo() и staggerFrom() создают серию анимаций с различной задержкой.<br>
+    Последний параметр в методе называется stagger. Он определяет задержку перед анимацией каждого элемента.
+  </div>
+	<div class="box" id="red9"></div>
+    <div class="box" id="yellow9"></div>
+    <div class="box" id="green9"></div>
+    <div class="box" id="blue9"></div>
+    <div class="box" id="pink9"></div>
+    <div class="box" id="purple9"></div>
+</div><hr>
+<style>
+.demo9 .box {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	margin-right: 10px;
+	float:left;
+}
+.demo9 #red9{
+	background-color: red;
+}
+.demo9 #yellow9{
+	background-color: yellow;
+}
+.demo9 #green9{
+	background-color: green;
+}
+.demo9 #blue9{
+	background-color: blue;
+}
+.demo9 #pink9{
+	background-color: pink;
+}
+.demo9 #purple9{
+	background-color: purple;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script>
+  /*external js
+https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js
+*/
+
+window.onload = function() {
+  var red = document.getElementById("red9"),
+		    yellow = document.getElementById("yellow9"),
+		    green = document.getElementById("green9"),
+		    blue = document.getElementById("blue9"),
+		    pink = document.getElementById("pink9"),
+		    purple = document.getElementById("purple9");
+
+  // Последний параметр со значением .25 является величиной смещения. Попробуйте изменить его на 1, чтобы увидеть, как это влияет на анимацию.
+  TweenMax.staggerTo([red9, yellow9, green9, blue9, pink9, purple9], 1,  {scale:0.2, opacity:0.3}, 0.25);			
+}
+</script>
+
+
+<div class="demo" style="height: 70px;">
+  <div id="demoBackground">
+  <div id="logo"></div>
+  <div id="timelinelite"></div>
+  <div id="tagline"><span><img src="https://s.cdpn.io/16327/whos_61x26.png" width="61" height="26"></span><span><img src="https://s.cdpn.io/16327/the_35x26.png" width="35" height="26"></span><span><img src="https://s.cdpn.io/16327/boss_51x26.png" width="51" height="26"></span><span><img src="https://s.cdpn.io/16327/of_27x26.png" width="27" height="26"></span><span><img src="https://s.cdpn.io/16327/your_49x26.png" width="49" height="26"></span><span><img src="https://s.cdpn.io/16327/tweens_83x26.png" width="83" height="26"></span>
+      </div>
+  </div>
+</div><hr>
+<style>
+  #demoBackground{
+	position:absolute;
+	background-color:#000;
+	overflow:hidden;
+	width:692px;
+	height:70px;
+	visibility:hidden;
+}	
+#logo{
+	position:absolute;
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/logo_black_1.jpg) no-repeat;
+	height: 60px;
+	width: 60px;
+	top:6px;
+}
+#timelinelite{
+	position:absolute;
+	background: url(https://s.cdpn.io/16327/timelinelite.png) no-repeat;
+	left:60px;
+	top:16px;
+	width: 180px;
+	height: 33px;
+	overflow:hidden;
+}	
+#tagline{
+	position:absolute;	
+	left:246px;
+	top:24px;
+	width:306px;
+	height:26px;
+}		
+#tagline span{
+	position:relative;
+	display:inline-block;
+}	 
+#slider{
+	width: 692px;
+	height:15px;
+	margin:15px 0px 8px 6px;	
+}
+</style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script>
+  /*external js
+https://code.jquery.com/jquery-latest.js
+https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js
+*/
+$(window).load(function() {
+	var logo = $("#logo"),
+    timelineLite = $("#timelinelite"),
+    tagline = $("#tagline span"),
+    restartBtn = $("#restartBtn"),
+    tl = new TimelineLite();
+			
+    tl.from(logo, 0.5, {left:"-=60px", ease:Back.easeOut})
+  	  .from(timelinelite, 0.5, {width:"0px", alpha:0}, "-=0.2")
+      .staggerFrom(tagline, 0.5, {top:"-=30px", rotation:"-40deg", alpha:0, scale:1.8, ease:Back.easeOut}, 0.2);
+		
+  restartBtn.click(function() {
+		  tl.restart();
+	  });
+	//show the demoBackground div after DOM is ready and all images loaded
+	  TweenLite.set($("#demoBackground"), {visibility:"visible"});
+});
+
+//cmd-0 to restart
+</script>
+
+
 
   <script src="js/main.js"></script>
 </body>

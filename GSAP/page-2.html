@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>GSAP</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/CSSRulePlugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/Draggable.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/EaselPlugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/MotionPathPlugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/PixiPlugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/TextPlugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/ScrollToPlugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/EasePack.js"></script>
+
+  <style>
+    .box1 {
+      display: block;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="text">https://greensock.com/docs/v3/Eases</div>
+  <div class="box box1 green"></div>
+  <div class="box box1 orange"></div>
+  <div class="box box1 grey"></div>
+  <hr>
+  <button id="button1">Click</button>
+  <script>
+    gsap.to('.green', {
+      rotation: 27,
+      x: 500,
+      y: 400,
+      duration: 1,
+      opacity: 0.3,
+      delay: 2,
+      ease: "power4.out"
+    })
+    gsap.from('.orange', {
+      rotation: 45,
+      x: 200,
+      y: 100,
+      duration: 2,
+      autoAlpha: 0
+    })
+    gsap.fromTo('.grey', {
+      rotation: 60,
+      x: 300,
+      y: 150,
+      duration: 3
+    },
+    {
+      rotation: 0,
+      x: 50,
+      y: 0,
+      duration: 3,
+      autoAlpha: .1
+    })
+    gsap.set('.text', { 
+      x: 440,
+      delay: 2
+    })
+  </script>
+
+</body>
+
+</html>

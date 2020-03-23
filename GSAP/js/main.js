@@ -1,5 +1,5 @@
 // Anima 1
-const tween = gsap.to('.green', {
+const tween = gsap.to('.green1', {
   duration: 4,
   x: 750,
   rotation: 360,

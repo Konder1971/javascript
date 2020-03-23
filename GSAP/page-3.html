@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>GSAP</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/CSSRulePlugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/Draggable.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/EaselPlugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/MotionPathPlugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/PixiPlugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/TextPlugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/ScrollToPlugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/EasePack.js"></script>
+
+  <style>
+    .box1 {
+      display: block;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="box box1 green">1</div>
+  <div class="box box1 orange">2</div>
+  <div class="box box1 grey">3</div>
+  <div class="box box1 pink">4</div>
+
+  <script>
+    let green = document.querySelector('.green')
+    let count = 0
+    function startAnima() {
+    }
+    function endAnima() {
+      green.style.backgroundColor = '#444';
+      green.style.color = '#fff';
+    }
+    function progressAnima() {
+      green.style.backgroundColor = '#fff';
+      green.innerHTML = count++
+      orange.innerHTML = count++
+      grey.innerHTML = count++
+      pink.innerHTML = count++
+    }
+    gsap.to('.green', {
+      duration: 4,
+      x: 500,
+      delay: 1,
+      onStart: startAnima,
+      onUpdate: progressAnima,
+      onComplete: endAnima
+    })
+
+    let orange = document.querySelector('.orange');
+    let grey = document.querySelector('.grey');
+    let pink = document.querySelector('.pink');
+    const duration = 2;
+    const xDistance = 800;
+    const alpha = .3;
+    const delayValue = 1;
+    const easing = Power4.easeOut;
+
+    gsap.to('.orange', duration, {
+      x: xDistance,
+      delay: delayValue,
+      autoAlpha: alpha
+    })
+    gsap.to('.grey', duration, {
+      x: xDistance - 100,
+      delay: delayValue + 1,
+      autoAlpha: alpha
+    })
+    gsap.to('.pink', duration, {
+      x: xDistance - 200,
+      delay: delayValue + 2,
+      autoAlpha: alpha
+    })
+  </script>
+
+</body>
+
+</html>

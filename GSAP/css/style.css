@@ -46,7 +46,8 @@ a:hover {
   text-align:center;
   color:#333;
 }
-.green{
+.green,
+.green1{
   background-color:#6fb936;
 }
 .orange {
@@ -127,4 +128,17 @@ button:hover {
   font-size:44px;
   line-height:50px;
   color:#dedede;
+}
+
+.demo {
+  background-color: #333;
+  padding: 12px;
+  overflow: hidden;
+  position:relative;
+}
+.logo {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/logo_black_1.jpg)no-repeat;
 }

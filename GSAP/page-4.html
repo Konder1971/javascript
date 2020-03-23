@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>GSAP</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.js"></script>
+
+  <style>
+    .box1 {
+      display: block;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="box">
+    <h1 id="title" style="text-align: center;">Title</h1>
+    <div class="box box1 green">1</div>
+    <div class="box box1 orange">2</div>
+    <div class="box box1 grey">3</div>
+    <div class="box box1 pink">4</div>
+  </div>
+
+  <script>
+
+    let green = document.querySelector('.green')
+    let orange = document.querySelector('.orange');
+    let grey = document.querySelector('.grey');
+    let pink = document.querySelector('.pink');
+    const duration = 2;
+    const xDistance = 800;
+    const alpha = .6;
+    const delayValue = 1;
+    const easing = Power4.easeOut;
+
+    gsap.set('#title', { opasity:0, scale:0})
+    const tl = new gsap.timeline({repeat: 2, repeatDelay: 1})
+    tl
+      .to('#box', {duration:1, opasity:1})
+      .to('#title', {opasity:1, scale:1.5, ease:"back"})
+      .to('.green', duration, {       
+        x: xDistance + 100,
+        delay: delayValue,
+        autoAlpha: alpha,
+        ease: easing
+      })
+      .add('label')
+      .to('.orange', duration, {
+        x: xDistance,
+        delay: delayValue,
+        autoAlpha: alpha,
+        ease: easing
+      }, '+=1.8')
+      .to('.grey', duration, {
+        x: xDistance - 100,
+        delay: delayValue + 1,
+        autoAlpha: alpha
+      }, 4)
+      .to('.pink', duration, {
+        x: xDistance - 200,
+        delay: delayValue - 2,
+        autoAlpha: alpha,
+        ease: easing
+      }, 'label');
+  </script>
+
+</body>
+
+</html>
