@@ -45,8 +45,7 @@
     gsap.set('#title', { opasity:0, scale:0})
     const tl = new gsap.timeline({repeat: 2, repeatDelay: 1})
     tl
-      .to('#box', {duration:1, opasity:1})
-      .to('#title', {opasity:1, scale:1.5, ease:"back"})
+      .to('#title', {delay:1, duration:2, opasity:1, scale:2, ease:"back"})
       .to('.green', duration, {       
         x: xDistance + 100,
         delay: delayValue,
