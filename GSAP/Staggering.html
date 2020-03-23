@@ -21,9 +21,9 @@
 </head>
 
 <body>
-
+  <div class="text">Text</div>
   <div id="box">
-    <h1 id="title" style="text-align: center;">Title</h1>
+    <h1 style="text-align: center;">Title</h1>
     <div class="box box1 green">1</div>
     <div class="box box1 orange">2</div>
     <div class="box box1 grey">3</div>
@@ -32,8 +32,13 @@
 
   <script>
 
+    function showLabel () {
+      const tlText = new gsap.timeline({repeat:5});
+      tlText.fromTo('.text', 2, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1});
+    }
+
     const box = document.querySelectorAll('.box');
-    const tl = new gsap.timeline();
+    const tl = new gsap.timeline({onComplete: showLabel });
     const duration = 1;
     const xDistance = 800;
     const alpha = .3;
@@ -45,7 +50,8 @@
         autoAlpha: alpha,
         ease: easing,
         rotate: 360
-      }, 0.6);
+      }, 0.6)
+      .fromTo('#box', 3, {scale:1, autoAlpha:1}, {scale:.25, autoAlpha:0, rotate:360}, 2.6);
 
   </script>
 
