@@ -68,3 +68,6 @@ tl.fromTo(box, durationScale, { rotate: 0 }, { rotate: 90 })
 tl.to(box, duration, { rotateX: -180 })
 tl.to(h1, duration, { rotateY: -180 }, '-=1')
 tl.to(h1, duration, { rotateX: -180, autoAlpha: 0.5 })
+tl.to(rot, durationScale, {
+  left: 'auto'
+})
