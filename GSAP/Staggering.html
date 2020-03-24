@@ -16,14 +16,22 @@
       width: 100px;
       height: 100px;
     }
+    .text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform:translate(-50%, -50%);
+      opacity: 0;
+      /*visibility: hidden;*/
+    }
   </style>
 
 </head>
 
 <body>
-  <div class="text">Text</div>
+  <div class="text">Animate Text</div>
   <div id="box">
-    <h1 style="text-align: center;">Title</h1>
+    <h1 style="text-align: center;">Animate Title</h1>
     <div class="box box1 green">1</div>
     <div class="box box1 orange">2</div>
     <div class="box box1 grey">3</div>
@@ -31,10 +39,11 @@
   </div>
 
   <script>
-
+  
     function showLabel () {
-      const tlText = new gsap.timeline({repeat:5});
-      tlText.fromTo('.text', 2, {autoAlpha:0, scale:1}, {autoAlpha:1, scale:1});
+      const tlText = new gsap.timeline({repeat:-1});
+      tlText.fromTo('.text', 1, {autoAlpha:0, scale:1, fontSize:30, color:'#fff'}, {autoAlpha:1, scale:1.5, fontSize:100, color:'#c00'});
+      tlText.fromTo('.text', 2, {autoAlpha:1, scale:1.5, fontSize:100, color:'#c00'}, {autoAlpha:0, scale:1, fontSize:30, color:'#fff'});
     }
 
     const box = document.querySelectorAll('.box');
@@ -51,7 +60,7 @@
         ease: easing,
         rotate: 360
       }, 0.6)
-      .fromTo('#box', 3, {scale:1, autoAlpha:1}, {scale:.25, autoAlpha:0, rotate:360}, 2.6);
+      .fromTo('#box', 1, {scale:1, autoAlpha:1}, {scale:.25, autoAlpha:0, rotate:3600}, 2.5);
 
   </script>
 
