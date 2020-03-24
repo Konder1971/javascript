@@ -1,4 +1,5 @@
 const h1 = document.querySelector('h1')
+const rot = document.querySelector('.rot')
 const hrH1 = document.querySelector('.hrH1')
 const btnPlay = document.querySelector('#button-play')
 const btnPause = document.querySelector('#button-pause')
@@ -37,7 +38,16 @@ tl.fromTo(
   { opacity: 0, width: 0 },
   { opacity: 1, width: '100%' }
 )
-tl.fromTo(box, duration, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 })
+tl.to(rot, durationScale, {
+  left: 'calc(-100% + 22px)'
+})
+tl.fromTo(
+  box,
+  duration,
+  { opacity: 0, scale: 0 },
+  { opacity: 1, scale: 1 },
+  '-=2'
+)
 tl.to(box, duration, {
   left: '50%',
   transform: 'translate(-50%, 0)'
@@ -45,12 +55,16 @@ tl.to(box, duration, {
 tl.to(box, duration, { rotate: 360, scale: 0, autoAlpha: alpha })
 tl.to(box, duration, { rotate: -360, scale: 1, autoAlpha: 1 }, '+=.5')
 tl.to(box, duration, { y: 100 })
-tl.to(circle, duration, { x: -70, y: -50, backgroundColor: '#6fb936' }, '-=1')
-tl.to(text, durationScale, {
-  color: 'green',
+tl.to(circle, duration, { x: -70, y: -50, backgroundColor: '#c00' }, '-=1')
+tl.to(text, duration, {
+  color: 'black',
   scale: 1.5,
-  fontSize: 32,
-  fontWeight: 'bold',
+  fontSize: 36,
+  fontWeight: 900,
   rotate: -45,
-  y: -20
+  y: -23
 })
+tl.fromTo(box, durationScale, { rotate: 0 }, { rotate: 90 })
+tl.to(box, duration, { rotateX: -180 })
+tl.to(h1, duration, { rotateY: -180 }, '-=1')
+tl.to(h1, duration, { rotateX: -180, autoAlpha: 0.5 })

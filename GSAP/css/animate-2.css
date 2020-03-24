@@ -125,3 +125,31 @@ hr.hrH1 {
   font-size: 22px;
   margin: 5px 0;
 }
+
+img.rot {
+  animation: 2s linear 0s normal none infinite running rot;
+  -webkit-animation: 2s linear 0s normal none infinite running rot;
+  width: 50px;
+  position: relative;
+  vertical-align: middle;
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* GSAP TextPlugin CSS
+--------------------------------------------------- */
