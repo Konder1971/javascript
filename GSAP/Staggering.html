@@ -39,11 +39,17 @@
   </div>
 
   <script>
+
+    function textColor () {
+      const tltextColor = new gsap.timeline()
+        .to('.text', 2, {color: 'green', x: -100, y: -100}) 
+    }
   
     function showLabel () {
-      const tlText = new gsap.timeline({repeat:-1});
-      tlText.fromTo('.text', 1, {autoAlpha:0, scale:1, fontSize:30, color:'#fff'}, {autoAlpha:1, scale:1.5, fontSize:100, color:'#c00'});
-      tlText.fromTo('.text', 2, {autoAlpha:1, scale:1.5, fontSize:100, color:'#c00'}, {autoAlpha:0, scale:1, fontSize:30, color:'#fff'});
+      gsap.to('.text', 2, {autoAlpha:1, scale:1.5, fontSize:100, color:'#c00'}) 
+      const tlText = new gsap.timeline({repeat:1, onComplete: textColor});
+      tlText.fromTo('.text', 2, {autoAlpha:1, scale:1.5, fontSize:100, color:'#c00'}, {autoAlpha:0, scale:1, fontSize:30, color:'#fff'}, '+=2');
+      tlText.fromTo('.text', 2, {autoAlpha:0, scale:1, fontSize:30, color:'#fff'}, {autoAlpha:1, scale:1.5, fontSize:100, color:'#c00'}, '+=2');
     }
 
     const box = document.querySelectorAll('.box');
