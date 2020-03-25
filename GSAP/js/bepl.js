@@ -35,9 +35,7 @@ function bez() {
         { x: 300, y: 200 },
         { x: 500, y: 500 },
         { x: 1600, y: 650 }
-      ],
-      // type: 'cubic'
-      autoRotate: true
+      ]
     },
     ease: 'power2.out'
   })
@@ -57,8 +55,10 @@ function complexTre() {
           { x: 300, y: 0 },
           { x: 500, y: 500 },
           { x: 1600, y: 250 }
-        ]
+        ],
+        autoRotate: true
       },
+      type: 'thru',
       ease: 'power2.out'
     },
     0
@@ -74,7 +74,9 @@ function complexTre() {
           { x: 300, y: 240 },
           { x: 500, y: 0 },
           { x: 1600, y: 350 }
-        ]
+        ],
+        type: 'thru',
+        autoRotate: true
       },
       ease: 'power2.out'
     },
@@ -91,7 +93,9 @@ function complexTre() {
           { x: 300, y: -200 },
           { x: 500, y: 0 },
           { x: 1600, y: 50 }
-        ]
+        ],
+        type: 'thru',
+        autoRotate: true
       },
       ease: 'power2.out'
     },
