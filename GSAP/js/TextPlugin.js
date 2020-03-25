@@ -1,53 +1,125 @@
-const h1 = document.querySelector('h1')
-const hrH1 = document.querySelector('.hrH1')
+/*!
+ * TextPlugin 3.2.6
+ * https://greensock.com
+ *
+ * @license Copyright 2008-2020, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+/* eslint-disable */
 
-const duration = 1
-const durationScale = 2
+import { emojiSafeSplit, getText, splitInnerHTML } from "./utils/strings.js";
 
-const tl = new gsap.timeline()
-tl.fromTo(h1, duration, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 }, 1)
-tl.fromTo(
-  hrH1,
-  durationScale,
-  { opacity: 0, width: 0 },
-  { opacity: 1, width: '100%' }
-)
+let gsap, _tempDiv,
+	_getGSAP = () => gsap || (typeof(window) !== "undefined" && (gsap = window.gsap) && gsap.registerPlugin && gsap);
 
-const tp = document.querySelector('.tp')
-const buttonText = document.querySelector('.block-button')
-const textBlock = document.querySelector('.block')
-const newText =
-  'Бихевиоризм (англ. behaviour — поведение) – направление в психологии, изучающее поведение человека как объективный феномен психики. Основоположником бихевиоризма стал американский психолог Джон Уотсон.'
 
-tl.fromTo(tp, duration, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 })
+export const TextPlugin = {
+	version:"3.2.6",
+	name:"text",
+	init(target, value, tween) {
+		let i = target.nodeName.toUpperCase(),
+			data = this,
+			short, text, original, j, condensedText, condensedOriginal, aggregate, s;
+		data.svg = (target.getBBox && (i === "TEXT" || i === "TSPAN"));
+		if (!("innerHTML" in target) && !data.svg) {
+			return false;
+		}
+		data.target = target;
+		if (typeof(value) !== "object") {
+			value = {value:value};
+		}
+		if (!("value" in value)) {
+			data.text = data.original = [""];
+			return;
+		}
+		data.delimiter = value.delimiter || "";
+		original = splitInnerHTML(target, data.delimiter);
+		if (!_tempDiv) {
+			_tempDiv = document.createElement("div");
+		}
+		_tempDiv.innerHTML = value.value;
+		text = splitInnerHTML(_tempDiv, data.delimiter);
+		data.from = tween._from;
+		if (data.from) {
+			i = original;
+			original = text;
+			text = i;
+		}
+		data.hasClass = !!(value.newClass || value.oldClass);
+		data.newClass = value.newClass;
+		data.oldClass = value.oldClass;
+		i = original.length - text.length;
+		short = (i < 0) ? original : text;
+		data.fillChar = value.fillChar || (value.padSpace ? "&nbsp;" : "");
+		if (i < 0) {
+			i = -i;
+		}
+		while (--i > -1) {
+			short.push(data.fillChar);
+		}
+		if (value.type === "diff") {
+			j = 0;
+			condensedText = [];
+			condensedOriginal = [];
+			aggregate = "";
+			for (i = 0; i < text.length; i++) {
+				s = text[i];
+				if (s === original[i]) {
+					aggregate += s;
+				} else {
+					condensedText[j] = aggregate + s;
+					condensedOriginal[j++] = aggregate + original[i];
+					aggregate = "";
+				}
+			}
+			text = condensedText;
+			original = condensedOriginal;
+			if (aggregate) {
+				text.push(aggregate);
+				original.push(aggregate);
+			}
+		}
+		if (value.speed) {
+			tween.duration(Math.min(0.05 / value.speed * short.length, value.maxDuration || 9999));
+		}
+		this.original = original;
+		this.text = text;
+		this._props.push("text");
+	},
+	render(ratio, data) {
+		if (ratio > 1) {
+			ratio = 1;
+		} else if (ratio < 0) {
+			ratio = 0;
+		}
+		if (data.from) {
+			ratio = 1 - ratio;
+		}
+		let { text, hasClass, newClass, oldClass, delimiter, target, fillChar, original } = data,
+			l = text.length,
+			i = (ratio * l + 0.5) | 0,
+			applyNew, applyOld, str;
+		if (hasClass) {
+			applyNew = (newClass && i);
+			applyOld = (oldClass && i !== l);
+			str = (applyNew ? "<span class='" + newClass + "'>" : "") + text.slice(0, i).join(delimiter) + (applyNew ? "</span>" : "") + (applyOld ? "<span class='" + oldClass + "'>" : "") + delimiter + original.slice(i).join(delimiter) + (applyOld ? "</span>" : "");
+		} else {
+			str = text.slice(0, i).join(delimiter) + delimiter + original.slice(i).join(delimiter);
+		}
+		if (data.svg) { //SVG text elements don't have an "innerHTML" in Microsoft browsers.
+			target.textContent = str;
+		} else {
+			target.innerHTML = (fillChar === "&nbsp;" && ~str.indexOf("  ")) ? str.split("  ").join("&nbsp;&nbsp;") : str;
+		}
+	}
+};
 
-function replaseText() {
-  TweenLite.to(textBlock, 10, {
-    text: {
-      value: newText,
-      delimiter: ' ',
-      // oldClass: 'textbox1tp',
-      newClass: 'class2'
-    }
-  })
-}
-buttonText.addEventListener('click', replaseText, false)
+TextPlugin.splitInnerHTML = splitInnerHTML;
+TextPlugin.emojiSafeSplit = emojiSafeSplit;
+TextPlugin.getText = getText;
 
-const tp2 = document.querySelector('.tp2')
-const buttonText2 = document.querySelector('.block-button2')
-const textBlock2 = document.querySelector('.block2')
-const newText2 =
-  'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex ipsam perspiciatis quia, accusamus dolores provident sunt fugiat vitae expedita doloremque doloribus ipsum placeat ut eligendi illo ab quas quae! At ut reiciendis atque obcaecati aspernatur vel, nemo voluptatum magnam laboriosam nesciunt maiores consectetur? Consectetur asperiores aliquam, quibusdam velit ullam vel voluptatum dignissimos adipisci, labore iusto minima eveniet. Neque animi, officia laborum...'
+_getGSAP() && gsap.registerPlugin(TextPlugin);
 
-tl.fromTo(tp2, duration, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1 })
-
-function replaseText2() {
-  TweenLite.to(textBlock2, 10, {
-    text: {
-      value: newText2,
-      delimiter: ' ',
-      newClass: 'class3'
-    }
-  })
-}
-buttonText2.addEventListener('click', replaseText2, false)
+export { TextPlugin as default };

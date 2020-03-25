@@ -85,6 +85,7 @@ body {
 .container {
   width: 100vw;
   padding: 0 40px;
+  position: relative;
 }
 .buttond {
   position: fixed;
@@ -96,16 +97,18 @@ h1 {
   font-size: 42px;
   padding: 20px;
 }
-hr.hrH1 {
+hr {
   border-top: 2px solid #fff;
   margin-bottom: 30px;
 }
 
 .box {
-  width: 140px;
-  height: 140px;
-  background-color: cornflowerblue;
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
   border-radius: 8px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
   position: relative;
 	display: flex;
 	flex-direction: column;
@@ -114,127 +117,12 @@ hr.hrH1 {
 	align-items: center;
 	align-content: center;
 }
-.circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #f38630;
-  margin: 5px 0;
+.uno {
+  background-color: #4d9916;
 }
-.text {
-  font-size: 22px;
-  margin: 5px 0;
+.duo {
+  background-color: blueviolet;
 }
-
-img.rot {
-  animation: 2s linear 0s normal none infinite running rot;
-  -webkit-animation: 2s linear 0s normal none infinite running rot;
-  width: 50px;
-  position: relative;
-  vertical-align: middle;
-}
-@keyframes rot {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes rot {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-/* GSAP TextPlugin CSS
---------------------------------------------------- */
-.textbox1tp {
-  border: 5px solid #4d9916;
-  border-radius: 10px;
-  padding: 30px;
-  font-size: 22px;
-  line-height: 34px;
-  letter-spacing: 1px;
-  margin: 20px 0 30px;
-}
-
-
-/* GSAP CSSRulePlugin CSS
---------------------------------------------------- */
-:root{
-  --first-var: green;
-  --grey: #ccc
-}
-p {
-  color: var(--first-var);
-  margin: 30px 0;
-  border: 4px solid #f38630;
-  border-radius: 10px;
-  padding: 20px;
-}
-.boxcss {
-  display: inline-block;
-  height:50px;
-  position:relative;
-  font-size:20px;
-  line-height: 50px;
-  border-radius:6px 0 0 6px;
-  margin:0 5px 10px;
-  background-color:#6fb936;
-  padding: 0 60px 0 15px;
-  color: #555;
-}
-.boxcss:after {
-  content:"X";
-  display: inline-block;
-  position:absolute;
-  right: -6px;
-  top: 0;
-  font-size:20px;
-  line-height: 50px;
-  text-align:center;
-  width:40px; 
-  height:50px;
-  background-color:#6fb936;
-  border-radius:0 6px 6px 0;
-  color:#6fb936;
-}
-
-/* box2cs
------------------------------------------- */
-.box2cs .title {
-  width: 600px;
-  min-height: 100px;
-  background-color: antiquewhite;
-  color: #000;
-  border: 4px solid #f38630;
-  border-radius: 10px;
-  font-size: 24px;
-  position: relative;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-}
-.box2cs .box {
-  width: 200px;
-  height: 200px;
-  background-color: transparent;
-  background-image: radial-gradient(#57a818, #f00 );
-  border: 4px solid #f38630;
-  border-radius: 10px;
-  position: relative;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+.tre {
+  background-color: darkred;
 }
