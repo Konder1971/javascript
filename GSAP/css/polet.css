@@ -112,9 +112,9 @@ hr {
 }
 .fa-plane {
   color: #4d9916;
-  font-size: 80px;
+  /*font-size: 80px;*/
   /*transform:rotate(45deg);*/
   position: relative;
-  left: 260px;
-  top: -37px
+  left: 300px;
+  top: 0;
 }

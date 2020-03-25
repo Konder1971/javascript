@@ -7,27 +7,19 @@ gsap.set(plane, { rotate: 45 })
 
 // .addPause() - осмтановить ход анимации
 
-const points = [
-  { left: 260, top: -37 },
-  { left: 600, top: 300 },
-  { left: 260, top: 600 },
-  { left: 0, top: 300 },
-  { left: 260, top: -37 }
-]
 function startPlane() {
-  const tl = new gsap.timeline({ yoyo: true })
+  const tl = gsap.timeline({ yoyo: true })
   tl.to(plane, {
-    duration: 10,
-    // type: 'thru',
-    autoRotate: true,
+    duration: 15,
     motionPath: {
       path: [
-        { left: 260, top: -37 },
+        { left: 300, top: 0 },
         { left: 600, top: 300 },
-        { left: 260, top: 600 },
+        { left: 300, top: 600 },
         { left: 0, top: 300 },
-        { left: 260, top: -37 }
-      ]
+        { left: 300, top: 0 }
+      ],
+      autoRotate: 45
     }
   })
 }
