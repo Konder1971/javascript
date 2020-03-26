@@ -35,3 +35,19 @@ gsap.to('div.cssrul > p', 5, {
   // rotateZ: -180,
   // ease: 'back'
 })
+
+gsap.to('h1', {
+  duration: 2,
+  color: '#cc0',
+  yoyo: true,
+  repeat: -1,
+  rotateX: -180
+})
+
+// const hrh = CSSRulePlugin.getRule('.hrH1')
+gsap.to('hr', {
+  duration: 1.5,
+  repeat: -1,
+  yoyo: true,
+  opacity: 0
+})
