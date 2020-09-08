@@ -31,6 +31,7 @@
       padding: 50px 30px;
       color: #222;
       font-size: 32px;
+      font-weight: 900;
       text-align: center;
     }
     .bg-darkgreen {
@@ -45,16 +46,18 @@
   </div>
   
   <script>
-    let block1 = document.querySelector('.block-1')
-    window.addEventListener('scroll', function() {
+    let block1 = document.querySelector('.block-1');
+    window.addEventListener('scroll',  checkScroll);
+    document.addEventListener('DOMContentloaded',  checkScroll); // чтобы не было скачка цвета при перезагрузки страницы на скролле
+    function checkScroll() {
       let scrollPos = window.scrollY;
-      if(scrollPos >= 100) {
+      if(scrollPos > 0) {
         block1.classList.add('bg-darkgreen')
       }
       else {
         block1.classList.remove('bg-darkgreen')
-      }
-    });
+      }     
+    }
   </script>
 </body>
 </html>
