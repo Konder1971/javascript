@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Скроллинг</title>
+  <style>
+    html {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      box-sizing: border-box;
+    }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+    }
+    body {
+      min-height: calc(200vh);
+    }
+    .block-1 {
+      position: fixed;
+      z-index: 99;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      background-color: cadetblue;
+      padding: 50px 30px;
+      color: #222;
+      font-size: 32px;
+      text-align: center;
+    }
+    .bg-darkgreen {
+      background-color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="block-1">
+    Блок 1
+  </div>
+  
+  <script>
+    let block1 = document.querySelector('.block-1')
+    window.addEventListener('scroll', function() {
+      let scrollPos = window.scrollY;
+      if(scrollPos >= 100) {
+        block1.classList.add('bg-darkgreen')
+      }
+      else {
+        block1.classList.remove('bg-darkgreen')
+      }
+    });
+  </script>
+</body>
+</html>
