@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Untitled</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      table {
+        width: 100%;
+      }
+      td > div {
+          background-image: -webkit-linear-gradient(left, #0000CD, #1E90FF);
+          background-image: linear-gradient(to right, #0000CD, #1E90FF);
+          color: #FFFF00;
+          padding: 30px;
+      }
+      td > span {
+          background-image: -webkit-linear-gradient(left, #FF1493, #F0E68C);
+          background-image: linear-gradient(to right, #FF1493, #F0E68C);
+          color: #FFFFFF;
+          padding: 30px;
+          display: block;
+      }
+    </style>
+
+    <script>
+      document.addEventListener( "DOMContentLoaded" , () => {
+        document.querySelectorAll("td").forEach((td, i) => {
+          let el = document.createElement(i % 2 ? "span" : "div");
+          el.append(td.firstChild);
+          td.append(el)
+        })
+      });
+    </script>
+</head>
+
+<body>
+<table>
+    <tr>
+        <td>Текст</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Текст</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>Текст</td>
+        <td>30</td>
+    </tr>
+    <tr>
+        <td>Текст</td>
+        <td>34</td>
+    </tr>
+</table>
+
+</body>
+</html>
