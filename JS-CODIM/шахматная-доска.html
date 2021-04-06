@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="robots" content="none"/>
+  <title>Script</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #mainChessBoard
+    {
+        width:160px;
+        height:160px;
+        border:1px solid black;
+    }
+    
+    #mainChessBoard div
+    {
+     width:20px;
+     height:20px;
+     float:left;
+    }
+
+    #chessBoard{
+      display: inline-block;
+      border: 2px outset lightGray;
+    }
+    
+    #chessBoard div{
+        line-height: 1px;
+    }
+    
+    #chessBoard span{
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+    }
+    
+    #chessBoard div:nth-child(odd) span:nth-child(even),
+    #chessBoard div:nth-child(even) span:nth-child(odd){
+        background-color: black;
+    }
+    #chessBoard div:nth-child(even) span:nth-child(even),
+    #chessBoard div:nth-child(odd) span:nth-child(odd){
+        background-color: snow;
+    }
+
+
+    table {
+      border: 0;
+      border-spacing: 0;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    td {
+        border: 1px solid #000;
+        height: 40px;
+        width: 40px;
+    }
+    .black {
+        background-color: black;
+    }
+    
+    .chess_header {
+        background-color: #d9d9d9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- http://bmarini.github.io/jchess/ -->
+
+  <br>
+  <div id="mainChessBoard"></div>
+  <br><br>
+  <div id="chessBoard"></div>
+  <br><br>
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  
+  <script>
+
+    // вариант 
+    for (var i=0; i<64; i++){
+      document.getElementById("mainChessBoard").appendChild(document.createElement("div")).style.backgroundColor = parseInt((i / 8) + i) % 2 == 0 ? '#ababab' : 'white';  
+    }
+    
+
+    // вариант
+    var x=8;
+    var y=8;
+    var chessBoard = document.getElementById("chessBoard");
+    for (var i=0; i<y; i++){
+        var row = chessBoard.appendChild(document.createElement("div"));
+        for (var j=0; j<x; j++){
+            row.appendChild(document.createElement("span"));
+        }
+    }
+
+
+    (function($){
+      'use strict';
+  
+      // Функции для создания html кода шахматной доски
+      function createChessBoard() {
+          var size = 8;
+          // я решил делать доску с обозначением строк и полей, поэтому суммарный
+          // размер таблицы будет 10х10
+          //$('body').append('<table id="chess"></table');
+          var board = $('<table id="chess"></table');
+          // Готовим верхнюю и нижнюю строку с цифрами
+          var letters = [' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', ' '];
+          var headerAndFooter = $('<tr></tr>');
+          for (var i = 0; i < letters.length; i++) {
+              headerAndFooter.append('<td class="chess_header">' + letters[i] + '</td>');
+          }
+          // Добавляем в таблицу основные строки
+          for (var i = 0; i < size; i++) {
+              board.append('<tr></tr>');
+              // Внутри строк добавляем столбцы
+              for (var j = 0; j < size + 2; j++) {
+                  $(board).find('tr:last').append('<td></td>');
+              }
+          }
+          // Теперь добавляем верхнюю и нижнюю строку с числами
+          board.append(headerAndFooter);
+          // если просто сделать prepend то jQuery перенесёт элемент на новое место
+          // а нужно добавить ещё одну такую-же строку, поэтому клонируем её
+          board.prepend(headerAndFooter.clone());
+  
+          // Теперь пробежим по всей таблице и расставим номера строк
+          // в крайних левом и правом столбцах. Так как нумерация идёт в противоположном
+          // от нашего прохода порядке, то использую массив
+          var numbers = [0, 8, 7, 6, 5, 4, 3, 2, 1];
+          $(board).find('tr').each(function(rowNum) {
+              if (rowNum !== 0 && rowNum !== 9) {
+                  $(this).children('td').each(function(colNum) {
+                      if (colNum === 0 || colNum === 9) {
+                          // Если это первый или последний столбец, ставим номер строки
+                          // и стиль заголовка
+                          $(this).text(numbers[rowNum]).addClass('chess_header');
+                      } else {
+                          // Ячейка внутри шахматной доски.
+                          // Вычисляем её положение по чётности строки/столбца и окрашиваем
+                          if ((rowNum % 2 === 0 && colNum % 2 === 0) || (rowNum % 2 !== 0 && colNum % 2 !== 0)) {
+                              $(this).addClass('white');
+                          } else {
+                              $(this).addClass('black');
+                          }
+                      }
+                  });
+              }
+          });
+          return board;
+      }
+  // Функция возвращает случайное число между
+  // min (включительно) и max (включительно)
+  // из документации модуля Math
+      function getRandomIntInclusive(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+  
+  
+      var chessboard = createChessBoard();
+      $('body').append(chessboard);
+  
+      $(chessboard).on('mouseenter', 'td', function(event) {
+          // Тут используется делегирование событий. Если просто назначить на каждую ячейку отслеживание события
+          // наведения мыши, то у нас будет 10*10 = 100 слушателей событий.
+          // А с делегированием только один "слушатель" - вся таблица, а потом происходит
+          // уточнение, в каком именно td оно произошло.
+          if (!$(this).hasClass('chess_header')) {
+              var r = getRandomIntInclusive(0, 255);
+              var b = getRandomIntInclusive(0, 255);
+              var g = getRandomIntInclusive(0, 255);
+  
+              // я использую css анимацию с помощью animate.css
+              var animanionName = 'animated zoomIn';
+              // для отслеживания события "анимация закончилось"
+              var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+              $(this).css('background-color', 'rgb(' + r + ',' + g + ',' + b + ')')
+                  .addClass(animanionName)
+                  .one(animationEnd, function(){
+                      $(this).removeClass(animanionName);
+                  });
+          }
+      });
+  
+  
+  })(jQuery);
+  </script>
+
+</body>
+</html>
