@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap&subset=cyrillic,latin-ext');
+
+body{
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    position: relative;
+}
+
+header,
+.headerFixed,
+main{
+    max-width: 1000px;
+    margin: 0 auto
+}
+.headerFixed {
+    z-index: 3;
+    top:0;
+}
+
+h1{
+    font-size: 1.8rem;
+    font-family: 'Russo One', sans-serif;
+}
+h2{
+    font-size: 1.5rem;
+    font-family: 'Russo One', sans-serif;
+}
+h3{
+    font-size: 1.25rem;
+    font-family: 'Russo One', sans-serif;
+}
+h4{
+    font-size: 1.1rem;
+    font-family: 'Russo One', sans-serif;
+}
+
+nav {
+    position: relative;
+}
+nav ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+    -moz-transform:translate(-50%, -50%);
+    -ms-transform:translate(-50%, -50%);
+    -o-transform:translate(-50%, -50%); 
+    width: auto;
+    float: none;
+}
+ul{
+    width: 100%;
+    float: left;
+}
+ul,
+ul li {
+    list-style: none;
+}
+ul li {
+    float: left;
+    padding: 10px;
+}
+
+
+
+/* бесконечная анимация вращения */
+img.koleso {
+    width: 201px;
+    -webkit-animation-name: rotation;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: rotation;
+    -moz-animation-duration: 5s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -o-animation-name: rotation;
+    -o-animation-duration: 5s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    animation-name: rotation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@-webkit-keyframes rotation {
+    0% {-webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);}
+}
+@-moz-keyframes rotation {
+    0% {-webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);}
+}
+@-o-keyframes rotation {
+    0% {-webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);}
+}
+@keyframes rotation {
+    0% {-webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        transform:rotate(0deg);}
+    100% {-webkit-transform:rotate(360deg);
+        -moz-transform:rotate(720deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);}
+}
+
+
+img.rotate-hover {
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+            transition:         transform .8s ease-in-out;
+}
+img.rotate-hover:hover {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+}
+
+
+figure{
+    position: relative;
+    width: 240px;
+    height: 240px;
+    overflow: hidden;
+    border: 2px solid black;
+}
+figure img {
+    width: 100%;
+    position: relative;
+}

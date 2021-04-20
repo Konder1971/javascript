@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>wrap-обертка</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/reset-grid.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Wrap Обертка -->
+    <script>
+        $(function() {
+            
+            $('<div class="div1b">').prependTo('body'); // вставили div в body первым 
+
+            $('h1').wrap('<div>');
+            $('h1').parent().addClass('divH1').css({
+                background: '#ccc',
+            });
+            $('h1').parent().css({
+               'margin': '26px',
+               'padding': ' 12px 0 8px 0',
+            });
+            $('h1').append(' :');
+
+            animateH1();
+            function animateH1() {
+                $('h1')
+                .css({
+                    'color': '#d00',  
+                    'position': 'relative',
+                })
+                .animate({
+                    'left': '80%',
+                    opacity: 0,
+                }, 1200)
+                .animate({
+                    'left': '20px',
+                    opacity: 0,
+                }, 900, animateH1)
+                .animate({
+                    opacity: 1,
+                }, 900, animateH1).delay(600)
+            }
+
+
+            $('section#sec-1').wrap('<div class="box-section">')
+            .css({
+                padding: '20px 25px',
+                border: '1px solid #000',
+            });
+
+
+            $('section > h2').attr("title", function(i) {
+                ++i; // Увеличим на 1, т.к. отсчет идет с 0
+                return "title-H2-" + i; 
+            });
+            $('section > h2').wrap( function(){
+                if ( $(this).attr('title') == 'title-H2-1' || $(this).attr('title') == 'title-H2-4' ) {
+                    return '<header>';
+                }
+                else {
+                    return '';
+                }
+            });
+
+
+            $('section > header > h2').css({
+                background: '#ccc',
+                color: 'green',
+                padding: '5px 15px',
+            });
+
+
+            $('span').wrap( function(){
+                if( $(this).text() == 'Lorem Ipsum' ) {
+                    return '<span class="li-s">';
+                }
+                else {
+                    return '';
+                }
+            });
+
+            $('.li-s')
+            .css({
+                display: 'inline-block',
+                background: '#cc0',
+                color: '#b00',
+                padding: '5px 15px',
+                'border-radius': '4px',
+                position: 'relative',
+            });
+            // зациклили анимацию
+            cikl();
+            function cikl() {
+                $('.li-s').delay(800)
+                .animate({
+                    opacity: .1,
+                    top: -5,
+                    
+                }, 1000)
+                .animate({
+                    opacity: 1,
+                    top: 0,
+                }, 1000, cikl)
+            }
+
+        });
+    </script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Wrap Обертка</h1>
+    </header>
+
+    <main>
+
+        <section id="sec-1">
+
+            <h2>Article Title. Lorem Ipsum</h2>
+
+            <h2>Article Title. Lorem Ipsum</h2>
+            <h2>Article Title. Lorem Ipsum</h2>
+            <h2>Article Title. Lorem Ipsum</h2>
+            <h2>Article Title. Lorem Ipsum</h2>
+            
+            <div>
+
+                <h3>Что такое Lorem Ipsum?</h3>
+
+                <p>
+                    <span>Lorem Ipsum</span> is simply <em>dummy text</em>dummy text of the printing and typesetting industry. 
+                    <span>Lorem Ipsum</span> has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type 
+                    specimen book. It has <span>survived not only five centuries</span>, but also the leap into 
+                    electronic typesetting, remaining essentially unchanged. It was popularised in 
+                    the 1960s with the release of <b>Letraset sheets containing</b> <span>Lorem Ipsum</span> passages, 
+                    and more recently with desktop publishing software like Aldus PageMaker 
+                    including versions of Lorem Ipsum.
+                </p>
+
+                <p>
+                    <span>Lorem Ipsum</span> - это текст-"рыба", часто используемый в печати и вэб-дизайне. 
+                    <span>Lorem Ipsum</span> является стандартной "рыбой" для текстов на латинице с начала XVI века. 
+                    В то время некий <span>безымянный печатник</span> создал большую коллекцию размеров и форм шрифтов, 
+                    используя <span>Lorem Ipsum</span> для распечатки образцов. Lorem Ipsum не только успешно пережил 
+                    без заметных изменений <i>пять веков</i>, но и перешагнул в электронный дизайн. <strong>Его популяризации 
+                    в новое время</strong> послужили публикация листов Letraset с образцами <span>Lorem Ipsum</span> в 60-х годах и, 
+                    в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах 
+                    которых используется Lorem Ipsum.
+                </p>
+                    
+                <h3>Почему он используется?</h3>
+
+                <p>
+                    Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
+                    <b><span>Lorem Ipsum</span></b> используют потому, что тот обеспечивает более или менее стандартное заполнение 
+                    шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается 
+                    при простой дубликации "<em>Здесь ваш текст..</em> Здесь ваш текст.. Здесь ваш текст.." Многие 
+                    программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по 
+                    умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много 
+                    веб-страниц всё <strong>ещё</strong> дожидаются своего настоящего рождения. За прошедшие годы текст 
+                    <span>Lorem Ipsum</span> получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно 
+                    (например, юмористические варианты).
+                </p>
+
+            </div> 
+        </section>
+
+    </main>
+
+</body>
+</html>

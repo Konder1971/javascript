@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>animate</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <style type="text/css">
+        .block {
+            width: 50px;
+            height: 50px;
+            background: gold;
+            margin: 10px;
+        }
+        .block-2 {
+            background:#98bf21;
+            height:150px;
+            width:150px;
+            margin: 10px;
+        }
+        div.blo {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: tomato;
+        }
+    </style>
+    <script src="js/animate.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Page Title Lorem Ipsum</h1>
+        <p><em>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</em></p>
+        <p>"Нет никого, кто любил бы боль саму по себе, кто искал бы её и кто хотел бы иметь её просто потому, что это боль.."</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" title="">home</a></li>
+            <li><a href="#sec-1" title="">Link 1</a></li>
+            <li><a href="#sec-2" title="">Link 2</a></li>
+            <li><a href="#sec-3" title="">Link 3</a></li>
+            <li><a href="#sec-4" title="">Link 4</a></li>
+            <li><a href="jquery.html" title="">jquery</a></li>
+            <li><a href="animate.html" title="">animate</a></li>
+            <li><a href="modal.html" title="">modal</a></li>
+            <li><a href="accordeon.html" title="">accordeon</a></li>
+        </ul>
+    </nav>
+    
+    <ul>
+        <li><a href="index.html" title="">home</a></li>
+        <li><a href="jquery.html" title="">jquery</a></li>
+        <li><a href="#sec-1" title="">Link 1</a></li>
+        <li><a href="#sec-2" title="">Link 2</a></li>
+        <li><a href="#sec-3" title="">Link 3</a></li>
+        <li><a href="#sec-4" title="">Link 4</a></li>
+        <li><a href="animate.html" title="">animate</a></li>
+        <li><a href="modal.html" title="">modal</a></li>
+    </ul>
+    
+
+    <div class="blo"></div>
+
+
+    <button id="go">Запустить анимацию</button>
+    <button id="stopanim">Остановить</button>
+    <div class="block"></div>
+
+    <button id="go-2">Запустить зацикленную анимацию</button>
+    <button id="stopanim-2">Остановить зацикленную анимацию</button>
+
+    <div class="block-2"></div>
+
+
+</body>
+</html>

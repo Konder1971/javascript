@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>modal</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    
+    <style type="text/css">
+        #modal_form {
+            width: 500px; 
+            height: 500px;
+            border-radius: 5px;
+            border: 3px #000 solid;
+            background: #fff;
+            position: fixed;
+            top: 45%;
+            left: 50%;
+            margin-top: -250px;
+            margin-left: -250px;
+            display: none;
+            opacity: 0;
+            z-index: 5;
+            padding: 20px 10px;
+        }
+        
+        #modal_form #modal_close {
+            width: 21px;
+            height: 21px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            display: block;
+        }
+        
+        #overlay {
+            z-index:3;
+            position:fixed;
+            background-color:#000;
+            opacity:0.8;
+            -moz-opacity:0.8;
+            filter:alpha(opacity=80);
+            width:100%; 
+            height:100%;
+            top:0;
+            left:0;
+            cursor:pointer;
+            display:none;
+        }
+    </style>
+    <script src="js/modal.js"></script>
+</head>
+<body>
+    
+
+    <header>
+        <h1>Page Title Lorem Ipsum</h1>
+        <p><em>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</em></p>
+        <p>"Нет никого, кто любил бы боль саму по себе, кто искал бы её и кто хотел бы иметь её просто потому, что это боль.."</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" title="">home</a></li>
+            <li><a href="#sec-1" title="">Link 1</a></li>
+            <li><a href="#sec-2" title="">Link 2</a></li>
+            <li><a href="#sec-3" title="">Link 3</a></li>
+            <li><a href="#sec-4" title="">Link 4</a></li>
+            <li><a href="jquery.html" title="">jquery</a></li>
+            <li><a href="animate.html" title="">animate</a></li>
+            <li><a href="modal.html" title="">modal</a></li>
+            <li><a href="accordeon.html" title="">accordeon</a></li>
+        </ul>
+    </nav>
+
+
+    <div id="modal_form">
+        <span id="modal_close">закрыть</span>
+    </div>
+    <div id="overlay"></div>
+    <a href="#" class="modal">Открыть модальное окно</a>
+
+
+
+</body>
+</html>

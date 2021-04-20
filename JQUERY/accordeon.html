@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>accordeon</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <style type="text/css">
+        #accordeon {
+            border: 10px solid #fff;
+            box-shadow: 0 0 10px grey;
+            margin: 20px 0;
+        }
+        .acc-head {
+            padding: 5px 10px;
+            background: #c0c0c0;
+            cursor: pointer;
+        }
+        .acc-body {
+            padding: 10px;
+            border-bottom: 1px solid #c0c0c0;
+            margin-bottom: 5px;
+            display: none;
+        }
+    </style>
+    <script src="js/accordeon.js"></script>
+</head>
+<body>
+
+
+    <header>
+        <h1>Page Title Lorem Ipsum</h1>
+        <p><em>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</em></p>
+        <p>"Нет никого, кто любил бы боль саму по себе, кто искал бы её и кто хотел бы иметь её просто потому, что это боль.."</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" title="">home</a></li>
+            <li><a href="#sec-1" title="">Link 1</a></li>
+            <li><a href="#sec-2" title="">Link 2</a></li>
+            <li><a href="#sec-3" title="">Link 3</a></li>
+            <li><a href="#sec-4" title="">Link 4</a></li>
+            <li><a href="jquery.html" title="">jquery</a></li>
+            <li><a href="animate.html" title="">animate</a></li>
+            <li><a href="modal.html" title="">modal</a></li>
+            <li><a href="accordeon.html" title="">accordeon</a></li>
+        </ul>
+    </nav>
+
+    <div id="accordeon">
+        <div class="acc-head">
+            accordeon Заголовок 1
+        </div>
+        <div class="acc-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, 
+            quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
+        </div>
+        <div class="acc-head">
+            accordeon Заголовок 2
+        </div>
+        <div class="acc-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, 
+            quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
+        </div>
+        <div class="acc-head">
+            accordeon Заголовок 3
+        </div>
+        <div class="acc-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, 
+            quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
+        </div>
+    </div>
+
+</body>
+</html>

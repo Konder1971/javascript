@@ -1,0 +1,159 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* 
+ * These selection declarations have to be separate
+ * No text-shadow: twitter.com/miketaylr/status/12228805301
+ * Also: hot pink!
+ */
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+
+/* ========================================
+   Links
+   ======================================*/
+
+a:hover, a:active { outline: 0; }
+
+/*=========================================
+	Main Styles
+=========================================*/
+body {
+font-family: arial;
+font-size: 15px;
+line-height: 25px;
+color: #515151;
+background: #fdfdfd;
+}
+
+#content {
+width: 500px;
+margin: 0 auto;
+padding-top: 40px;
+height: 2000px;
+}
+
+#content p {
+margin-bottom: 25px;
+}
+
+nav {
+width: 100%;
+position: fixed;
+height: 40px;
+background: white;
+border: 1px solid #CACACA;
+border-top: none;
+-webkit-box-shadow: 0px 0px 3px 1px #ebebeb;
+-moz-box-shadow: 0px 0px 3px 1px #ebebeb;
+box-shadow: 0px 0px 3px 1px #ebebeb;
+}
+
+nav ul {
+width: 750px;
+margin: 0 auto;
+}
+
+nav ul li{
+float: left;
+width: 150px;
+text-align: center;
+}
+
+nav ul li a {
+line-height: 40px;
+font-size: 16px;
+text-decoration: none;
+color: #515151;
+border-bottom: 1px dotted #515151;
+}
+
+nav ul li a:hover{
+color: #000;
+}
+footer {
+    background-color:#212121;
+    bottom:0;
+    box-shadow: 0 -1px 2px #111111;
+    display:block;
+    height:70px;
+    left:0;
+    position:fixed;
+    width:100%;
+    z-index:100;
+}
+footer h2{
+    font-size:22px;
+    font-weight:normal;
+    left:50%;
+    margin-left:-400px;
+    padding:10px 0;
+    position:absolute;
+    width:540px;
+	color:#fff;
+}
+footer a.stuts,a.stuts:visited{
+    border:none;
+    text-decoration:none;
+    color:#fcfcfc;
+    font-size:14px;
+    left:50%;
+    line-height:31px;
+    margin:23px 0 0 110px;
+    position:absolute;
+    top:0;
+}
+footer .stuts span {
+    font-size:22px;
+    font-weight:bold;
+    margin-left:5px;
+}

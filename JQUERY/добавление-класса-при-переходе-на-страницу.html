@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Добавление класса в меню для a при переходе на эту страницу</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/reset-grid.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(function(){
+            // добавление класса в меню для a при переходе на эту страницу 
+            // смотреть тут http://qaru.site/questions/163253/jquery-add-class-active-on-menu
+            var url = window.location.pathname, 
+            urlRegExp = new RegExp(url.replace(/\/$/,'') + "$");
+            $('nav a').each(function(){
+                if(urlRegExp.test(this.href.replace(/\/$/,''))){
+                    $(this).addClass('active');
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>   
+
+    <header>
+        <h1>Добавление класса в меню для a при переходе на эту страницу</h1>
+    </header>
+       
+    <nav>
+        <ul>
+            <li><a href="index.html" title="">home</a></li>
+            <li><a href="#sec-1" title="">Link 1</a></li>
+            <li><a href="#sec-2" title="">Link 2</a></li>
+            <li><a href="#sec-3" title="">Link 3</a></li>
+            <li><a href="#sec-4" title="">Link 4</a></li>
+            <li><a href="jquery.html" title="">jquery</a></li>
+            <li><a href="animate.html" title="">animate</a></li>
+            <li><a href="modal.html" title="">modal</a></li>
+            <li><a href="accordeon.html" title="">accordeon</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Кнопка на верх вариант 2</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/reset-grid.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+
+    <!-- кнопка на верх -->
+    <script>
+        $( document ).ready(function() {
+            // выбирает тег БАДИ и вставляем перед закрывающим тегом нашу кнопку
+            $( 'body' ).append( '<button id="toTop" title="Go to top"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDI4NC45MjkgMjg0LjkyOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjg0LjkyOSAyODQuOTI5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTI4Mi4wODIsMTk1LjI4NUwxNDkuMDI4LDYyLjI0Yy0xLjkwMS0xLjkwMy00LjA4OC0yLjg1Ni02LjU2Mi0yLjg1NnMtNC42NjUsMC45NTMtNi41NjcsMi44NTZMMi44NTYsMTk1LjI4NSAgIEMwLjk1LDE5Ny4xOTEsMCwxOTkuMzc4LDAsMjAxLjg1M2MwLDIuNDc0LDAuOTUzLDQuNjY0LDIuODU2LDYuNTY2bDE0LjI3MiwxNC4yNzFjMS45MDMsMS45MDMsNC4wOTMsMi44NTQsNi41NjcsMi44NTQgICBjMi40NzQsMCw0LjY2NC0wLjk1MSw2LjU2Ny0yLjg1NGwxMTIuMjA0LTExMi4yMDJsMTEyLjIwOCwxMTIuMjA5YzEuOTAyLDEuOTAzLDQuMDkzLDIuODQ4LDYuNTYzLDIuODQ4ICAgYzIuNDc4LDAsNC42NjgtMC45NTEsNi41Ny0yLjg0OGwxNC4yNzQtMTQuMjc3YzEuOTAyLTEuOTAyLDIuODQ3LTQuMDkzLDIuODQ3LTYuNTY2ICAgQzI4NC45MjksMTk5LjM3OCwyODMuOTg0LDE5Ny4xODgsMjgyLjA4MiwxOTUuMjg1eiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" /></button>' );
+            // Добавляем к нашей кнопке стили (CSS)
+            $("#toTop").css({"display": "none", "position": "fixed", "bottom": "18px", "right": "18px", "z-index": "1000", "border": "none", "outline": "none", "background": "none", "cursor": "pointer"});
+            // В момент скрола в окне показываем или скрываем нашу кнопку
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 50) {
+                    $('#toTop').fadeIn();
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            });
+            // Вешаем функцию-обработчик на действие по клику по нашей кнопке
+            $('#toTop').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({scrollTop : 0}, 900); // задаем анимацию, плавность
+                return false;
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+    <a href="#" class="tutop">Вверх</a>
+
+    <header>
+        <h1>Кнопка на верх вариант 2</h1>
+    </header>
+
+    <main>
+        <section id="sec-1">
+            <header>
+                <h2>Article Title. Lorem Ipsum</h2>
+            </header>
+            <div>
+                <h3>Что такое Lorem Ipsum?</h3>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type 
+                    specimen book. It has survived not only five centuries, but also the leap into 
+                    electronic typesetting, remaining essentially unchanged. It was popularised in 
+                    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                    and more recently with desktop publishing software like Aldus PageMaker 
+                    including versions of Lorem Ipsum.
+                </p>
+                <p>
+                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. 
+                    Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. 
+                    В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, 
+                    используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил 
+                    без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации 
+                    в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, 
+                    в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах 
+                    которых используется Lorem Ipsum.
+                </p>
+                    
+                <h3>Почему он используется?</h3>
+                <p>
+                    Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. 
+                    Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение 
+                    шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается 
+                    при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие 
+                    программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по 
+                    умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много 
+                    веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem 
+                    Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно 
+                    (например, юмористические варианты).
+                </p>
+                
+                <p>
+                    Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. 
+                    Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий 
+                    назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из 
+                    самых странных слов в Lorem Ipsum, "consectetur", и занялся его поисками в классической латинской 
+                    литературе. В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 
+                    книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной Цицероном в 45 году н.э. 
+                    Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem Ipsum, 
+                    "Lorem ipsum dolor sit amet..", происходит от одной из строк в разделе 1.10.32
+                </p>
+                <p>
+                    Классический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны разделы 
+                    1.10.32 и 1.10.33 "de Finibus Bonorum et Malorum" Цицерона и их английский перевод, сделанный 
+                    H. Rackham, 1914 год.
+                </p>
+                <h3>
+                    Где его взять?
+                </h3>
+                <p>
+                    Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, 
+                    например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам 
+                    нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в 
+                    середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, 
+                    который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор 
+                    единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, 
+                    а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не 
+                    имеет повторяющихся абзацей или "невозможных" слов.
+                </p>
+                <p>
+                    Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, 
+                    например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам 
+                    нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в 
+                    середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, 
+                    который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор 
+                    единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, 
+                    а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не 
+                    имеет повторяющихся абзацей или "невозможных" слов.
+                </p>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type 
+                    specimen book. It has survived not only five centuries, but also the leap into 
+                    electronic typesetting, remaining essentially unchanged. It was popularised in 
+                    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                    and more recently with desktop publishing software like Aldus PageMaker 
+                    including versions of Lorem Ipsum.
+                </p>
+                <p>
+                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. 
+                    Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. 
+                    В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, 
+                    используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил 
+                    без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации 
+                    в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, 
+                    в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах 
+                    которых используется Lorem Ipsum.
+                </p>
+                
+                <p>
+                    Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. 
+                    Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий 
+                    назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из 
+                    самых странных слов в Lorem Ipsum, "consectetur", и занялся его поисками в классической латинской 
+                    литературе. В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 
+                    книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной Цицероном в 45 году н.э. 
+                    Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem Ipsum, 
+                    "Lorem ipsum dolor sit amet..", происходит от одной из строк в разделе 1.10.32
+                </p>
+                <p>
+                    Классический текст Lorem Ipsum, используемый с XVI века, приведён ниже. Также даны разделы 
+                    1.10.32 и 1.10.33 "de Finibus Bonorum et Malorum" Цицерона и их английский перевод, сделанный 
+                    H. Rackham, 1914 год.
+                </p>
+                <h3>
+                    Где его взять?
+                </h3>
+                <p>
+                    Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, 
+                    например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам 
+                    нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в 
+                    середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, 
+                    который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор 
+                    единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, 
+                    а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не 
+                    имеет повторяющихся абзацей или "невозможных" слов.
+                </p>
+                <p>
+                    Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, 
+                    например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам 
+                    нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в 
+                    середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, 
+                    который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор 
+                    единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, 
+                    а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не 
+                    имеет повторяющихся абзацей или "невозможных" слов.
+                </p>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type 
+                    specimen book. It has survived not only five centuries, but also the leap into 
+                    electronic typesetting, remaining essentially unchanged. It was popularised in 
+                    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                    and more recently with desktop publishing software like Aldus PageMaker 
+                    including versions of Lorem Ipsum.
+                </p>
+                <p>
+                    Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. 
+                    Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. 
+                    В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, 
+                    используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил 
+                    без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации 
+                    в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, 
+                    в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах 
+                    которых используется Lorem Ipsum.
+                </p>
+            </div> 
+        </section>
+
+    </main>
+
+</body>
+</html>

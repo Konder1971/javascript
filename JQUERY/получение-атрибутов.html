@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Получение атрибутов</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/reset-grid.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Wrap Обертка -->
+    <script>
+        $(function() {
+
+            //$('<div class="div1b">').prependTo('body'); // вставили div в body первым 
+            
+            $('section > h2').attr("title", function(i) {
+                ++i; // Увеличим на 1, т.к. отсчет идет с 0
+                return "title-H2-" + i; 
+            });
+            
+
+
+            /* Получаем все свойства */
+            var attributes = document.getElementById('test').attributes;
+            /* Для демонстрации */
+            $('#test').append($('<ul>').attr('id', 'result'));
+                /* Перебираем свойства */
+                for (var key in attributes) {
+                /* Выбираем именно html-атрибуты */
+                if (attributes[key].nodeName) {
+                    $('<li>', {
+                    text: attributes[key].nodeName + ': ' + attributes[key].nodeValue
+                    }).appendTo('#result');
+                }
+            }
+
+
+            $("#myTestButton").click(function(){
+                var attrs = document.getElementById("myTestButton").attributes;
+                $.each(attrs,function(i,elem){
+                $("#attrs").html($("#attrs").html()+'Attributes are:'+"<br><b>"+elem.name+"</b>:<i>"+elem.value+"</i>");
+                });
+            });
+
+
+        });
+    </script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Получение атрибутов</h1>
+    </header>
+
+    <main>
+
+        <div id="test" class="testClass" data-target="17" data-key1="5" data-key2="7" value="Хрень">Этот элемент имеет следующие атрибуты:</div>
+
+        <button id="myTestButton" class="myclass" ekind="div" etype="text" name="stack">
+            Кликни чтобы вывести атрибуты этой кнопки
+        </button>
+        <div id="attrs"></div>
+
+        <section id="sec-1">
+            <h2>Article Title 1</h2>
+            <h2>Article Title 2</h2>
+            <h2>Article Title 3</h2>
+            <h2>Article Title 4</h2>
+            <h2>Article Title 5</h2>
+        </section>
+
+    </main>
+
+</body>
+</html>
