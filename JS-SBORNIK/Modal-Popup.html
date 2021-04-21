@@ -175,13 +175,15 @@
     closemodal.onclick = function () {
       modal.style.display = "none";
       modal.classList.remove('modalActive');
-      modalcontent.style.opacity = 0
+      modalcontent.style.opacity = 0;
+      document.body.style.cssText = `overflow: auto;`;
     }
     window.onclick = function (event) {
       if (event.target == modal) {
         modal.style.display = "none";
         modal.classList.remove('modalActive');
-        modalcontent.style.opacity = 0
+        modalcontent.style.opacity = 0;
+        document.body.style.cssText = `overflow: auto;`;
       }
     };
 
