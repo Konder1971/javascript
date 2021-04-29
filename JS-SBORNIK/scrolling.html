@@ -24,7 +24,6 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       padding: 120px 0 0 0;
-      min-height: calc(200vh);
     }
 
     .block-1 {
@@ -57,6 +56,9 @@
       -moz-transition: all 500ms ease-in-out;
       -ms-transition: all 500ms ease-in-out;
       -o-transition: all 500ms ease-in-out;
+    }
+    .block-1:hover {
+      opacity: .7;
     }
 
     .bg-darkgreen {
@@ -102,7 +104,7 @@
   </style>
 </head>
 
-<body>
+<body id="top">
 
   <div class="top">top</div>
   <header>
@@ -115,6 +117,7 @@
   <main>
     <section>
       <h1>Header Page h1</h1>
+      <a href="#bot">Вниз</a>
       <article>
         <header>
           <hgroup>
@@ -166,7 +169,7 @@
     Блок 2
   </div>
 
-  <marquee height="100" direction="up"
+  <marquee id="bot" height="100" direction="up"
     style="text-align: center; color: #D9470D; font-size: 40px; font-weight: bolder; line-height: 150%; text-shadow: #000 0px 1px 1px;">
     <div>0</div>
     <div>1</div>
@@ -179,6 +182,9 @@
     <div>8</div>
     <div>9</div>
   </marquee>
+
+
+  <a href="#top">Back to Top</a>
 
   <script>
 
@@ -207,8 +213,9 @@
         `
       }
     }
+    
     block1.addEventListener("click", function () {
-      window.scrollTo(pageYOffset, 0);
+        window.scrollTo(pageYOffset, 0)
     })
 
     let block2 = document.querySelector('.block-2');
@@ -222,6 +229,23 @@
         document.body.style.backgroundColor = 'transparent'
       }
     }
+
+    // https://www.youtube.com/watch?v=4uRfBzLc85A
+    const anthors = document.querySelectorAll('a[href*="#"]')
+    for(let anthor of anthors) {
+      anthor.addEventListener('click', function(event) {
+        event.preventDefault();
+        const blockID = anthor.getAttribute('href')
+        document.querySelector('' + blockID).scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        })
+      })
+    }
+    /*
+    видео от Лущенко
+    https://www.youtube.com/watch?v=zjWoZlXEDXU
+    */
 
   </script>
 </body>
