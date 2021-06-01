@@ -51,13 +51,6 @@ for(var i=0; i<ul.length; i++){
 
 
 
-
-
-
-
-
-
-
 let arrDp = [
   "<span>bl-1</span>",
   "<span>bl-2</span>",

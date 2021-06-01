@@ -18,9 +18,9 @@ p1.classList.add("p1");
 p1.innerHTML += lorem1;
 document.querySelector(".container").appendChild(p1);
 
-var script = document.createElement("script"); // добавили скрипт на страницу
-script.src = "jquery-3.4.1.min.js";
-document.body.appendChild(script);
+var scrollscript = document.createElement("script"); // добавили скрипт на страницу
+scrollscript.src = "jquery-3.4.1.min.js";
+document.body.appendChild(scrollscript);
 
 // http://webdiz.com.ua/glava6-rabota-s-dom/sozdanie-dobavlenie-i-udalenie-elementov-html-stranicy/
 
@@ -50,4 +50,13 @@ parentNode: возвращает родительский узел найден�
 nodeName: позволяет получить имя узла
 nodeType: вернет тип узла в виде числа
 nodeValue: вернет или установит значение узла в виде простого текста
+
+Методы для вставки и удаления узлов
+
+    parent.appendChild(el) — добавляет элемент в конец существующего элемента
+    parent.insertBefore(el, nextSibling) — вставляет элемент перед существующим элементом
+    parent.removeChild(el) — удаляет элемент
+    parent.replaceChild(newElem, el) — заменяет один элемент на другой
+    parent.cloneNode(bool) — копирует элемент, если параметр bool=true то элемент копируется со всеми дочерними элементами, а если false то без дочерних элементов
+
 */

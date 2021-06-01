@@ -2,7 +2,7 @@ function showModal() {
   let modalId = this.dataset.modal;
   document.querySelector(modalId).classList.remove('hide');
   document.onkeydown = function(event) {
-    if(event.keyCode = 27) closeModal(); // такая запись - если внутири одна if команда
+    if(event.keyCode = 27) closeModal();
   }
 };
 

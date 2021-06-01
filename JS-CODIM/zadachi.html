@@ -164,22 +164,22 @@
 <body>
 
   <style>
-  #raz div {
-    transition: 3s;
-    opacity: 0;
-  }
+    #raz div {
+      transition: 3s;
+      opacity: 0;
+    }
   </style>
   <div id="raz">
     <input type="button" value="Добавить">
   </div>
-<script>
-  document.querySelector('#raz input').onclick = function() {
-    var theDiv = document.createElement('div');  // создать новый тег div
-    theDiv.innerHTML = 'HTML-содержимое';  // его содержимое
-    this.parentNode.appendChild(theDiv);  // поместить новый тег последним в div с id="raz" (вместо this.parentNode может быть любой другой элемент DOM)
-    getComputedStyle(theDiv).opacity;
-    theDiv.style.opacity = '1';
-  }
+  <script>
+    document.querySelector('#raz input').onclick = function () {
+      var theDiv = document.createElement('div');  // создать новый тег div
+      theDiv.innerHTML = 'HTML-содержимое';  // его содержимое
+      this.parentNode.appendChild(theDiv);  // поместить новый тег последним в div с id="raz" (вместо this.parentNode может быть любой другой элемент DOM)
+      getComputedStyle(theDiv).opacity;
+      theDiv.style.opacity = '1';
+    }
   </script>
 
 
@@ -201,7 +201,7 @@
     btn.onclick = function () {
       pText.classList.toggle('hideText');
       this.innerHTML.indexOf('Показать ') > -1 ? this.innerHTML = "Спрятать текст" :
-      this.innerHTML = "Показать текст";
+        this.innerHTML = "Показать текст";
     }
   </script>
 
@@ -216,6 +216,7 @@
       height: 400px;
       padding: 5px;
     }
+
     #thumbs a {
       border: solid 1px #ccc;
       width: 100px;
@@ -224,12 +225,15 @@
       margin: 2px;
       float: left;
     }
+
     #thumbs a:hover {
       border-color: #FF9900;
     }
+
     #thumbs li {
       list-style: none;
     }
+
     #thumbs {
       margin: 0;
       padding: 0;
@@ -238,23 +242,28 @@
   <p><img id="largeImg" src="https://en.js.cx/gallery/img1-lg.jpg" alt="Large image"></p>
   <ul id="thumbs">
     <li>
-      <a href="https://en.js.cx/gallery/img2-lg.jpg" title="Image 2"><img src="https://en.js.cx/gallery/img2-thumb.jpg"></a>
+      <a href="https://en.js.cx/gallery/img2-lg.jpg" title="Image 2"><img
+          src="https://en.js.cx/gallery/img2-thumb.jpg"></a>
     </li>
     <li>
-      <a href="https://en.js.cx/gallery/img3-lg.jpg" title="Image 3"><img src="https://en.js.cx/gallery/img3-thumb.jpg"></a>
+      <a href="https://en.js.cx/gallery/img3-lg.jpg" title="Image 3"><img
+          src="https://en.js.cx/gallery/img3-thumb.jpg"></a>
     </li>
     <li>
-      <a href="https://en.js.cx/gallery/img4-lg.jpg" title="Image 4"><img src="https://en.js.cx/gallery/img4-thumb.jpg"></a>
+      <a href="https://en.js.cx/gallery/img4-lg.jpg" title="Image 4"><img
+          src="https://en.js.cx/gallery/img4-thumb.jpg"></a>
     </li>
     <li>
-      <a href="https://en.js.cx/gallery/img5-lg.jpg" title="Image 5"><img src="https://en.js.cx/gallery/img5-thumb.jpg"></a>
+      <a href="https://en.js.cx/gallery/img5-lg.jpg" title="Image 5"><img
+          src="https://en.js.cx/gallery/img5-thumb.jpg"></a>
     </li>
     <li>
-      <a href="https://en.js.cx/gallery/img6-lg.jpg" title="Image 6"><img src="https://en.js.cx/gallery/img6-thumb.jpg"></a>
+      <a href="https://en.js.cx/gallery/img6-lg.jpg" title="Image 6"><img
+          src="https://en.js.cx/gallery/img6-thumb.jpg"></a>
     </li>
   </ul>
   <script>
-    thumbs.onclick = function(event) {
+    thumbs.onclick = function (event) {
       let thumbnail = event.target.closest('a');
 
       if (!thumbnail) return;
@@ -269,4 +278,5 @@
   </script>
 
 </body>
+
 </html>

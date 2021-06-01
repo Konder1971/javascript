@@ -1,6 +1,3 @@
-// https://coursehunter.net/course/prakticheskiy-javascript
-// урок 20 бонус
-// урок 21 бонус
 
 let one = document.querySelector("#one");
 function myClick() {

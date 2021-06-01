@@ -1,7 +1,7 @@
 // генерация случайного числа от 0 до 49
 let number = 0;
 let min = 0;
-let max =49;
+let max = 49;
 function randomNumberGeneration(min, max) {
     return number = Math.floor(min + Math.random() * (max + 1 - min));
 }

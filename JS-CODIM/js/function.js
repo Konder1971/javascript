@@ -1,7 +1,7 @@
-// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+﻿// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 // https://habr.com/ru/company/ruvds/blog/430382/
 // https://coursehunter.net/course/prakticheskiy-javascript
-// аргументы функций -  урок 19 бонус
+// ��������� ������� -  ���� 19 �����
 
 let number = 0;
 let min = 0;
@@ -11,16 +11,16 @@ function randomNumberGeneration(min, max) {
 }
 randomNumberGeneration(min, max);
 document.getElementById("number").innerHTML =
-  "Генерация случайного числа от 0 до 10 = " + number + "<hr />";
+  "��������� ���������� ����� �� 0 �� 10 = " + number + "<hr />";
 // *************************************** //
 
 const myFunction1 = function() {
-  // объявление обычной функции
+  // ���������� ������� �������
   //...
 };
 
 const myFunction2 = () => {
-  // объявление стрелочной функции
+  // ���������� ���������� �������
   //...
 };
 
@@ -56,14 +56,14 @@ m2.myTest();
 
 function f1(z) {
   let zz = document.querySelector('#'+z);
-  zz.innerHTML += ' Добавили Привет'; 
+  zz.innerHTML += ' �������� ������'; 
 }
 f1('one');
 f1('two');
 
 
 function umn(a = 1, b = 2, c = -0.0124){
-  // b ? b=b : b = 2;  - тернарный оператор, усли b не определено ему присвоится значение 2
+  // b ? b=b : b = 2;  - ��������� ��������, ���� b �� ���������� ��� ���������� �������� 2
   return (a * b)/c;
 }
 document.querySelector('.umn').innerHTML += ' ' + umn(31, 18);

@@ -185,7 +185,6 @@ peremeshatButton.onclick = function() {
 }
 
 // Шары
-/*
 let sh = document.createElement('div');
 sh.classList.add('sh');
 document.querySelector('.container').appendChild(sh);
@@ -217,6 +216,5 @@ document.querySelector('.shbuttons').after(shContent);
 let shar = document.createElement('div');
 shar.classList.add('shar');
 document.querySelector('.shcontent').appendChild(shar);
-*/
 
 // https://www.youtube.com/watch?v=v6AVfIupNB8

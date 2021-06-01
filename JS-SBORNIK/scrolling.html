@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,240 +12,52 @@
       -webkit-font-smoothing: antialiased;
       box-sizing: border-box;
     }
-
     *,
     *::before,
     *::after {
       box-sizing: border-box;
       margin: 0;
     }
-
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      padding: 120px 0 0 0;
+      min-height: calc(200vh);
     }
-
     .block-1 {
       position: fixed;
       z-index: 99;
       left: 0;
       top: 0;
-      width: 100%;
+      width: 100vw;
       background-color: cadetblue;
-      height: 120px;
-      padding: 30px;
-      color: #fff;
+      padding: 50px 30px;
+      color: #222;
       font-size: 32px;
       font-weight: 900;
-      font-weight: bold;
-
-      display: -webkit-flex;
-      -webkit-flex-direction: column;
-      -webkit-flex-wrap: nowrap;
-      -webkit-justify-content: center;
-      -webkit-align-items: center;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-
-      transition: all 500ms ease-in-out;
-      -webkit-transition: all 500ms ease-in-out;
-      -moz-transition: all 500ms ease-in-out;
-      -ms-transition: all 500ms ease-in-out;
-      -o-transition: all 500ms ease-in-out;
+      text-align: center;
     }
-    .block-1:hover {
-      opacity: .7;
-    }
-
     .bg-darkgreen {
       background-color: darkgreen;
     }
-
-    .block-2 {
-      background-color: chocolate;
-      height: 400px;
-    }
-
-    .top {
-      min-height: 50px;
-      background: #dff8f6;
-      border-bottom: 4px solid #39b4ac;
-    }
-    header {
-      background-color: #f4f8fb;
-      min-height: 120px;
-      box-shadow: 0 1px 1px rgba(0,0,0,.11);
-    }
-    main {
-      margin: 0 auto;
-      padding: 0 20px;
-      max-width: 1200px;
-    }
-    aside {
-    }
-    article {
-      background-color: #fff;
-      margin-bottom: 30px;
-      padding: 20px;
-    }
-    main header,
-    main footer { 
-      min-height: auto;
-      background-color: transparent
-    }
-    footer {
-      min-height: 100px;
-      background-color: #4b5258;
-    }
   </style>
 </head>
-
-<body id="top">
-
-  <div class="top">top</div>
-  <header>
-    Header<br />
-    design: https://creativemarket.com/
-  </header>
-  <nav>Navigation</nav>
-  <div class="banner">Banner</div>
-  <aside>Sidebar</aside>
-  <main>
-    <section>
-      <h1>Header Page h1</h1>
-      <a href="#bot">Вниз</a>
-      <article>
-        <header>
-          <hgroup>
-            <h2>Основной контент</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias, id.
-            </p>
-          </hgroup>
-          <footer>
-            footer
-          </footer>
-        </header>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quas cupiditate dolorem modi, 
-          qui ut quisquam similique unde mollitia deserunt et rerum totam iste esse provident tempore, 
-          minima explicabo neque quasi itaque odio ducimus blanditiis. Iusto dolorem beatae qui harum 
-          adipisci ipsa nulla sed. Nam nemo minima dolores. Commodi, omnis?
-        </p>
-      </article>
-    </section>
-    <section>
-      <h2>Новости</h2>
-      <article>
-        <h3>Новость 1</h3>
-        <p>Текст новости 1</p>
-        <a href="#">Подробнее</a>
-      </article>
-      <article>
-        <h3>Новость 2</h3>
-        <p>Текст новости 2</p>
-        <a href="#">Подробнее</a>
-      </article>
-      <article>
-        <h3>Новость 3</h3>
-        <p>Текст новости 3</p>
-        <a href="#">Подробнее</a>
-      </article>
-    </section>
-  </main>
-  <footer>Footer</footer>
-
-
+<body>
 
   <div class="block-1">
     Блок 1
   </div>
-
-  <div class="block-2">
-    Блок 2
-  </div>
-
-  <marquee id="bot" height="100" direction="up"
-    style="text-align: center; color: #D9470D; font-size: 40px; font-weight: bolder; line-height: 150%; text-shadow: #000 0px 1px 1px;">
-    <div>0</div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-  </marquee>
-
-
-  <a href="#top">Back to Top</a>
-
+  
   <script>
-
     let block1 = document.querySelector('.block-1');
-    window.addEventListener('scroll', checkScroll);
-    document.addEventListener('DOMContentloaded', checkScroll); // чтобы не было скачка цвета при перезагрузки страницы на скролле
+    window.addEventListener('scroll',  checkScroll);
+    document.addEventListener('DOMContentloaded',  checkScroll); // чтобы не было скачка цвета при перезагрузки страницы на скролле
     function checkScroll() {
       let scrollPos = window.scrollY;
-      if (scrollPos > 0) {
+      if(scrollPos > 0) {
         block1.classList.add('bg-darkgreen')
-        block1.style.cssText = `
-          height: 60px;
-          padding: 10px;
-          font-size: 20px;
-          cursor: pointer;
-        `
-        block1.innerHTML = pageYOffset + 'px';
       }
       else {
         block1.classList.remove('bg-darkgreen')
-        block1.style.cssText = `
-          height: 120px;
-          padding: 30px;
-          font-size: 32px;
-          cursot: default;
-        `
-      }
+      }     
     }
-    
-    block1.addEventListener("click", function () {
-        window.scrollTo(pageYOffset, 0)
-    })
-
-    let block2 = document.querySelector('.block-2');
-    window.onscroll = function () { scrollFunction() };
-    function scrollFunction() {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        //document.getElementById("block2").style.fontSize = "30px";
-        document.body.style.backgroundColor = '#cc0';
-      } else {
-        //document.getElementById("block2").style.fontSize = "90px";
-        document.body.style.backgroundColor = 'transparent'
-      }
-    }
-
-    // https://www.youtube.com/watch?v=4uRfBzLc85A
-    const anthors = document.querySelectorAll('a[href*="#"]')
-    for(let anthor of anthors) {
-      anthor.addEventListener('click', function(event) {
-        event.preventDefault();
-        const blockID = anthor.getAttribute('href')
-        document.querySelector('' + blockID).scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        })
-      })
-    }
-    /*
-    видео от Лущенко
-    https://www.youtube.com/watch?v=zjWoZlXEDXU
-    */
-
   </script>
 </body>
 </html>
