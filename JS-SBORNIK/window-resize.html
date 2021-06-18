@@ -190,53 +190,88 @@
       font-family: Arial, Helvetica, sans-serif;
       background-color: azure;
       min-height: 100vh;
-      padding: 40px;
+      padding: 20px;
     }
-    .bl1 {
-      background: green;
+    .bl1,
+    .bl2 {
+      background-color: green;
+      font-size: 18px;
+      padding: 15px;
       display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
       justify-content: center;
       align-items: center;
-      margin: 0 auto;
+      margin: 0 auto 20px;
+      color: #fff;
       transition: all 500ms ease-out;
     }
-    .bl1 p {
+    .bl1 p,
+    .bl2 p {
       color: aliceblue;
       font-size: 24px;
+      margin-bottom: 10px;
     }
     div[class*="bl1-"] {
       background-color:darkcyan;
       border-radius: 20px;
     }
+    .bl2 {
+      background-color:brown;
+    }
+
   </style>
 
 </head>
 <body>
 
+  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.5 10.7439L12 1.7439L22.5 10.7439" stroke="#F78F1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.2439L3.377 13.6099C3.15289 13.818 3.01782 14.1046 3 14.4099V23.2649C3.00165 23.8043 3.43855 24.2412 3.978 24.2429H9.75V17.2329C9.75055 16.9629 9.969 16.744 10.239 16.7429H13.761C14.031 16.744 14.2495 16.9629 14.25 17.2329V24.2429H20.022C20.5611 24.2413 20.9978 23.805 21 23.2659V14.4109C20.9822 14.1056 20.8471 13.819 20.623 13.6109L12 6.2439Z" stroke="#001968" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+    
+
   <div class="bl1">
     <p>Block-1</p>
+    <span>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis quae enim corporis, sit hic nam, est magnam 
+      facilis eum nostrum, vel velit. Quisquam, modi architecto soluta sint at blanditiis maxime.
+    </span>
+  </div>
+
+  <div class="bl2">
+    <p>Block-2</p>
+    <span>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis quae enim corporis, sit hic nam, est magnam 
+      facilis eum nostrum, vel velit. Quisquam, modi architecto soluta sint at blanditiis maxime.
+    </span>
   </div>
 
   <script>
 
+    let svg = document.querySelector('svg')
+
     let bl1 = document.querySelector('.bl1')
+    let bl2 = document.querySelector('.bl2')
 
     // размеры
     let vw = document.querySelector('body').offsetWidth;
-    let vh= document.querySelector('body').offsetHeight;
-    bl1.style.width = (vw-80)/1.7 + 'px';
-    bl1.style.height = (vh-80)/4 + 'px';
+    let vh = document.querySelector('body').offsetHeight;
+    bl1.style.minWidth = (vw-80)/1.7 + 'px';
+    bl1.style.minHeight = (vh-80)/6 + 'px';
+
+    
 
     window.addEventListener("resize", function () {
 
-      // размеры
+      svg.style.transition += 'all 500ms ease-in-out';
+      svg.style.transform  += 'rotate(180deg)';
+
       let vw = document.querySelector('body').offsetWidth;
-      let vh= document.querySelector('body').offsetHeight;
-      bl1.style.width = (vw-80)/1.7 + 'px';
-      bl1.style.height = (vh-80)/4 + 'px';
-
+      let vh = document.querySelector('body').offsetHeight;
+      bl1.style.minWidth  = (vw-80)/1.7 + 'px';
+      bl1.style.minHeight = (vw-60)/6 + 'px';
       bl1.classList.remove('bl1-1500', 'bl1-1200', 'bl1-800', 'bl1-600', 'bl1-mobile')
-
       if (window.innerWidth >= 1500) {
         document.body.style.backgroundColor = 'azure';
         bl1.classList.add('bl1-1500')
@@ -257,6 +292,19 @@
         document.body.style.backgroundColor = '#f1f1f1';
         bl1.classList.add('bl1-mobile')
       }
+
+      // Генерация случайных чисела от - до
+      function randomInteger(min, max) {
+        var rand = min + Math.random() * (max + 1 - min);
+        rand = Math.floor(rand);
+        return rand;
+      }
+      let rangen = randomInteger(1, 10);
+      let bl2w = document.querySelector('.bl2').offsetWidth;
+      bl2.style.minHeight = bl2w/rangen + 'px';
+      bl2.style.borderRadius = 20 + 'px';
+      bl2.style.border = 3 + 'px solid #000'
+      
     });
 
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="none" />
+  <title>Modal</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+
+    .submenu {
+      width: 150px;
+      height: 150px;
+      background-color: black;
+      opacity: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="submenu"></div>
+
+  <script>
+
+    function setOpacity() {
+        var el = document.getElementsByClassName("submenu")[0];
+        var op = 0;
+        while (op <= 1.01) {
+            (function(_op) {
+                setTimeout(function() { el.style.opacity = _op; }, 60 + op * 800);
+            })(op);
+            op += 0.01;
+        }
+    }
+    document.addEventListener("DOMContentLoaded", setOpacity);
+
+  </script>
+
+</body>
+
+</html>
