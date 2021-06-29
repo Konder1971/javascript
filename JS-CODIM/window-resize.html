@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="none" />
+  <title>Script</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <style>
+    *, *:before, *:after {
+      margin:0;
+      padding:0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    *:focus, a:focus {
+      outline:0;
+      outline-offset:0;
+    }
+    *{
+      -webkit-appearance: none; /* delete the default styles ios */
+    }
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+
+    html, body {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-overflow-scrolling: touch;
+      text-rendering: optimizeLegibility;
+      
+    }
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      vertical-align: baseline;
+      font-weight: normal;
+    }
+    pre {
+      white-space: pre;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    ol, ul {list-style: none;}
+    caption,th { text-align:left; }
+    blockquote, q {quotes: none;}
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+      content: '';
+      content: none;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup, 
+    menu,
+    nav,
+    section,
+    summary {
+      display: block;
+    }
+    audio,
+    canvas,
+    video {
+      display: inline-block;
+    }
+    audio:not([controls]) {
+      display: none;
+      height: 0;
+    }
+    img {
+      max-width: 100%;
+      width: auto\9;
+      height: auto;
+      vertical-align: middle;
+      border: 0;
+    }
+    .clearfix:before,
+    .clearfix:after {
+      display: table;
+      line-height: 0;
+      content: "";
+    }
+    .clearfix:after { clear: both; }
+
+    /* убрать синий фон при клике на элемент */
+    button, 
+    input[type="submit"],
+    input[type="checkbox"],
+    input[type="radio"] { 
+      -webkit-tap-highlight-color: transparent;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    input[type="search"] {
+      -webkit-appearance: textfield;
+      -moz-box-sizing: content-box;
+      -webkit-box-sizing: content-box;
+      box-sizing: content-box;
+    }
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    /* убирает закругления и тень у полей в WebKit браузерах */
+    input:not([type=checkbox]):not([type=radio]),
+    input[type="submit"],
+    textarea, 
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    /* Target all Firefox */
+    @-moz-document url-prefix() { 
+      .class {
+
+      } 
+    }
+
+    @media all and (-webkit-min-device-pixel-ratio:0) {
+      /*Всё, что вы сюда напишете, будет работать только с -webkit-*/
+    }
+
+    /*	Retina (HiDPI) Display */
+    @media 
+        only screen and (-moz-min-device-pixel-ratio:1.5), 
+        only screen and (-o-min-device-pixel-ratio:3/2), 
+        only screen and (-webkit-min-device-pixel-ratio:1.5), 
+        only screen and (min-device-pixel-ratio:1.5) {
+    }
+
+    /* для ретина img */
+    @media 	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-resolution: 1.5dppx),
+    only screen and (min-resolution: 144dpi)  {
+
+    }
+
+    /* Css для Ipad */
+    @media only screen and (device-width: 768px) {
+    /* Для основных стилей, размеры менять под себя */
+    }
+
+    @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    /* Только для режима портретный, размеры менять под себя */
+    }
+
+    @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    /* Только для режима ландшафтный , размеры менять под себя */
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: azure;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .bl1,
+    .bl2 {
+      background-color: green;
+      font-size: 18px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 20px;
+      color: #fff;
+      transition: all 500ms ease-out;
+    }
+    .bl1 p,
+    .bl2 p {
+      color: aliceblue;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    div[class*="bl1-"] {
+      background-color:darkcyan;
+      border-radius: 20px;
+    }
+    .bl2 {
+      background-color:brown;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.5 10.7439L12 1.7439L22.5 10.7439" stroke="#F78F1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.2439L3.377 13.6099C3.15289 13.818 3.01782 14.1046 3 14.4099V23.2649C3.00165 23.8043 3.43855 24.2412 3.978 24.2429H9.75V17.2329C9.75055 16.9629 9.969 16.744 10.239 16.7429H13.761C14.031 16.744 14.2495 16.9629 14.25 17.2329V24.2429H20.022C20.5611 24.2413 20.9978 23.805 21 23.2659V14.4109C20.9822 14.1056 20.8471 13.819 20.623 13.6109L12 6.2439Z" stroke="#001968" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+    
+
+  <div class="bl1">
+    <p>Block-1</p>
+    <span>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis quae enim corporis, sit hic nam, est magnam 
+      facilis eum nostrum, vel velit. Quisquam, modi architecto soluta sint at blanditiis maxime.
+    </span>
+  </div>
+
+  <div class="bl2">
+    <p>Block-2</p>
+    <span>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis quae enim corporis, sit hic nam, est magnam 
+      facilis eum nostrum, vel velit. Quisquam, modi architecto soluta sint at blanditiis maxime.
+    </span>
+  </div>
+
+  <script>
+
+    let svg = document.querySelector('svg')
+
+    let bl1 = document.querySelector('.bl1')
+    let bl2 = document.querySelector('.bl2')
+
+    // размеры
+    let vw = document.querySelector('body').offsetWidth;
+    let vh = document.querySelector('body').offsetHeight;
+    bl1.style.minWidth = (vw-80)/1.7 + 'px';
+    bl1.style.minHeight = (vh-80)/6 + 'px';
+
+    
+
+    window.addEventListener("resize", function () {
+
+      svg.style.transition += 'all 500ms ease-in-out';
+      svg.style.transform  += 'rotate(180deg)';
+
+      let vw = document.querySelector('body').offsetWidth;
+      let vh = document.querySelector('body').offsetHeight;
+      bl1.style.minWidth  = (vw-80)/1.7 + 'px';
+      bl1.style.minHeight = (vw-60)/6 + 'px';
+      bl1.classList.remove('bl1-1500', 'bl1-1200', 'bl1-800', 'bl1-600', 'bl1-mobile')
+      if (window.innerWidth >= 1500) {
+        document.body.style.backgroundColor = 'azure';
+        bl1.classList.add('bl1-1500')
+      }
+      else if (window.innerWidth > 1200 && window.innerWidth < 1500) {
+        document.body.style.backgroundColor = '#c0c';
+        bl1.classList.add('bl1-1200')
+      }
+      else if (window.innerWidth > 900 && window.innerWidth <= 1199) {
+        document.body.style.backgroundColor = '#00f';
+        bl1.classList.add('bl1-800')
+      } 
+      else if (window.innerWidth >= 600 && window.innerWidth <= 900) {
+        document.body.style.backgroundColor = '#f00';
+        bl1.classList.add('bl1-600')
+      } 
+      else {
+        document.body.style.backgroundColor = '#f1f1f1';
+        bl1.classList.add('bl1-mobile')
+      }
+
+      // Генерация случайных чисела от - до
+      function randomInteger(min, max) {
+        var rand = min + Math.random() * (max + 1 - min);
+        rand = Math.floor(rand);
+        return rand;
+      }
+      let rangen = randomInteger(1, 10);
+      let bl2w = document.querySelector('.bl2').offsetWidth;
+      bl2.style.minHeight = bl2w/rangen + 'px';
+      bl2.style.borderRadius = 20 + 'px';
+      bl2.style.border = 3 + 'px solid #000'
+      
+    });
+
+
+  </script>
+
+</body>
+
+</html>

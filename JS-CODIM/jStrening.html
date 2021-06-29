@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="none" />
+  <title>Script</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #progress_line {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 0%;
+      height: 4px;
+      background: red;
+    }
+
+    #container {
+      margin: 0 auto 100px;
+      width: 400px;
+      height: 400px;
+      position: relative;
+      background: yellow;
+      transform: rotate(45deg);
+    }
+
+    #animate {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background: green;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #rect {
+      margin: 100px;
+      width: 100px;
+      height: 100px;
+      background: #50c878;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div id="progress_line"></div>
+
+  <div id="container">
+    <div id="animate">Моя</div>
+    <div id="rect"></div>
+    Счётчик: <input type="button" value="1" data-counter><br />
+    Ещё счётчик: <input type="button" value="2" data-counter><br />
+    Ещё счётчик: <input type="button" value="-55" data-counter><br />
+    <button data-toggle-id="subscribe-mail">
+      Показать форму подписки
+    </button>
+    <form id="subscribe-mail" hidden>
+      Ваша почта: <input type="email">
+    </form>
+  </div>
+
+  <script>
+
+    // progress line
+    var line = document.getElementById('progress_line');
+    window.addEventListener('scroll', progressBar);
+    function progressBar(e) {
+      var windowScroll = document.body.scrollTop ||
+        document.documentElement.scrollTop;
+      var windowHeight = document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      var width_progress_line = windowScroll / windowHeight * 100;
+      line.style.width = width_progress_line + '%';
+    }
+
+    let FONT_SIZE = 16
+
+    // document.documentElement.style.background = '#00c' // для тэга html
+    // document.head   // для тэга .head
+    // setTimeout(() => document.body.style.background = '#c00', 2500)
+
+    let bodyClass = document.body.classList.add('bodyClass')
+
+    let myContainer = document.createElement('div')
+    myContainer.classList.add('myContainer')
+    myContainer.style.cssText = `
+      border: 1px solid #222;
+      margin: 20px 0;
+      text-align: center;
+      padding: 10px;
+      background-color: #fff;
+    `
+
+    let btn = document.createElement('button')
+    btn.classList.add('btn')
+    btn.innerText = 'Нажать'
+    btn.style.cssText += `
+      padding: 8px 18px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: ${FONT_SIZE}px;
+    `
+
+    let div2 = document.createElement('div')
+    div2.innerHTML += ''
+
+    // выводим DOM
+    document.body.appendChild(myContainer)
+    myContainer.appendChild(div2)
+    myContainer.insertBefore(btn, div2)
+    
+
+    // window.innerHeight – внутренняя высота окна браузера (в пикселях)
+    // window.innerWidth – внутренняя ширина окна браузера (в пикселях)
+
+    // resize
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 800 && window.innerWidth < 1300) {
+        document.body.style.backgroundColor = '#c0c';
+      } else {
+        document.body.style.backgroundColor = '#ccc';
+      }
+    });
+
+
+    /*
+    Практическое решение JavaScript (охватывает все браузеры):
+    var w = window.innerWidth
+      document.documentElement.clientWidth
+      document.body.clientWidth;
+
+    var h = window.innerHeight
+      document.documentElement.clientHeight
+      document.body.clientHeight; 
+    */
+
+
+    // animate
+    function myMove() {
+      var elem = document.getElementById("animate");
+      var pos = 0;
+      var id = setInterval(frame, 8);
+      function frame() {
+        if (pos == 350) {
+          clearInterval(id);
+        } else {
+          pos++;
+          elem.style.top = pos + 'px';
+          elem.style.left = pos + 'px';
+        }
+      }
+    }
+    btn.addEventListener("click", function () {
+      myMove()
+    })
+    let square = document.getElementById("rect");
+    let angle = 0;
+    function rotate() {
+        angle = (angle + 2)%360;
+        square.style.transform = "rotate(" + angle + "deg)";
+        window.requestAnimationFrame(rotate);
+    }
+    window.requestAnimationFrame(rotate);
+
+
+    // размеры
+    let vw = document.querySelector('.btn').offsetWidth;
+    btn.style.height += vw + 'px';
+    btn.style.width += vw + 'px';
+
+
+    // counter taimer
+    var varCounter = 0;
+    var varName = setInterval(function() {
+        if (varCounter <= 20) {
+            // document.writeln(varCounter++); /* your code goes here*/
+            div2.innerHTML += varCounter++
+        } else {
+            clearInterval(varName);
+            // document.writeln("clear");
+        }
+    }, 1000);
+    varName;
+
+
+    // счётчики
+    document.addEventListener('click', function(event) {
+      if (event.target.dataset.counter != undefined) { // работает если есть атрибут...
+        event.target.value++;
+      }
+    });
+
+    document.addEventListener('click', function(event) {
+      let id = event.target.dataset.toggleId;
+      if (!id) return;
+      let elem = document.getElementById(id);
+      elem.hidden = !elem.hidden;
+    });
+
+
+    
+    /* redirect
+    if (window.innerWidth < 1400) {
+      window.location.href = 'https://creastate.com';
+    }
+    window.addEventListener("resize", function () {
+      if (window.innerWidth < 1400) {
+        setTimeout(function(){
+          window.location.href = 'https://creastate.com';
+        }, 2 * 1000);
+      }
+    });
+    */
+
+
+
+
+    /*
+      Но у вас все еще будет нестабильный результат, потому что JS однопоточен. Пока, если поток JS будет занят чем-то, 
+      он не сможет выполнить вашу функцию обратного вызова, и выполнение будет отложено на 2-3 мс. У вас есть 60 казней 
+      в секунду, и каждый раз, когда у вас есть случайная 1-3-секундная задержка, это будет абсолютно неприемлемо 
+      (через одну минуту это будет около 7200 мсек задержки), и я могу посоветовать использовать что-то вроде этого:
+
+      Этот код гарантирует стабильный период выполнения. Даже поток будет занят, и ваш код будет выполнен через 1005 мсек, 
+      в следующий раз он будет иметь тайм-аут в течение 995 мс, и результат будет стабильным.
+    *//*
+    function Timer(clb, timeout) {
+        this.clb = clb;
+        this.timeout = timeout;
+        this.stopTimeout = null;
+        this.precision = -1;
+    }
+    Timer.prototype.start = function() {
+        var me = this;
+        var now = new Date();
+        if(me.precision === -1) {
+            me.precision = now.getTime();
+        }
+        me.stopTimeout = setTimeout(function(){
+            me.start()
+        }, me.precision - now.getTime() + me.timeout);
+        me.precision += me.timeout;
+        me.clb();
+    };
+    Timer.prototype.stop = function() {
+        clearTimeout(this.stopTimeout);
+        this.precision = -1;
+    };
+    function myTimeoutFunction()
+    {
+        doStuff();
+    }
+    var timer = new Timer(myTimeoutFunction, 1000);
+    timer.start();*/
+
+
+
+
+  </script>
+
+</body>
+
+</html>
