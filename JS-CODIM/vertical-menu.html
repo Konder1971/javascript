@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="robots" content="none"/>
+  <title>Вертикальное меню</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+  <meta name="format-detection" content="telephone=no" />
+  <style>
+    *, *:before, *:after {
+      margin:0;
+      padding:0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    *:focus, a:focus {
+      outline:0;
+      outline-offset:0;
+    }
+    *{
+      -webkit-appearance: none; /* delete the default styles ios */
+    }
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+
+    html, body {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-overflow-scrolling: touch;
+      text-rendering: optimizeLegibility;
+      
+    }
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      vertical-align: baseline;
+      font-weight: normal;
+    }
+    pre {
+      white-space: pre;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    ol, ul {list-style: none;}
+    caption,th { text-align:left; }
+    blockquote, q {quotes: none;}
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+      content: '';
+      content: none;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup, 
+    menu,
+    nav,
+    section,
+    summary {
+      display: block;
+    }
+    audio,
+    canvas,
+    video {
+      display: inline-block;
+    }
+    audio:not([controls]) {
+      display: none;
+      height: 0;
+    }
+    img {
+      max-width: 100%;
+      width: auto\9;
+      height: auto;
+      vertical-align: middle;
+      border: 0;
+    }
+    .clearfix:before,
+    .clearfix:after {
+      display: table;
+      line-height: 0;
+      content: "";
+    }
+    .clearfix:after { clear: both; }
+
+    /* убрать синий фон при клике на элемент */
+    button, 
+    input[type="submit"],
+    input[type="checkbox"],
+    input[type="radio"] { 
+      -webkit-tap-highlight-color: transparent;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    input[type="search"] {
+      -webkit-appearance: textfield;
+      -moz-box-sizing: content-box;
+      -webkit-box-sizing: content-box;
+      box-sizing: content-box;
+    }
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    /* убирает закругления и тень у полей в WebKit браузерах */
+    input:not([type=checkbox]):not([type=radio]),
+    input[type="submit"],
+    textarea, 
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    /* Target all Firefox */
+    @-moz-document url-prefix() { 
+      .class {
+
+      } 
+    }
+
+    @media all and (-webkit-min-device-pixel-ratio:0) {
+      /*Всё, что вы сюда напишете, будет работать только с -webkit-*/
+    }
+
+    /*	Retina (HiDPI) Display */
+    @media 
+        only screen and (-moz-min-device-pixel-ratio:1.5), 
+        only screen and (-o-min-device-pixel-ratio:3/2), 
+        only screen and (-webkit-min-device-pixel-ratio:1.5), 
+        only screen and (min-device-pixel-ratio:1.5) {
+    }
+
+    /* для ретина img */
+    @media 	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-resolution: 1.5dppx),
+    only screen and (min-resolution: 144dpi)  {
+
+    }
+
+    /* Css для Ipad */
+    @media only screen and (device-width: 768px) {
+    /* Для основных стилей, размеры менять под себя */
+    }
+
+    @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    /* Только для режима портретный, размеры менять под себя */
+    }
+
+    @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    /* Только для режима ландшафтный , размеры менять под себя */
+    }
+
+
+    .vm {
+      margin: 30px auto 0;
+      max-width: 300px;
+    }
+    .subUl {
+      display: none;
+    }
+    .active .subUl {
+      display: block;
+    }
+    li {
+      position: relative;
+    }
+
+    .parent > a:before {
+      top: 11px;
+      right: 10px;
+      color: transparent;
+      background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTYuNTkgOC41OUwxMiAxMy4xNyA3LjQxIDguNTkgNiAxMGw2IDYgNi02eiIvPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48L3N2Zz4=") no-repeat 50% 50% / 1.5em 1.5em;
+      width: 1em;
+      height: 1em;
+      content: "";
+      position: absolute;
+      transition: transform .5s;
+    }
+    .parent.active > a:before {
+      transform: scale(1, -1);
+    }
+
+    .vmUl a {
+      display: block;
+      padding: 10px 14px;
+      font-size: 20px;
+      font-weight: 600;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #000;
+      text-decoration: none;
+      background-color: cornflowerblue;
+      border-bottom: 1px solid #fff;
+    }
+    .vmUl .parent > a {
+      padding-right: 34px;
+    }
+    .vmUl .subUl a {
+      color: #fff;
+      font-size: 18px;
+      padding-left: 20px;
+      background-color: darkseagreen;
+    }
+    .vmUl a:hover,
+    .vmUl .subUl a:hover {
+      background-color: darkgoldenrod;
+    }
+    .parent.active > a {
+      background-color: dodgerblue;
+      background-color: forestgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="vm">
+    <ul class="vmUl">
+      <li class="parent">
+        <a href="htts://google.com" target="_blank">link</a>
+        <ul class="subUl">
+          <li><a href="htts://google.com" target="_blank">111 111</a></li>
+          <li><a href="htts://google.com" target="_blank">222 222</a></li>
+          <li><a href="htts://google.com" target="_blank">333 333</a></li>
+          <li><a href="htts://google.com" target="_blank">444 444</a></li>
+        </ul>
+      </li>
+      <li><a href="htts://google.com" target="_blank">link</a></li>
+      <li class="parent">
+        <a href="htts://google.com" target="_blank">link</a>
+        <ul class="subUl">
+          <li><a href="htts://google.com" target="_blank">111 111</a></li>
+          <li><a href="htts://google.com" target="_blank">222 222</a></li>
+        </ul>
+      </li>
+      <li><a href="htts://google.com" target="_blank">link</a></li>
+      <li><a href="htts://google.com" target="_blank">link</a></li>
+      <li class="parent">
+        <a href="htts://google.com" target="_blank">link</a>
+        <ul class="subUl">
+          <li><a href="htts://google.com" target="_blank">444 444</a></li>
+        </ul>
+      </li>
+      <li><a href="htts://google.com" target="_blank">link</a></li>
+      <li class="parent">
+        <a href="htts://google.com" target="_blank">link</a>
+        <ul class="subUl">
+          <li><a href="htts://google.com" target="_blank">222 222</a></li>
+          <li><a href="htts://google.com" target="_blank">111 111</a></li>
+          <li><a href="htts://google.com" target="_blank">333 333</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+
+  <script>
+
+    let parent = document.querySelectorAll('.parent')
+    let linkdown = document.querySelectorAll('.parent > a')
+
+    for(let i=0; i < linkdown.length; i++) {
+      linkdown[i].onclick = function(e) {
+      e.preventDefault()
+      if( parent[i].classList.contains('active') ) {
+        parent[i].classList.remove('active')
+      } else {
+          for(let i=0; i < parent.length; i++) {
+            parent[i].classList.remove('active')
+          }
+          parent[i].classList.add('active')
+        }
+      }
+    }
+
+    document.body.style.backgroundColor = "burlywood";
+    setTimeout(() => document.body.style.backgroundColor = "cadetblue", 2000);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="none" />
+  <title>Modal</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+
+    .btn-modal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50% -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      padding: 20px 30px;
+    }
+
+    .modal {
+      display: none;
+      -webkit-flex-direction: row;
+      -webkit-flex-wrap: nowrap;
+      -webkit-justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-box {
+      margin: 40px;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 0 auto;
+      padding: 40px;
+      border: 5px solid #c00;
+      position: relative;
+      opacity: 0;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 2;
+      color: #c00;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <button class="btn-modal">Open Modal</button>
+  <div class="modal">
+    <div class="modal-box">
+      <div class="modal-content">
+        <button class="close-modal">×</button>
+        <h2>Header Modal</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non magnam commodi assumenda in magni debitis vero
+          nisi at consectetur officiis ea, perspiciatis iusto, error id. Magni inventore dolores suscipit fugiat enim
+          debitis, laudantium minus, saepe hic sapiente sit reprehenderit id in doloribus. Nisi maiores alias aliquid
+          aut officiis maxime harum.
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, ducimus, delectus veritatis repellat ipsum
+          temporibus recusandae eos consectetur vitae perferendis doloremque obcaecati magnam pariatur aliquam aperiam
+          porro? Odit, cumque. Fuga repudiandae, vel velit officia aliquam numquam eveniet pariatur maiores corporis
+          vitae, at laborum nostrum! Magnam, vel labore quisquam inventore autem accusantium voluptates quaerat illum
+          obcaecati quidem hic mollitia harum esse sint, sunt doloremque odio enim sed ipsum optio cumque. Dignissimos
+          soluta laborum minus iste, accusantium eveniet. Voluptates ad, nemo alias laboriosam eveniet sint est modi
+          quaerat ipsum quasi eos, pariatur tempore maxime libero mollitia, quod quas iusto sit non explicabo!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae nostrum sed reprehenderit laborum esse
+          molestias nisi fugit voluptates pariatur non optio fuga repellendus aspernatur, nesciunt labore ducimus
+          voluptas nam quasi maiores incidunt eius. Quod dolorem nisi fuga magnam magni vel quaerat cumque aliquid illo
+          repudiandae corporis, impedit nobis qui aut sint? Ipsa perferendis ducimus quas aperiam culpa alias non rem,
+          quia corporis? Velit ex culpa iusto labore sequi adipisci atque! Nobis eligendi non ullam, impedit provident
+          nesciunt repellat molestiae! Soluta.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non magnam commodi assumenda in magni debitis vero
+          nisi at consectetur officiis ea, perspiciatis iusto, error id. Magni inventore dolores suscipit fugiat enim
+          debitis, laudantium minus, saepe hic sapiente sit reprehenderit id in doloribus. Nisi maiores alias aliquid
+          aut officiis maxime harum.
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, ducimus, delectus veritatis repellat ipsum
+          temporibus recusandae eos consectetur vitae perferendis doloremque obcaecati magnam pariatur aliquam aperiam
+          porro? Odit, cumque. Fuga repudiandae, vel velit officia aliquam numquam eveniet pariatur maiores corporis
+          vitae, at laborum nostrum! Magnam, vel labore quisquam inventore autem accusantium voluptates quaerat illum
+          obcaecati quidem hic mollitia harum esse sint, sunt doloremque odio enim sed ipsum optio cumque. Dignissimos
+          soluta laborum minus iste, accusantium eveniet. Voluptates ad, nemo alias laboriosam eveniet sint est modi
+          quaerat ipsum quasi eos, pariatur tempore maxime libero mollitia, quod quas iusto sit non explicabo!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    let whe = window.innerHeight;
+    let modal = document.querySelector(".modal");
+    let btnmodal = document.querySelector(".btn-modal");
+    let modalcontent = document.querySelector(".modal-content");
+    let closemodal = document.getElementsByClassName("close-modal")[0];
+    btnmodal.onclick = function () {
+      modal.classList.add('modalActive');
+      let op = 0;
+      while (op <= 1.01) {
+          (function(_op) {
+            setTimeout(function() { modalcontent.style.opacity = _op; }, 60 + op * 600);
+          })(op);
+          op += 0.01;
+      }
+      modal.style.cssText += `
+        display: flex;
+        display: -webkit-flex;
+      `;
+      let modalcontentheight = document.querySelector('.modal-box').offsetHeight;
+      if (modalcontentheight > whe) {
+        document.body.style.cssText += `overflow:hidden`;
+        modal.style.cssText += `
+          display: block;
+        `
+      }
+    }
+
+    window.addEventListener("resize", function () {
+      if (modal.classList.contains('modalActive')) {
+        modal.style.cssText += `
+          display: flex;
+          display: -webkit-flex;
+        `;
+        let modalcontentheight = document.querySelector('.modal-box').offsetHeight;
+        if (modalcontentheight > whe) {
+          document.body.style.cssText += `overflow:hidden`;
+          modal.style.cssText += `
+            display: block;
+          `
+        }
+      }
+    })
+
+    closemodal.onclick = function () {
+      modal.style.display = "none";
+      modal.classList.remove('modalActive');
+      modalcontent.style.opacity = 0;
+      document.body.style.cssText = `overflow: auto;`;
+    }
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        modal.classList.remove('modalActive');
+        modalcontent.style.opacity = 0;
+        document.body.style.cssText = `overflow: auto;`;
+      }
+    };
+
+  </script>
+
+</body>
+
+</html>
