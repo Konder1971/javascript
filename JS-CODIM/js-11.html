@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="none" />
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+  <meta name="format-detection" content="telephone=no" />
+  <style>
+    *, *:before, *:after {
+      margin:0;
+      padding:0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    *:focus, a:focus {
+      outline:0;
+      outline-offset:0;
+    }
+    *{
+      -webkit-appearance: none; /* delete the default styles ios */
+    }
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+
+    html, body {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-overflow-scrolling: touch;
+      text-rendering: optimizeLegibility;
+      
+    }
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      vertical-align: baseline;
+      font-weight: normal;
+    }
+    pre {
+      white-space: pre;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    ol, ul {list-style: none;}
+    caption,th { text-align:left; }
+    blockquote, q {quotes: none;}
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+      content: '';
+      content: none;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup, 
+    menu,
+    nav,
+    section,
+    summary {
+      display: block;
+    }
+    audio,
+    canvas,
+    video {
+      display: inline-block;
+    }
+    audio:not([controls]) {
+      display: none;
+      height: 0;
+    }
+    img {
+      max-width: 100%;
+      width: auto\9;
+      height: auto;
+      vertical-align: middle;
+      border: 0;
+    }
+    .clearfix:before,
+    .clearfix:after {
+      display: table;
+      line-height: 0;
+      content: "";
+    }
+    .clearfix:after { clear: both; }
+
+    /* убрать синий фон при клике на элемент */
+    button, 
+    input[type="submit"],
+    input[type="checkbox"],
+    input[type="radio"] { 
+      -webkit-tap-highlight-color: transparent;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    input[type="search"] {
+      -webkit-appearance: textfield;
+      -moz-box-sizing: content-box;
+      -webkit-box-sizing: content-box;
+      box-sizing: content-box;
+    }
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    /* убирает закругления и тень у полей в WebKit браузерах */
+    input:not([type=checkbox]):not([type=radio]),
+    input[type="submit"],
+    textarea, 
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    /* Target all Firefox */
+    @-moz-document url-prefix() { 
+      .class {
+
+      } 
+    }
+
+    @media all and (-webkit-min-device-pixel-ratio:0) {
+      /*Всё, что вы сюда напишете, будет работать только с -webkit-*/
+    }
+
+    /*	Retina (HiDPI) Display */
+    @media 
+        only screen and (-moz-min-device-pixel-ratio:1.5), 
+        only screen and (-o-min-device-pixel-ratio:3/2), 
+        only screen and (-webkit-min-device-pixel-ratio:1.5), 
+        only screen and (min-device-pixel-ratio:1.5) {
+    }
+
+    /* для ретина img */
+    @media 	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-resolution: 1.5dppx),
+    only screen and (min-resolution: 144dpi)  {
+
+    }
+
+    /* Css для Ipad */
+    @media only screen and (device-width: 768px) {
+    /* Для основных стилей, размеры менять под себя */
+    }
+
+    @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    /* Только для режима портретный, размеры менять под себя */
+    }
+
+    @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    /* Только для режима ландшафтный , размеры менять под себя */
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    a {
+      text-decoration: none;
+    }
+    button {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: .7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dparr"></div>
+  <script>
+    let arraa = [1, 2, 3, 4, 5];
+    let result = arraa.map(function(elem, index) {
+      return elem * index;
+    });
+    console.log(result);
+
+    let arr = [1, 2, 3, 4, 5];
+    let sum = 0;
+    arr.forEach(function(elem) {
+      sum +=  elem*2;
+    });
+    console.log(sum);
+    let parr = document.createElement('p');
+    let dparr = document.querySelector('.dparr');
+    //dparr.insertAdjacentElement('afterEnd', parr); // или так
+    document.body.insertBefore(parr, dparr) // или так
+    parr.innerHTML = sum
+  </script>
+
+
+  <style>
+    .container2 {
+      display: inline-block;
+      cursor: pointer;
+    }
+    
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+    
+    .change .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    
+    .change .bar2 {opacity: 0;}
+    
+    .change .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  </style>
+  <p>Click on the Menu Icon to transform it to "X":</p>
+  <div class="container2" onclick="myFunction(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  <div class="clearfix"></div>
+  <script>
+  function myFunction(x) {
+    x.classList.toggle("change");
+  }
+  </script>
+
+
+
+  <button onclick="document.getElementById('myImage').src='dino/img/dino.png'">Turn on the light</button>
+  <img id="myImage" src="dino/img/cactus.png" style="width:100px">
+  <button onclick="document.getElementById('myImage').src='dino/img/cactus.png'">Turn off the light</button>
+
+
+
+  <div class="car1"></div>
+  <hr>
+  <div class="car2"></div>
+  <hr>
+  <div class="obj3"></div>
+
+  <script>
+
+    let car1 = document.querySelector('.car1')
+    function Car1(brand, color) {
+      this.brand = brand,
+      this.color = color
+    }
+    const tesla = new Car1('Tesla', 'black')
+    Car1.prototype.start = function() {
+      car1.innerHTML += `${this.brand}, ${this.color} <br>`
+    }
+    Car1.prototype.stop = function() {
+      car1.innerHTML += `${this.brand} - Стоп.`
+    }
+    tesla.start()
+    tesla.stop()
+
+
+    let car2 = document.querySelector('.car2')
+    class Car2 {
+      constructor(brand, color) {
+        this.brand = brand,
+        this.color = color
+      }
+      start() {
+        car2.innerHTML += `${this.brand}, ${this.color} <br>`
+      }
+      stop() {
+        car2.innerHTML += `${this.brand} - Стоп.`
+      }
+    }
+    const ford = new Car2('Ford', 'red')
+    ford.start()
+    ford.stop()
+
+    /*
+    window.addEventListener('DOMContentLoaded', function() {
+      alert('Привет Дэбил')
+      console.log('Привет Дэбил')
+      let h1 = document.createElement('h1')
+      h1.innerHTML = 'Header H1'
+      document.body.insertBefore(h1, car1)
+    })
+    */
+
+
+    let obj3 = document.querySelector('.obj3')
+    const obj = {
+      name: 'Debil',
+      age: 42,
+      counter: [1, 2, 3],
+      log1() {
+          const objEntries = Object.entries(obj);
+          for(let i=0; i<objEntries.length-1; i++) {
+              let output = objEntries[i];
+              console.log(output.join(': '));
+              obj3.innerHTML += `${output.join(': ')} <br />`
+          }   
+      }
+    }
+    obj.log1();
+
+    const monoline = (...strings) => [...strings].join("");
+    console.log(monoline("n", "o", '6', 's'));
+    obj3.innerHTML += monoline("n", "o", '6', 's', ' ... ... ... ', 'xr en dost')
+
+
+  </script>
+
+</body>
+</html>
