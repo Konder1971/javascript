@@ -28,6 +28,7 @@ const person2 = new Person("Игнатий", "Иванопуло", "Мужик",
 const person3 = new Person("Калистрат", "Свиридонов", "Мужик", 32);
 const person4 = new Person("Иннокентий", "Зойцман", "Мужик", 46);
 const person5 = new Person("Рафик", "Кихберджаев", "Осёл", 16);
+const person6 = new Person("Махмуд", "Исембаев", "Бог", 889);
 
 countpersons.innerHTML += `Всего Количество Персон = ${Person.count}`
 
@@ -54,4 +55,9 @@ btn4.onclick = function() {
 let btn5 = document.querySelector('.btn-5')
 btn5.onclick = function() {
   person5.showPerson()
+}
+
+let btn6 = document.querySelector('.btn-6')
+btn6.onclick = function() {
+  person6.showPerson()
 }
