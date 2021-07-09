@@ -203,6 +203,20 @@
 </head>
 <body>
 
+  <input id="elem" value="0">
+  <script>
+    let vvv = 0
+    let elem = document.querySelector('#elem');
+    const interval = setInterval(() => {
+      vvv++
+      if (vvv >= 10) {
+        clearInterval(interval);
+      } else {
+        elem.setAttribute('value', `${vvv}`);
+      }
+    }, 400)
+  </script>
+
   <div class="dparr"></div>
   <script>
     let arraa = [1, 2, 3, 4, 5];
