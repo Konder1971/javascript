@@ -203,19 +203,64 @@
 </head>
 <body>
 
-  <input id="elem" value="0">
+
+
+  <style>
+    #elem99 {
+      width: 200px;
+      height: 60px;
+      padding: 10px;
+      font-size: 24px;
+    }
+    .elem99  {
+      position: relative;
+      animation: cactusMov 3s infinite linear;
+      -webkit-animation: cactusMov 3s infinite linear;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+    @keyframes cactusMov {
+      0% {
+        left: 0;
+        top: 0;
+        transform: rotate(0deg);
+        background-color: aliceblue;
+      }
+      25% {
+        background-color: antiquewhite;
+      }
+      50% {
+        background-color: bisque;
+      }
+      75% {
+        background-color: burlywood;
+      }
+      100% {
+        left: 400px;
+        top: 100px;
+        transform: rotate(45deg);
+        background-color:cadetblue;
+      }
+    }
+  </style>
+  <input id="elem99" value="0">
   <script>
     let vvv = 0
-    let elem = document.querySelector('#elem');
+    let elem99 = document.querySelector('#elem99');
     const interval = setInterval(() => {
       vvv++
-      if (vvv >= 10) {
+      if (vvv > 3) {
         clearInterval(interval);
+        elem99.classList.add('elem99')
       } else {
-        elem.setAttribute('value', `${vvv}`);
+        elem99.setAttribute('value', `${vvv}`);
       }
     }, 400)
   </script>
+
+
+
+
 
   <div class="dparr"></div>
   <script>
